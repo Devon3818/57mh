@@ -1,0 +1,50 @@
+<ion-menu [content]="mycontent">
+    <ion-content>
+        <ion-list>
+
+            <section class="menu-top">
+                <div class="user-data">
+                    <img src="https://avatars0.githubusercontent.com/u/11835988?v=3&s=460" />
+                    <h2>Devon</h2>
+                </div>
+            </section>
+            <ion-list no-border>
+
+                <ion-item (click)="pushFocusPage();">
+                    <ion-icon name='eye' item-left color="h"></ion-icon>
+                    我的关注
+                </ion-item>
+                <ion-item (click)="pushCollectPage();">
+                    <ion-icon name='star' item-left color="h"></ion-icon>
+                    我的收藏
+                </ion-item>
+                <ion-item (click)="pushMySharePage();">
+                    <ion-icon name='document' item-left color="h"></ion-icon>
+                    我的分享
+                </ion-item>
+                <ion-item (click)="pushMyQuestionPage();">
+                    <ion-icon name='time' item-left color="h"></ion-icon>
+                    我的提问
+                </ion-item>
+                <ion-item (click)="pushMyWorkPage();">
+                    <ion-icon name='bookmarks' item-left color="h"></ion-icon>
+                    我的作品
+                </ion-item>
+                <ion-item (click)="pushMyAnswerPage();">
+                    <ion-icon name='play' item-left color="h"></ion-icon>
+                    我的回答
+                </ion-item>
+                <ion-item (click)="pushMyLikePage();">
+                    <ion-icon name='play' item-left color="h"></ion-icon>
+                    我的点赞
+                </ion-item>
+                <ion-item (click)="pushSettingPage();">
+                    <ion-icon name='school' item-left color="h"></ion-icon>
+                    设置
+                </ion-item>
+            </ion-list>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-nav #mycontent [root]="rootPage"></ion-nav>

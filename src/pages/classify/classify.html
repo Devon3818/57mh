@@ -1,0 +1,176 @@
+<ion-header no-border>
+    <ion-navbar color="fff">
+        <img (click)="openMenu();" class="headers" src="https://avatars0.githubusercontent.com/u/11835988?v=3&s=460" />
+        <ion-title>漫画分类</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="search();">
+              <ion-icon name="ios-search"></ion-icon>
+            </button>
+        </ion-buttons>
+
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+    <section class="classifys" (click)="openClassifyData('日本','日本');">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/bcover/2012/12/252206261_h.jpg')"></div>
+        <p>日本</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('港台','港台');">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/manhuaxiaotuku/2016-02-06/20162610401947204.jpg')"></div>
+        <p>港台</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('欧美','欧美');">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/webpic/16/00chaojizhizhu1022.jpg')"></div>
+        <p>欧美</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('韩国','韩国');">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/bcover/2013/8/061157498_h.jpg')"></div>
+        <p>韩国</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('国产','国产');">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/vod/2017-05-25/5925ccda8f89e.jpg')"></div>
+        <p>国产</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('热血',1);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/vip/jinjidejuren.jpg')"></div>
+        <p>热血</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('武侠',2);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/fengmian/720481.jpg')"></div>
+        <p>武侠</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('搞笑',3);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/bcover/2012/12/281619206_h.jpg')"></div>
+        <p>搞笑</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('耽美',4);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/vip/heizhishi.jpg')"></div>
+        <p>耽美</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('爱情',5);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/vip/wodeshuangxiudaolv.jpg')"></div>
+        <p>爱情</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('科幻',6);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/vip/kunbingzhilong.jpg')"></div>
+        <p>科幻</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('魔法',7);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/webpic/9/170511legend.jpg')"></div>
+        <p>魔法</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('神魔',8);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/vip/dongjingshishigui.jpg')"></div>
+        <p>神魔</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('竞技',9);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/vip/xingmengouxiangjihua.jpg')"></div>
+        <p>竞技</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('格斗',10);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/webpic/16/qiuyujingying.jpg')"></div>
+        <p>格斗</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('机战',11);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/img/webpic/19/1024118591482917357.jpg')"></div>
+        <p>机战</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('体育',12);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/bcover/2012/12/262103255_h.jpg')"></div>
+        <p>体育</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('运动',13);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/manhuaxiaotuku/2015-09-16/201591612112385251.jpg')"></div>
+        <p>运动</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('校园',14);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/bcover/2012/12/252229268_h.jpg')"></div>
+        <p>校园</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('励志',15);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/vip/mingxingjinpaixiaozhuli.jpg')"></div>
+        <p>励志</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('历史',16);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/pic/2015/07/02/ee9555ae5aba455a91e844ed93f73439.jpg')"></div>
+        <p>历史</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('伪娘',17);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/vip/qishimofa.jpg')"></div>
+        <p>伪娘</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('百合',18);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/vip/xuanjici.jpg')"></div>
+        <p>百合</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('后宫',19);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/vip/qunxiazhishen.jpg')"></div>
+        <p>后宫</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('治愈',20);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/manhuaxiaotuku/2016-02-03/20162320485490646.jpg')"></div>
+        <p>治愈</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('美食',21);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/bcover/2013/8/221152484_h.jpg')"></div>
+        <p>美食</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('推理',22);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/bcover/2012/12/261802199_h.jpg')"></div>
+        <p>推理</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('悬疑',23);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/img/webpic/3/1016819631493374978.jpg')"></div>
+        <p>悬疑</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('恐怖',24);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/img/webpic/12/1041456121492155329.jpg')"></div>
+        <p>恐怖</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('职场',25);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/webpic/6/shezekezhangdemniang.jpg')"></div>
+        <p>职场</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('BL',26);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/fengmian/772801.jpg')"></div>
+        <p>BL</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('剧情',27);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/works/vertical/57f2517d4d76c.webp')"></div>
+        <p>剧情</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('生活',28);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/vip/baiyelinglong.jpg')"></div>
+        <p>生活</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('幻想',29);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/vip/tianzhongshinianling.jpg')"></div>
+        <p>幻想</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('战争',30);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/bcover/2012/12/262050071_h.jpg')"></div>
+        <p>战争</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('仙侠',33);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/webpic/1/tashimofashaonv.png')"></div>
+        <p>仙侠</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('性转换',40);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/webpic/9/shuzhihunzhiwulieren.jpg')"></div>
+        <p>性转换</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('冒险',41);">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/webpic/10/lurennvzhudeyangchengfangfagirlssidefengmianl.jpg')"></div>
+        <p>冒险</p>
+    </section>
+    <section class="classifys" (click)="openClassifyData('其他','其他');">
+        <div class="classimg" style="background: url('http://i.57mh.com/Uploads/webpic/18/godfingerxunfengmianl.jpg')"></div>
+        <p>其他</p>
+    </section>
+
+
+
+</ion-content>

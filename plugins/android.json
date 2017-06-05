@@ -1,0 +1,33 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.buka"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.buka"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.buka"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.buka"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.buka"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.buka"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.buka"
+        }
+    },
+    "dependent_plugins": {}
+}

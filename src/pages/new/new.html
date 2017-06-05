@@ -1,0 +1,28 @@
+<ion-header no-border>
+    <ion-navbar color="fff">
+        <img (click)="openMenu();" class="headers" src="https://avatars0.githubusercontent.com/u/11835988?v=3&s=460" />
+        <ion-title>最新上架</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="search();">
+              <ion-icon name="ios-search"></ion-icon>
+            </button>
+        </ion-buttons>
+
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+    <section class="wrap">
+        <h6 class="title">最新更新</h6>
+
+        <div class="mh" *ngFor="let item of data" (click)="open(item.name, item.uptime, item.bannerimg, item.url, item.len, item.cod, item.class);">
+            <div class="mh-img" [style.background]="'url('+item.bannerimg+')'"></div>
+            <p>{{item.name}}</p>
+            <span>{{item.len}}</span>
+        </div>
+
+    </section>
+    <!--<iframe id="ikmnew" src="http://m.57mh.com/latest/"></iframe>-->
+</ion-content>

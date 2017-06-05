@@ -1,0 +1,129 @@
+page-comics {
+    ion-content {
+        #ikmfs {
+            display: none;
+        }
+        background: #f7f7f7 !important;
+        .comics-top {
+            width: 100%;
+            background: #fff;
+            position: relative;
+            overflow: hidden;
+            .comics-top-bar {
+                width: 100%;
+                height: 5rem;
+                background: #ff9b24;
+                .grade {
+                    margin: 0 !important;
+                    margin-right: 5% !important;
+                    color: #fff;
+                }
+            }
+            img {
+                position: absolute;
+                bottom: 0;
+                left: 5%;
+                width: 33%;
+                box-shadow: 0px 0px 12px #868686;
+            }
+            .basics {
+                float: right;
+                width: 56%;
+                background: #fff;
+                p {
+                    margin: 0 !important;
+                    line-height: 32px;
+                    color: #b06869;
+                }
+                .title {
+                    color: #666;
+                    font-size: 20px;
+                    line-height: 38px;
+                }
+                .btm {
+                    padding-top: 8px;
+                    width: 80%;
+                    overflow: hidden;
+                    .coll {
+                        float: left;
+                        color: #b06869;
+                    }
+                    .read {
+                        float: right;
+                        background: #b06869;
+                        color: #fff;
+                    }
+                    .btms {
+                        padding: 10px 18px;
+                        border: 1px solid #b06869;
+                        border-radius: 60px;
+                    }
+                }
+            }
+        }
+        .wrap {
+            background: #fff;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            .tag-wrap {
+                width: 100%;
+                padding: 0 5%;
+                background: #fff;
+                overflow: hidden;
+            }
+            .tag {
+                padding: 7px 12px;
+                display: block;
+                float: left;
+                background: #eeeeee;
+                color: #666;
+                border-radius: 999px;
+                margin-right: 3%;
+                margin-bottom: 5%;
+            }
+            // 漫画章节
+            .piece-title {
+                width: 90%;
+                margin: 0 auto;
+                background: #fff;
+                overflow: hidden;
+                color: #bbbbbb;
+            }
+            .piece {
+                float: left;
+                width: 18%;
+                display: block;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                line-height: 28px;
+                margin-left: 5.7%;
+                margin-bottom: 2.35%;
+                margin-top: 2.35%;
+                text-align: center;
+                border: 1px solid #929292;
+                box-sizing: border-box;
+                color: #929292;
+                border-radius: 999px;
+            }
+        }
+        .dec {
+            padding: 1.5rem 0;
+            display: block;
+            background: #fff;
+            clear: both;
+            width: 90%;
+            margin: 0 auto 1.5rem;
+            color: #666666;
+            border-bottom: 1px solid #eee;
+        }
+    }
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}

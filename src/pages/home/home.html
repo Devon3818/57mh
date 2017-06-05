@@ -1,0 +1,68 @@
+<ion-header no-border>
+    <ion-navbar color="fff">
+        <img (click)="openMenu();" class="headers" src="https://avatars0.githubusercontent.com/u/11835988?v=3&s=460" />
+        <ion-title>推荐</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="search();">
+              <ion-icon name="ios-search"></ion-icon>
+            </button>
+        </ion-buttons>
+
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <!--<iframe id="ikmhome" src="http://m.57mh.com"></iframe>-->
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" *ngFor="let item of data.banner" [style.background]="'url('+item+')'"></div>
+        </div>
+    </div>
+
+    <section class="wrap">
+        <h6 class="title">今日推荐的漫画 (=・ω・=)</h6>
+
+        <div class="mh" *ngFor="let item of data.tj">
+            <div class="mh-img" [style.background]="'url('+item.bannerimg+')'"></div>
+            <p>{{item.name}}</p>
+            <span>{{item.len}}</span>
+        </div>
+
+
+        <i class="bar"></i>
+
+        <h6 class="title">热门连载日漫 (๑•̀ㅂ•́)و✧</h6>
+
+        <div class="mh" *ngFor="let item of data.rm">
+            <div class="mh-img" [style.background]="'url('+item.bannerimg+')'"></div>
+            <p>{{item.name}}</p>
+            <span>{{item.len}}</span>
+        </div>
+
+
+        <i class="bar"></i>
+
+        <h6 class="title">热门连载国漫 ( ˘ ³˘)♥ </h6>
+
+        <div class="mh" *ngFor="let item of data.gm">
+            <div class="mh-img" [style.background]="'url('+item.bannerimg+')'"></div>
+            <p>{{item.name}}</p>
+            <span>{{item.len}}</span>
+        </div>
+
+        <i class="bar"></i>
+
+        <h6 class="title">最新上架漫画 (ง •_•)ง</h6>
+
+        <div class="mh" *ngFor="let item of data.new">
+            <div class="mh-img" [style.background]="'url('+item.bannerimg+')'"></div>
+            <p>{{item.name}}</p>
+            <span>{{item.len}}</span>
+        </div>
+
+    </section>
+
+    <p class="no-data"> ------ 数据来源于57漫画网 ------</p>
+
+</ion-content>

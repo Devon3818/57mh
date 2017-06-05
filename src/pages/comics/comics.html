@@ -1,0 +1,47 @@
+<ion-header no-border>
+
+    <ion-navbar color="hebar">
+        <ion-title>{{name}}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <section class="comics-top">
+        <div class="comics-top-bar">
+            <h2 class="fr grade">{{cod}}</h2>
+        </div>
+        <img [src]="banner" />
+        <div class="basics">
+            <p class="title">{{name}}</p>
+            <p>{{len}}</p>
+            <p>{{uptime}}</p>
+            <div class="btm">
+                <div class="btms coll">收藏</div>
+                <div class="btms read">开始阅读</div>
+            </div>
+        </div>
+
+    </section>
+    <div class="wrap">
+        <p class="dec">{{dec}}</p>
+
+        <div class="tag-wrap">
+            <span class="tag" *ngFor="let ic of iclass">{{ic}}</span>
+        </div>
+    </div>
+
+    <div class="wrap">
+
+        <div class="piece-title">
+            <p class="fl">连载(话)</p>
+            <p class="fr">{{uptime}}</p>
+        </div>
+
+        <div class="piece" *ngFor="let item of data['pages']" (click)="open(item.ihref);">{{item.ititle}}</div>
+
+    </div>
+    <iframe id="ikmfs" src="http://m.57mh.com/"></iframe>
+</ion-content>

@@ -1,0 +1,11 @@
+.tabs-md .tab-button {
+    min-height: 5rem;
+}
+
+.tab-button-icon {
+    color: #cccccc !important;
+}
+
+.tab-button[aria-selected=true] .tab-button-icon {
+    color: #ff9b24 !important;
+}

@@ -1,0 +1,31 @@
+<ion-header no-border>
+
+    <ion-navbar color="fff">
+        <ion-title>{{title}}</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="presentPopover($event)">
+              <ion-icon name="more"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <section class="wrap">
+
+        <div class="mh" *ngFor="let item of data" (click)="open(item.name, item.uptime, item.bannerimg, item.url, item.len, item.cod, item.class);">
+            <div class="mh-img" [style.background]="'url('+item.bannerimg+')'"></div>
+            <p>{{item.name}}</p>
+            <span>{{item.len}}</span>
+        </div>
+
+    </section>
+
+    <!--<iframe id="ikmiclass" src="http://m.57mh.com"></iframe>-->
+
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>
