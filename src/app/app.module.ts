@@ -7,6 +7,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { pubilcService } from '../service/public';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StatusBar,
     SplashScreen,
     InAppBrowser,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    pubilcService
   ]
 })
 export class AppModule { }

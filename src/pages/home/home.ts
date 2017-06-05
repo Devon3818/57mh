@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, MenuController, IonicPage } from 'ionic-angular';
+import { pubilcService } from '../../service/public';
 
 declare var $: any;
 declare var Swiper: any;
@@ -20,18 +21,23 @@ export class HomePage {
 
   constructor(
     public navCtrl: NavController,
-    public menuCtrl: MenuController
+    public menuCtrl: MenuController,
+    public pubilcService: pubilcService
   ) {
-
+    this.pubilcService.presentLoadingDefault();
   }
 
   openMenu() {
     this.menuCtrl.open();
   }
 
-  openComics() {
+  open(name, banner, url) {
+    this.navCtrl.push('ComicsPage', {
+      name: name,
+      banner: banner,
+      url: url,
 
-    this.navCtrl.push('ComicsPage');
+    })
   }
 
   search() {
@@ -42,15 +48,11 @@ export class HomePage {
 
     var _thst = this;
 
-    var link  = $("<iframe/>");
-    link.attr('id','ikmhome');  
-    link.attr('src','http://m.57mh.com');
-    link.appendTo('body')    
-
     document.getElementById("ikmhome").onload = function () {
-      alert("myframe is loaded");
-      var ifobj = $("#ikmhome").contents();
 
+      var oframe = $("#ikmhome");
+      var ifobj = oframe.contents();
+      oframe.remove();
       var ibanner = ifobj.find('.swiper-slide');
       ibanner.each(function (index) {
         _thst.data['banner'].push($(this).find('img').attr('src'));
@@ -65,8 +67,6 @@ export class HomePage {
         //alert(iobj['bannerimg']);
         iobj['url'] = 'http://m.57mh.com' + ot.find('a').attr('href');
         iobj['len'] = ot.find('p').text();
-        iobj['cod'] = 0.0;
-        iobj['class'] = ['日本'];
         _thst.data['tj'].push(iobj);
 
       });
@@ -80,8 +80,6 @@ export class HomePage {
         //alert(iobj['bannerimg']);
         iobj['url'] = 'http://m.57mh.com' + ot.find('a').attr('href');
         iobj['len'] = ot.find('p').text();
-        iobj['cod'] = 0.0;
-        iobj['class'] = ['日本'];
         _thst.data['rm'].push(iobj);
 
       });
@@ -95,8 +93,6 @@ export class HomePage {
         //alert(iobj['bannerimg']);
         iobj['url'] = 'http://m.57mh.com' + ot.find('a').attr('href');
         iobj['len'] = ot.find('p').text();
-        iobj['cod'] = 0.0;
-        iobj['class'] = ['日本'];
         _thst.data['gm'].push(iobj);
 
       });
@@ -110,16 +106,18 @@ export class HomePage {
         //alert(iobj['bannerimg']);
         iobj['url'] = 'http://m.57mh.com' + ot.find('a').attr('href');
         iobj['len'] = ot.find('p').text();
-        iobj['cod'] = 0.0;
-        iobj['class'] = ['日本'];
         _thst.data['new'].push(iobj);
 
       });
 
-      var swiper = new Swiper('.swiper-container', {
-        loop: true,
-        autoplay: 3000,
-      });
+      setTimeout(() => {
+        var swiper = new Swiper('.swiper-container', {
+          loop: true,
+          autoplay: 3000,
+        });
+      }, 1000);
+
+      _thst.pubilcService.presentLoadingDismiss();
 
     };
 

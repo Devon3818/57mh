@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
+import { pubilcService } from '../../service/public';
 
 declare var $: any;
 declare var document: any;
@@ -15,9 +16,10 @@ export class NewPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public menuCtrl: MenuController
+    public menuCtrl: MenuController,
+    public pubilcService: pubilcService
   ) {
-    //this.getdata();
+    this.pubilcService.presentLoadingDefault();
   }
 
   ionViewDidLoad() {
@@ -32,7 +34,7 @@ export class NewPage {
     //document.getElementById("ikmnew").src = "http://m.57mh.com/list/order-hits";
 
     document.getElementById("ikmnew").onload = function () {
-      alert("myframe is loaded");
+      
       var ifobj = $("#ikmnew").contents();
       var ele = ifobj.find(".cont-list #data_list li");
       ele.each(function (index) {
@@ -50,6 +52,7 @@ export class NewPage {
 
       });
       $("#ikmnew").remove();
+      _thst.pubilcService.presentLoadingDismiss();
     };
 
   }

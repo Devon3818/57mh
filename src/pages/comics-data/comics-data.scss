@@ -52,6 +52,9 @@ page-comics-data {
                     display: block;
                     font-size: 1rem;
                     color: #7d7d7d;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
                 }
             }
             .mh:nth-of-type(3n-1) {
