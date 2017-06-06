@@ -42,13 +42,10 @@ export class NewPage {
         var iobj = {},
           ot = $(this);
         iobj['name'] = ot.find('h3').text();
-        iobj['uptime'] = ot.find('font').text();
         iobj['bannerimg'] = ot.find('.thumb img').attr('data-src');
         //alert(iobj['bannerimg']);
         iobj['url'] = 'http://m.57mh.com'+ot.find('a').eq(0).attr('href');
         iobj['len'] = ot.find('dd').eq(2).text();
-        iobj['cod'] = 0.0;
-        iobj['class'] = ['日本'];
         pages.push(iobj);
       });
       _thst.data = pages;
@@ -58,15 +55,11 @@ export class NewPage {
 
   }
 
-  open( name, uptime, banner, url, len, cod, iclass ){
+  open( name, banner, url ){
     this.navCtrl.push( 'ComicsPage', {
       name: name,
-      uptime: uptime,
       banner: banner,
       url: url,
-      len: len,
-      cod: cod,
-      iclass: iclass
     } )
   }
 

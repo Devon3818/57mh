@@ -1,8 +1,9 @@
 <ion-header no-border>
 
     <ion-navbar color="fff">
-        <ion-searchbar color="primary" autofocus placeholder="漫画的名字">
-        </ion-searchbar>
+        <ion-title>
+            搜索
+        </ion-title>
     </ion-navbar>
 
 </ion-header>
@@ -10,28 +11,20 @@
 
 <ion-content>
 
+    <ion-searchbar (ionInput)="getItems($event)" debounce="500" showCancelButton="true" placeholder="作者／漫画" animated="true"></ion-searchbar>
+
     <section class="wrap">
 
-        <div class="mh" (click)="openComics();">
-            <div class="mh-img" style="background: url('http://i.57mh.com/Uploads/bcover/2013/3/151540589_h.jpg')"></div>
-            <p>一拳超人</p>
-            <span>更新至116话</span>
+        <div class="mh" *ngFor="let item of data" (click)="open(item.name, item.bannerimg, item.url);">
+            <div class="mh-img" [style.background]="'url('+item.bannerimg+')'"></div>
+            <p>{{item.name}}</p>
+            <span>{{item.len}}</span>
         </div>
-        <div class="mh">
-            <div class="mh-img" style="background: url('http://i.57mh.com/Uploads/vip/jueshitangmen.jpg')"></div>
-            <p>斗罗大陆2绝世唐门</p>
-            <span>更新至116话</span>
-        </div>
-        <div class="mh">
-            <div class="mh-img" style="background: url('http://i.57mh.com/Uploads/vip/chuanyuexiyuan3000hou.jpg')"></div>
-            <p>穿越西元3000后</p>
-            <span>更新至116话</span>
-        </div>
-        <div class="mh">
-            <div class="mh-img" style="background: url('http://i.57mh.com/Uploads/vip/shayuhaizhige.jpg')"></div>
-            <p>砂与海之歌</p>
-            <span>更新至116话</span>
-        </div>
+
     </section>
+
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 
 </ion-content>

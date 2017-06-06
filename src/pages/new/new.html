@@ -17,7 +17,7 @@
     <section class="wrap">
         <h6 class="title">最新更新</h6>
 
-        <div class="mh" *ngFor="let item of data" (click)="open(item.name, item.uptime, item.bannerimg, item.url, item.len, item.cod, item.class);">
+        <div class="mh" *ngFor="let item of data" (click)="open(item.name, item.bannerimg, item.url);">
             <div class="mh-img" [style.background]="'url('+item.bannerimg+')'"></div>
             <p>{{item.name}}</p>
             <span>{{item.len}}</span>
