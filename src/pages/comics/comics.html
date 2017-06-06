@@ -40,7 +40,7 @@
             <p class="fr">{{uptime}}</p>
         </div>
 
-        <div class="piece" *ngFor="let item of data['pages']" (click)="open(item.ihref);">{{item.ititle}}</div>
+        <div class="piece" *ngFor="let item of data['pages']" (click)="openpage(item.ihref);">{{item.ititle}}</div>
 
     </div>
     <!--<iframe id="ikmfs" src="http://m.57mh.com/"></iframe>-->

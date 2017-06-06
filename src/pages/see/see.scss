@@ -1,15 +1,7 @@
 page-see {
     ion-content {
-        background: #f7f7f7 !important;
-    }
-    .wrap {
-        width: 100%;
-        position: relative;
-        #ifs {
-            width: 100%;
-            height: 800px;
-            display: block;
-            border: none;
-        }
+        background-image: url('../assets/img/loading.gif') !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
     }
 }

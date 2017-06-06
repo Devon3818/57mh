@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, Platform, NavController, Tabs, ToastController } from 'ionic-angular';
+import { pubilcService } from '../../service/public';
 
 @IonicPage()
 @Component({
@@ -16,7 +17,7 @@ export class TabsPage {
   tab3Root = 'ClassifyPage';
   tab4Root = 'CollectPage';
 
-  constructor(public navCtrl: NavController, public platform: Platform, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public platform: Platform, public toastCtrl: ToastController,public pubilcService: pubilcService) {
     this.pageBack();
   }
 
@@ -31,6 +32,7 @@ export class TabsPage {
         if (!this.navCtrl.canGoBack()) {
           return this.showExit();
         }
+        this.pubilcService.presentLoadingDismiss();
         return this.navCtrl.pop();
       }
       let tabs = page.tabs;
@@ -38,6 +40,7 @@ export class TabsPage {
       if (!activeNav.canGoBack()) {
         return this.showExit();
       }
+      this.pubilcService.presentLoadingDismiss();
       return activeNav.pop();
 
     }, 101);

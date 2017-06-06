@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 declare var $: any;
 declare var document: any;
@@ -11,64 +12,38 @@ declare var document: any;
 export class SeePage {
 
   imgs = 'http://im1.56zzw.com/7/2225.jpg';
-  isrc = ''
-  iurl = '';
-  allpage = 0;
-  page = 1;
-  ifele = null;
-  ifobj = null;
-  itimer = null;
+  br;
 
   constructor(
     public navCtrl: NavController,
+    public iab: InAppBrowser,
     public navParams: NavParams
   ) {
-    this.iurl = this.navParams.get('iurl');
-    this.isrc = 'http://m.57mh.com' + this.iurl + '?p=';
-    
+    this.open(this.navParams.get('url'));
   }
 
-  nextpage() {
-    this.page++;
-    if (this.allpage >= this.page) {
-      this.ifele.src = this.isrc + this.page;
+  open(url) {
+    this.br = this.iab.create('http://m.57mh.com' + url, '_blank', 'location=no,hardwareback=no');
+    this.br.on('loadstart').subscribe(() => {
+      this.br.hide();
+    });
 
-      this.itimer = setTimeout(() => {
-        this.ifobj = $("#ifs").contents();
-        this.imgs = this.ifobj.find("#manga").attr('src');
-        clearTimeout(this.itimer);
-      }, 1050);
-    } else {
-      alert("最后一页了");
-    }
+    this.br.on('exit').subscribe(() => {
+      this.navCtrl.pop();
+    });
+
+    this.br.on('loaderror').subscribe(() => {
+      alert('加载出错...');
+      this.navCtrl.pop();
+    });
+
+    this.br.on('loadstop').subscribe(() => {
+      this.br.insertCSS({ code: "body {display: block;" });
+      var jscode = "$('body').children().css('display','none'); $('.title').css('display','block'); $('.main-bar').css('display','block'); $('#mangaTitle a').attr('href',''); var allpage = $('#pageNo').text().split('/')[1];  var ihtml = ''; var iurl = 'http://' + window.location.host + window.location.pathname + '?p='; for(var i=0; i<allpage; i++){ var ips = i+1; ihtml+='<a class=\"dv_a\" href=\"' + iurl+ ips + '\">'+ ips +' 页</a>'; }; $('body').append(ihtml+'<i class=\"dv_bar\"></i>');";
+      this.br.executeScript({ code: jscode });
+      this.br.insertCSS({ code: ".dv_bar { clear: both; width: 100px; height: 20px; display: block; } .dv_a { float: left; display: block; padding: 20px; } #pb {width: 100% !important;} #pb a {display: none !important;}" });
+      this.br.show();
+    });
   }
-
-  ionViewDidLoad2() {
-    var _thst = this;
-    this.ifele = document.getElementById("ifs");
-    this.ifele.src = this.isrc + this.page;
-
-    this.ifele.onload = function () {
-
-      //alert("myframe is loaded");
-      _thst.ifobj = $("#ifs").contents();
-      //_thst.allpage = _thst.ifobj.find("#pageNo").text().split('/')[1];
-      //var iimg = _thst.ifobj.find("#manga").attr('src');
-      //alert(_thst.ifele.src);
-      //alert(_thst.ifobj.find("#manga").attr('alt'));
-      //if (iimg.length > 12) {
-        //_thst.imgs = iimg;
-      //}
-
-
-    };
-
-  }
-
-  ionViewWillLeave() {
-    this.ifele.src = '';
-    this.ifele.remove();
-  }
-
 
 }

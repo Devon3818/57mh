@@ -47,6 +47,13 @@ export class HomePage {
   ionViewDidLoad() {
 
     var _thst = this;
+    var pages = {
+      'tj': [],
+      'rm': [],
+      'gm': [],
+      'new': [],
+      'banner': []
+    };
 
     document.getElementById("ikmhome").onload = function () {
 
@@ -55,8 +62,9 @@ export class HomePage {
       oframe.remove();
       var ibanner = ifobj.find('.swiper-slide');
       ibanner.each(function (index) {
-        _thst.data['banner'].push($(this).find('img').attr('src'));
-      })
+        pages['banner'].push($(this).find('img').attr('src'));
+      });
+      _thst.data['banner'] = pages['banner'];
 
       var tuijian = ifobj.find("#main-jinrituijian li");
       tuijian.each(function (index) {
@@ -67,9 +75,10 @@ export class HomePage {
         //alert(iobj['bannerimg']);
         iobj['url'] = 'http://m.57mh.com' + ot.find('a').attr('href');
         iobj['len'] = ot.find('p').text();
-        _thst.data['tj'].push(iobj);
+        pages['tj'].push(iobj);
 
       });
+      _thst.data['tj'] = pages['tj'];
 
       var remen = ifobj.find("#main-rimanlianzai li");
       remen.each(function (index) {
@@ -80,10 +89,10 @@ export class HomePage {
         //alert(iobj['bannerimg']);
         iobj['url'] = 'http://m.57mh.com' + ot.find('a').attr('href');
         iobj['len'] = ot.find('p').text();
-        _thst.data['rm'].push(iobj);
+        pages['rm'].push(iobj);
 
       });
-
+      _thst.data['rm'] = pages['rm'];
       var gm = ifobj.find("#main-guomanlianzai li");
       gm.each(function (index) {
         var iobj = {},
@@ -93,10 +102,10 @@ export class HomePage {
         //alert(iobj['bannerimg']);
         iobj['url'] = 'http://m.57mh.com' + ot.find('a').attr('href');
         iobj['len'] = ot.find('p').text();
-        _thst.data['gm'].push(iobj);
+        pages['gm'].push(iobj);
 
       });
-
+      _thst.data['gm'] = pages['gm'];
       var inew = ifobj.find("#main-shangjia li");
       inew.each(function (index) {
         var iobj = {},
@@ -106,10 +115,10 @@ export class HomePage {
         //alert(iobj['bannerimg']);
         iobj['url'] = 'http://m.57mh.com' + ot.find('a').attr('href');
         iobj['len'] = ot.find('p').text();
-        _thst.data['new'].push(iobj);
+        pages['new'].push(iobj);
 
       });
-
+      _thst.data['new'] = pages['new'];
       setTimeout(() => {
         var swiper = new Swiper('.swiper-container', {
           loop: true,

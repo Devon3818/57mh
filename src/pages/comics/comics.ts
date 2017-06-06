@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Headers, Http } from '@angular/http';
-import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { pubilcService } from '../../service/public';
 
 declare var $: any;
@@ -24,13 +23,11 @@ export class ComicsPage {
   data = {
     'pages': []
   };
-  br;
 
   constructor(
     public http: Http,
     public navCtrl: NavController,
     public navParams: NavParams,
-    public iab: InAppBrowser,
     public pubilcService: pubilcService
   ) {
     this.name = this.navParams.get('name');
@@ -39,20 +36,10 @@ export class ComicsPage {
     this.pubilcService.presentLoadingDefault();
   }
 
-  open(url) {
-    this.br = this.iab.create('http://m.57mh.com' + url, '_blank', 'location=no,hardwareback=no');
-    //this.br.insertCSS({ code: "body {display: none !important;" });
-
-    this.br.on('loadstart').subscribe(() => {
-
-    });
-
-    this.br.on('loadstop').subscribe(() => {
-      this.br.insertCSS({ code: "body {display: block;" });
-      var jscode = "$('body').children().css('display','none'); $('.title').css('display','block'); $('.main-bar').css('display','block'); $('#mangaTitle a').attr('href','')";
-      this.br.executeScript({ code: jscode });
-      this.br.insertCSS({ code: "#pb {width: 100% !important;} #pb a {display: none !important;}" });
-
+  openpage(url) {
+    
+    this.navCtrl.push('SeePage', {
+      url: url+'?p=1'
     });
   }
 
@@ -66,10 +53,12 @@ export class ComicsPage {
 
 
     var oframe = $("#ikmfs");
+    var pages = [];
     oframe[0].onload = function () {
 
       var ifobj = oframe.contents();
       oframe.remove();
+
       var ele = ifobj.find(".chapter-list li a");
       _thst.dec = ifobj.find("#bookIntro").text();
       _thst.len = ifobj.find("dd").eq(5).text();
@@ -81,10 +70,9 @@ export class ComicsPage {
           ot = $(this);
         iobj['ititle'] = ot.attr('title');
         iobj['ihref'] = ot.attr('href');
-        _thst.data['pages'].push(iobj);
-
+        pages.push(iobj);
       });
-
+      _thst.data['pages'] = pages;
       _thst.pubilcService.presentLoadingDismiss();
 
     };

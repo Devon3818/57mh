@@ -25,6 +25,7 @@ export class NewPage {
   ionViewDidLoad() {
 
     var _thst = this;
+    var pages = [];
 
     var link = $("<iframe/>");
     link.attr('id', 'ikmnew');
@@ -48,9 +49,9 @@ export class NewPage {
         iobj['len'] = ot.find('dd').eq(2).text();
         iobj['cod'] = 0.0;
         iobj['class'] = ['日本'];
-        _thst.data.push(iobj);
-
+        pages.push(iobj);
       });
+      _thst.data = pages;
       $("#ikmnew").remove();
       _thst.pubilcService.presentLoadingDismiss();
     };

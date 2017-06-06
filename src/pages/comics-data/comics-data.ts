@@ -13,6 +13,7 @@ export class ComicsDataPage {
 
   title = '';
   data = [];
+  allpage = [];
   or: any = '';
   pages = 1;
 
@@ -58,10 +59,10 @@ export class ComicsDataPage {
         //alert(iobj['bannerimg']);
         iobj['url'] = 'http://m.57mh.com' + ot.find('a').attr('href');
         iobj['len'] = ot.find('.tt').text();
-        _that.data.push(iobj);
+        _that.allpage.push(iobj);
 
       });
-
+      _that.data = _that.allpage;
       _that.pubilcService.presentLoadingDismiss();
     };
 
@@ -108,10 +109,10 @@ export class ComicsDataPage {
         //alert(iobj['bannerimg']);
         iobj['url'] = 'http://m.57mh.com' + ot.find('a').attr('href');
         iobj['len'] = ot.find('.tt').text();
-        _thst.data.push(iobj);
+        _thst.allpage.push(iobj);
 
       });
-
+       _thst.data = _thst.allpage;
       _thst.pubilcService.presentLoadingDismiss();
     };
 
