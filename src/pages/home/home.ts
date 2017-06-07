@@ -68,8 +68,14 @@ export class HomePage {
       oframe[0].src = 'about:blank';
       oframe.remove();
       var ibanner = ifobj.find('.swiper-slide');
+      
       ibanner.each(function (index) {
-        pages['banner'].push($(this).find('img').attr('src'));
+        var iobj = {},
+          ot = $(this);
+        iobj['banner'] = ot.find('img').attr('src');
+        iobj['name'] = ot.find('h2').text();
+        iobj['url'] = 'http://m.57mh.com/' + ot.find('a').attr('href');
+        pages['banner'].push( iobj );
       });
       _thst.data['banner'] = pages['banner'];
 

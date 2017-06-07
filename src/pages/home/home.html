@@ -16,7 +16,9 @@
     <!-- Swiper -->
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide" *ngFor="let item of data.banner" [style.background]="'url('+item+')'"></div>
+            <div (click)="open(item.name, item.banner, item.url);" class="swiper-slide" *ngFor="let item of data.banner" [style.background]="'url('+item.banner+')'">
+                <p class="islide-p">{{item.name}}</p>
+            </div>
         </div>
     </div>
 

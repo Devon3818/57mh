@@ -24,7 +24,7 @@ export class TabsPage {
   pageBack() {
 
     this.platform.registerBackButtonAction((): any => {
-
+      this.pubilcService.presentLoadingDismiss();
       let activeVC = this.navCtrl.getActive();
       let page = activeVC.instance;
       page.tabs
@@ -32,7 +32,6 @@ export class TabsPage {
         if (!this.navCtrl.canGoBack()) {
           return this.showExit();
         }
-        this.pubilcService.presentLoadingDismiss();
         return this.navCtrl.pop();
       }
       let tabs = page.tabs;
@@ -40,7 +39,7 @@ export class TabsPage {
       if (!activeNav.canGoBack()) {
         return this.showExit();
       }
-      this.pubilcService.presentLoadingDismiss();
+      
       return activeNav.pop();
 
     }, 101);

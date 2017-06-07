@@ -62,6 +62,7 @@ export class ComicsPage {
       oframe.remove();
 
       var ele = ifobj.find(".chapter-list li a");
+      _thst.banner = ifobj.find(".thumb img").attr('src');
       _thst.dec = ifobj.find("#bookIntro").text();
       _thst.len = ifobj.find("dd").eq(5).text();
       _thst.cod = ifobj.find("dd").eq(4).text();
