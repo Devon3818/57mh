@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, PopoverController, Content } from 'ionic-angular';
 import { pubilcService } from '../../service/public';
 
 declare var $: any;
@@ -11,6 +11,7 @@ declare var document: any;
 })
 export class ComicsDataPage {
 
+  @ViewChild(Content) content: Content;
   title = '';
   data = [];
   allpage = [];
@@ -72,6 +73,7 @@ export class ComicsDataPage {
     oframe[0].onload = function () {
 
       var ifobj = oframe.contents();
+      oframe[0].src = 'about:blank';
       oframe.remove();
       var ele = ifobj.find("#contList li");
       ele.each(function (index) {
@@ -88,6 +90,17 @@ export class ComicsDataPage {
        _thst.data = _thst.allpage;
       _thst.pubilcService.presentLoadingDismiss();
     };
+  }
+
+  ionViewWillLeave() {
+    var ifs = $("#ikmiclass");
+    ifs[0].src = 'about:blank';
+    ifs.remove();
+  }
+
+  //点击到顶部
+  tapEvent(e) {
+    this.content.scrollToTop();
   }
 
 }

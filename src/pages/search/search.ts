@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, Content } from 'ionic-angular';
 import { pubilcService } from '../../service/public';
 
 declare var $: any;
@@ -11,6 +11,7 @@ declare var document: any;
 })
 export class SearchPage {
 
+  @ViewChild(Content) content: Content;
   page = 1;
   data = [];
   allpages = [];
@@ -47,8 +48,9 @@ export class SearchPage {
 
     document.getElementById("ikmsearch").onload = function () {
 
-      var iframe = $("#ikmsearch")
+      var iframe = $("#ikmsearch");
       var ifobj = iframe.contents();
+      iframe[0].src = 'about:blank';
       iframe.remove();
       var ele = ifobj.find("#data_list li");
       ele.each(function (index) {
@@ -88,7 +90,14 @@ export class SearchPage {
   }
 
   ionViewWillLeave() {
-    this.pubilcService.presentLoadingDismiss();
+    var ifs = $("#ikmsearch");
+    ifs[0].src = 'about:blank';
+    ifs.remove();
+  }
+
+  //点击到顶部
+  tapEvent(e) {
+    this.content.scrollToTop();
   }
 
 }

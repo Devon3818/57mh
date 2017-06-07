@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, Content } from 'ionic-angular';
 import { Headers, Http } from '@angular/http';
 import { pubilcService } from '../../service/public';
 
@@ -12,6 +12,7 @@ declare var document: any;
 })
 export class ComicsPage {
 
+   @ViewChild(Content) content: Content;
   name = '';
   uptime = '-';
   banner = '';
@@ -57,6 +58,7 @@ export class ComicsPage {
     oframe[0].onload = function () {
 
       var ifobj = oframe.contents();
+      oframe[0].src = 'about:blank';
       oframe.remove();
 
       var ele = ifobj.find(".chapter-list li a");
@@ -77,6 +79,17 @@ export class ComicsPage {
 
     };
 
+  }
+
+  ionViewWillLeave() {
+    var ifs = $("#ikmfs");
+    ifs[0].src = 'about:blank';
+    ifs.remove();
+  }
+
+  //点击到顶部
+  tapEvent(e) {
+    this.content.scrollToTop();
   }
 
 

@@ -31,6 +31,11 @@ page-comics {
                 width: 56%;
                 background: #fff;
                 p {
+                    display: block;
+                    width: 100%;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
                     margin: 0 !important;
                     line-height: 32px;
                     color: #b06869;

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController, MenuController, IonicPage } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, MenuController, IonicPage, Content } from 'ionic-angular';
 import { pubilcService } from '../../service/public';
 
 declare var $: any;
@@ -11,6 +11,7 @@ declare var Swiper: any;
 })
 export class HomePage {
 
+  @ViewChild(Content) content: Content;
   data = {
     'tj': [],
     'rm': [],
@@ -46,6 +47,11 @@ export class HomePage {
 
   ionViewDidLoad() {
 
+    var link = $("<iframe/>");
+    link.attr('id', 'ikmhome');
+    link.attr('src', "http://m.57mh.com");
+    link.appendTo('body');
+
     var _thst = this;
     var pages = {
       'tj': [],
@@ -59,6 +65,7 @@ export class HomePage {
 
       var oframe = $("#ikmhome");
       var ifobj = oframe.contents();
+      oframe[0].src = 'about:blank';
       oframe.remove();
       var ibanner = ifobj.find('.swiper-slide');
       ibanner.each(function (index) {
@@ -130,6 +137,11 @@ export class HomePage {
 
     };
 
+  }
+
+  //点击到顶部
+  tapEvent(e) {
+    this.content.scrollToTop();
   }
 
 }

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, MenuController, Content } from 'ionic-angular';
 import { pubilcService } from '../../service/public';
 
 declare var $: any;
@@ -11,6 +11,7 @@ declare var document: any;
 })
 export class NewPage {
 
+  @ViewChild(Content) content: Content;
   data = []
 
   constructor(
@@ -69,6 +70,11 @@ export class NewPage {
 
   search() {
     this.navCtrl.push('SearchPage');
+  }
+
+  //点击到顶部
+  tapEvent(e) {
+    this.content.scrollToTop();
   }
 
 

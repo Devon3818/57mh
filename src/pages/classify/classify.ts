@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, MenuController, Content } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -7,6 +7,8 @@ import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angul
   templateUrl: 'classify.html',
 })
 export class ClassifyPage {
+
+  @ViewChild(Content) content: Content;
 
   constructor(
     public navCtrl: NavController,
@@ -28,6 +30,11 @@ export class ClassifyPage {
       title: title,
       or:or
     } );
+  }
+
+  //点击到顶部
+  tapEvent(e) {
+    this.content.scrollToTop();
   }
 
 
