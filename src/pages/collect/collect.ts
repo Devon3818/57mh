@@ -1,5 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController, Content } from 'ionic-angular';
+import { pubilcService } from '../../service/public';
+import { Headers, Http } from '@angular/http';
 
 @IonicPage()
 @Component({
@@ -10,20 +12,57 @@ export class CollectPage {
 
   @ViewChild(Content) content: Content;
 
+  data: any = [];
+  
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public menuCtrl: MenuController
+    public menuCtrl: MenuController,
+    public pubilcService: pubilcService,
+    public http: Http
   ) {
+    
+  }
 
+  getclooect() {
+    this.pubilcService.presentLoadingDefault();
+    let url = "http://www.devonhello.com/buka/getcollect";
+
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+
+    this.http.post(url, "uid=" + this.pubilcService.user._id, {
+      headers: headers
+    })
+      .subscribe((res) => {
+        this.data = res.json();
+        this.pubilcService.presentLoadingDismiss();
+      });
   }
 
   openMenu() {
-    this.menuCtrl.open();
+    if (this.pubilcService.user._id) {
+      this.menuCtrl.open();
+    } else {
+      this.navCtrl.push('LoginPage');
+    }
   }
 
-  search(){
-    this.navCtrl.push( 'SearchPage' );
+  ionViewDidEnter() {
+    this.getclooect();
+  }
+
+  search() {
+    this.navCtrl.push('SearchPage');
+  }
+
+  open(name, banner, url) {
+    this.navCtrl.push('ComicsPage', {
+      name: name,
+      banner: banner,
+      url: url,
+
+    })
   }
 
   //点击到顶部

@@ -34,8 +34,11 @@ export class HomePage {
   }
 
   openMenu() {
-    this.navCtrl.push('LoginPage');
-    //this.menuCtrl.open();
+    if( this.pubilcService.user._id ){
+      this.menuCtrl.open();
+    }else{
+      this.navCtrl.push('LoginPage');
+    }
   }
 
   open(name, banner, url) {

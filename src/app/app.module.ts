@@ -8,6 +8,7 @@ import { CodePush } from '@ionic-native/code-push';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { pubilcService } from '../service/public';
+import { IonicStorageModule } from '@ionic/storage';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { pubilcService } from '../service/public';
       tabsHideOnSubPages: true
     }),
     HttpModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

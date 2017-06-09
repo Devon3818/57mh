@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Content } from 'ionic-angular';
 import { pubilcService } from '../../service/public';
+import { Headers, Http } from '@angular/http';
 
 declare var $: any;
 declare var document: any;
@@ -11,7 +12,7 @@ declare var document: any;
 })
 export class ComicsPage {
 
-   @ViewChild(Content) content: Content;
+  @ViewChild(Content) content: Content;
   name = '';
   uptime = '-';
   banner = '';
@@ -27,7 +28,8 @@ export class ComicsPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public pubilcService: pubilcService
+    public pubilcService: pubilcService,
+    public http: Http
   ) {
     this.name = this.navParams.get('name');
     this.banner = this.navParams.get('banner');
@@ -35,10 +37,35 @@ export class ComicsPage {
     this.pubilcService.presentLoadingDefault();
   }
 
+  //收藏
+  collect() {
+    if (this.pubilcService.user._id) {
+      this.pubilcService.presentLoadingDefault();
+      let url = "http://www.devonhello.com/buka/collect";
+
+      var headers = new Headers();
+      headers.append('Content-Type', 'application/x-www-form-urlencoded');
+
+      this.http.post(url, "name=" + this.pubilcService.user.nickname + "&uid=" + this.pubilcService.user._id + "&bookname=" + this.name + "&bookbanner=" + this.banner + "&bookpages=" + this.len + "&booktime=" + this.uptime + "&url=" + this.url, {
+        headers: headers
+      })
+        .subscribe((res) => {
+          this.pubilcService.presentLoadingDismiss();
+          if (res.json()['result']['ok'] == 1) {
+            alert('ok');
+          } else {
+            alert('err');
+          }
+        });
+    } else {
+      this.navCtrl.push('LoginPage');
+    }
+  }
+
   openpage(url) {
-    
+
     this.navCtrl.push('SeePage', {
-      url: url+'?p=1'
+      url: url + '?p=1'
     });
   }
 

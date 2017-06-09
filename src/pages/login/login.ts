@@ -28,6 +28,7 @@ export class LoginPage {
     if (!this.name || !this.pass) {
       return true;
     }
+    this.pubilcService.presentLoadingDefault();
     let url = "http://www.devonhello.com/buka/login";
 
     var headers = new Headers();
@@ -37,7 +38,9 @@ export class LoginPage {
       headers: headers
     })
       .subscribe((res) => {
+        this.pubilcService.presentLoadingDismiss();
         if (res.json()[0]['_id']) {
+          this.pubilcService.setUser( res.json()[0] );
           this.navCtrl.popToRoot();
         }
       });

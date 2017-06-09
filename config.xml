@@ -91,7 +91,7 @@
     <plugin name="cordova-plugin-file" spec="~4.3.3" />
     <plugin name="cordova-plugin-file-opener2" spec="~2.0.19" />
     <plugin name="cordova-plugin-file-transfer" spec="~1.6.3" />
-    <plugin name="cordova-sqlite-storage" spec="~2.0.4" />
     <engine name="android" spec="~6.1.2" />
     <plugin name="cordova-plugin-code-push" spec="~1.9.4-beta" />
+    <plugin name="cordova-sqlite-storage" spec="~2.0.4" />
 </widget>

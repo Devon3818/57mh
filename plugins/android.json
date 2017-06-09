@@ -40,13 +40,13 @@
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.buka57"
         },
-        "cordova-sqlite-storage": {
-            "PACKAGE_NAME": "com.buka57"
-        },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.buka57"
         },
         "cordova-plugin-code-push": {
+            "PACKAGE_NAME": "com.buka57"
+        },
+        "cordova-sqlite-storage": {
             "PACKAGE_NAME": "com.buka57"
         }
     },

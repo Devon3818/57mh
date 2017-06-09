@@ -12,68 +12,19 @@
 </ion-header>
 
 <ion-content>
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
     <section class="wrap">
 
-        <div class="mh">
-            <div class="mh-img" style="background: url('http://i.57mh.com/Uploads/bcover/2013/3/151540589_h.jpg')"></div>
-            <p>一拳超人</p>
-            <span>更新至116话</span>
-        </div>
-        <div class="mh">
-            <div class="mh-img" style="background: url('http://i.57mh.com/Uploads/vip/jueshitangmen.jpg')"></div>
-            <p>斗罗大陆2绝世唐门</p>
-            <span>更新至116话</span>
-        </div>
-        <div class="mh">
-            <div class="mh-img" style="background: url('http://i.57mh.com/Uploads/vip/chuanyuexiyuan3000hou.jpg')"></div>
-            <p>穿越西元3000后</p>
-            <span>更新至116话</span>
-        </div>
-        <div class="mh">
-            <div class="mh-img" style="background: url('http://i.57mh.com/Uploads/vip/shayuhaizhige.jpg')"></div>
-            <p>砂与海之歌</p>
-            <span>更新至116话</span>
-        </div>
-        <div class="mh">
-            <div class="mh-img" style="background: url('http://i.57mh.com/Uploads/vip/xuezujinyu.jpg')"></div>
-            <p>血族禁域</p>
-            <span>更新至116话</span>
-        </div>
-        <div class="mh">
-            <div class="mh-img" style="background: url('http://i.57mh.com/Uploads/vip/heizhishi.jpg')"></div>
-            <p>黑执事</p>
-            <span>更新至116话</span>
+        <div class="mh" *ngFor="let item of data">
+            <div class="mh-img" (click)="open(item.bookname, item.bookbanner, item.url);" [style.background]="'url('+item.bookbanner+')'"></div>
+            <p>{{item.bookname}}</p>
+            <span>更新至:{{item.bookpages}}</span>
+            <span>时间:{{item.booktime}}</span>
         </div>
 
-        <div class="mh">
-            <div class="mh-img" style="background: url('http://i.57mh.com/Uploads/bcover/2013/3/151540589_h.jpg')"></div>
-            <p>一拳超人</p>
-            <span>更新至116话</span>
-        </div>
-        <div class="mh">
-            <div class="mh-img" style="background: url('http://i.57mh.com/Uploads/vip/jueshitangmen.jpg')"></div>
-            <p>斗罗大陆2绝世唐门</p>
-            <span>更新至116话</span>
-        </div>
-        <div class="mh">
-            <div class="mh-img" style="background: url('http://i.57mh.com/Uploads/vip/chuanyuexiyuan3000hou.jpg')"></div>
-            <p>穿越西元3000后</p>
-            <span>更新至116话</span>
-        </div>
-        <div class="mh">
-            <div class="mh-img" style="background: url('http://i.57mh.com/Uploads/vip/shayuhaizhige.jpg')"></div>
-            <p>砂与海之歌</p>
-            <span>更新至116话</span>
-        </div>
-        <div class="mh">
-            <div class="mh-img" style="background: url('http://i.57mh.com/Uploads/vip/xuezujinyu.jpg')"></div>
-            <p>血族禁域</p>
-            <span>更新至116话</span>
-        </div>
-        <div class="mh">
-            <div class="mh-img" style="background: url('http://i.57mh.com/Uploads/vip/heizhishi.jpg')"></div>
-            <p>黑执事</p>
-            <span>更新至116话</span>
-        </div>
     </section>
 </ion-content>
