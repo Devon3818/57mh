@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, Platform, NavController, Tabs, ToastController } from 'ionic-angular';
 import { pubilcService } from '../../service/public';
 
+declare var codePush: any;
 @IonicPage()
 @Component({
   templateUrl: 'tabs.html'
@@ -17,8 +18,10 @@ export class TabsPage {
   tab3Root = 'ClassifyPage';
   tab4Root = 'CollectPage';
 
-  constructor(public navCtrl: NavController, public platform: Platform, public toastCtrl: ToastController,public pubilcService: pubilcService) {
+  constructor(public navCtrl: NavController, public platform: Platform, public toastCtrl: ToastController, public pubilcService: pubilcService) {
     this.pageBack();
+    codePush.sync();
+    //alert(codePush.sync);
   }
 
   pageBack() {
@@ -39,7 +42,7 @@ export class TabsPage {
       if (!activeNav.canGoBack()) {
         return this.showExit();
       }
-      
+
       return activeNav.pop();
 
     }, 101);

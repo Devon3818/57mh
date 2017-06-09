@@ -1,2 +1,160 @@
-webpackJsonp([2],{186:function(n,l,t){"use strict";Object.defineProperty(l,"__esModule",{value:!0});var u=t(0),i=t(215),o=t(17),a=t(51),e=t(80),r=t(121),s=t(122),c=t(123),_=t(124),d=t(216),f=t(199),p=t(37);t.d(l,"ComicsDataPageModuleNgFactory",function(){return h});var b=this&&this.__extends||function(){var n=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(n,l){n.__proto__=l}||function(n,l){for(var t in l)l.hasOwnProperty(t)&&(n[t]=l[t])};return function(l,t){function u(){this.constructor=l}n(l,t),l.prototype=null===t?Object.create(t):(u.prototype=t.prototype,new u)}}(),m=function(n){function l(l){return n.call(this,l,[r.a,s.a,c.a,_.a,d.a],[])||this}return b(l,n),Object.defineProperty(l.prototype,"_NgLocalization_7",{get:function(){return null==this.__NgLocalization_7&&(this.__NgLocalization_7=new o.a(this.parent.get(u.c))),this.__NgLocalization_7},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_ɵi_8",{get:function(){return null==this.__ɵi_8&&(this.__ɵi_8=new a.a),this.__ɵi_8},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_FormBuilder_9",{get:function(){return null==this.__FormBuilder_9&&(this.__FormBuilder_9=new a.b),this.__FormBuilder_9},enumerable:!0,configurable:!0}),l.prototype.createInternal=function(){return this._CommonModule_0=new o.d,this._ɵba_1=new a.c,this._FormsModule_2=new a.d,this._ReactiveFormsModule_3=new a.e,this._IonicModule_4=new e.b,this._IonicPageModule_5=new e.c,this._ComicsDataPageModule_6=new i.a,this._LAZY_LOADED_TOKEN_10=f.a,this._ComicsDataPageModule_6},l.prototype.getInternal=function(n,l){return n===o.d?this._CommonModule_0:n===a.c?this._ɵba_1:n===a.d?this._FormsModule_2:n===a.e?this._ReactiveFormsModule_3:n===e.b?this._IonicModule_4:n===e.c?this._IonicPageModule_5:n===i.a?this._ComicsDataPageModule_6:n===o.e?this._NgLocalization_7:n===a.a?this._ɵi_8:n===a.b?this._FormBuilder_9:n===p.d?this._LAZY_LOADED_TOKEN_10:l},l.prototype.destroyInternal=function(){},l}(u.x),h=new u.y(m,i.a)},194:function(n,l,t){"use strict";function u(n){return o._14(0,[(n()(),o._16(0,null,null,1,"div",[["class","toolbar-background"]],null,null,null,null,null)),o._17(278528,null,0,a.n,[o.t,o.u,o.H,o.I],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),(n()(),o._16(0,null,null,8,"button",[["class","back-button"],["ion-button","bar-button"]],[[8,"hidden",0]],[[null,"click"]],function(n,l,t){var u=!0,i=n.component;if("click"===l){u=!1!==i.backButtonClick(t)&&u}return u},r.a,r.b)),o._17(278528,null,0,a.n,[o.t,o.u,o.H,o.I],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),o._17(1097728,null,0,s.a,[[8,"bar-button"],c.c,o.H,o.I],null,null),(n()(),o._16(0,null,0,2,"ion-icon",[["class","back-button-icon"],["role","img"]],[[2,"hide",null]],null,null,null,null)),o._17(278528,null,0,a.n,[o.t,o.u,o.H,o.I],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),o._17(147456,null,0,_.a,[c.c,o.H,o.I],{name:[0,"name"]},null),(n()(),o._16(0,null,0,2,"span",[["class","back-button-text"]],null,null,null,null,null)),o._17(278528,null,0,a.n,[o.t,o.u,o.H,o.I],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),(n()(),o._19(null,["",""])),o._23(null,0),o._23(null,1),o._23(null,2),(n()(),o._16(0,null,null,2,"div",[["class","toolbar-content"]],null,null,null,null,null)),o._17(278528,null,0,a.n,[o.t,o.u,o.H,o.I],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),o._23(null,3)],function(n,l){var t=l.component;n(l,1,0,"toolbar-background","toolbar-background-"+t._mode);n(l,3,0,"back-button","back-button-"+t._mode);n(l,6,0,"back-button-icon","back-button-icon-"+t._mode),n(l,7,0,t._bbIcon);n(l,9,0,"back-button-text","back-button-text-"+t._mode);n(l,15,0,"toolbar-content","toolbar-content-"+t._mode)},function(n,l){var t=l.component;n(l,2,0,t._hideBb),n(l,5,0,o._20(l,7)._hidden),n(l,10,0,t._backText)})}function i(n){return o._14(0,[(n()(),o._16(0,null,null,1,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,u,m)),o._17(49152,null,0,e.a,[d.a,[2,f.a],[2,p.a],c.c,o.H,o.I],null,null)],null,function(n,l){n(l,0,0,o._20(l,1)._hidden,o._20(l,1)._sbPadding)})}var o=t(0),a=t(17),e=t(35),r=t(120),s=t(23),c=t(1),_=t(28),d=t(4),f=t(5),p=t(14);t.d(l,"b",function(){return m}),l.a=u;var b=[],m=o._13({encapsulation:2,styles:b,data:{}});o._21("ion-navbar",e.a,i,{color:"color",mode:"mode",hideBackButton:"hideBackButton"},{},["[menuToggle],ion-buttons[left]","ion-buttons[start]","ion-buttons[end],ion-buttons[right]","*"])},195:function(n,l,t){"use strict";function u(n){return o._14(2,[(n()(),o._16(0,null,null,2,"div",[["class","toolbar-title"]],null,null,null,null,null)),o._17(278528,null,0,a.n,[o.t,o.u,o.H,o.I],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),o._23(null,0)],function(n,l){n(l,1,0,"toolbar-title","toolbar-title-"+l.component._mode)},null)}function i(n){return o._14(0,[(n()(),o._16(0,null,null,1,"ion-title",[],null,null,null,u,d)),o._17(49152,null,0,e.a,[r.c,o.H,o.I,[2,s.a],[2,c.a]],null,null)],null,null)}var o=t(0),a=t(17),e=t(78),r=t(1),s=t(36),c=t(35);t.d(l,"b",function(){return d}),l.a=u;var _=[],d=o._13({encapsulation:2,styles:_,data:{}});o._21("ion-title",e.a,i,{color:"color",mode:"mode"},{},["*"])},196:function(n,l,t){"use strict";function u(n){return e._14(0,[(n()(),e._16(0,null,null,2,"div",[["class","infinite-loading-spinner"]],null,null,null,null,null)),(n()(),e._16(0,null,null,1,"ion-spinner",[],[[2,"spinner-paused",null]],null,null,r.a,r.b)),e._17(114688,null,0,s.a,[c.c,e.H,e.I],{name:[0,"name"]},null)],function(n,l){n(l,2,0,l.component.loadingSpinner)},function(n,l){n(l,1,0,e._20(l,2)._paused)})}function i(n){return e._14(0,[(n()(),e._16(0,null,null,0,"div",[["class","infinite-loading-text"]],[[8,"innerHTML",1]],null,null,null,null))],null,function(n,l){n(l,0,0,l.component.loadingText)})}function o(n){return e._14(0,[(n()(),e._16(0,null,null,4,"div",[["class","infinite-loading"]],null,null,null,null,null)),(n()(),e._22(16777216,null,null,1,null,u)),e._17(16384,null,0,_.l,[e.L,e.N],{ngIf:[0,"ngIf"]},null),(n()(),e._22(16777216,null,null,1,null,i)),e._17(16384,null,0,_.l,[e.L,e.N],{ngIf:[0,"ngIf"]},null)],function(n,l){var t=l.component;n(l,2,0,t.loadingSpinner),n(l,4,0,t.loadingText)},null)}function a(n){return e._14(0,[(n()(),e._16(0,null,null,1,"ion-infinite-scroll-content",[],[[1,"state",0]],null,null,o,b)),e._17(114688,null,0,d.a,[f.a,c.c],null,null)],function(n,l){n(l,1,0)},function(n,l){n(l,0,0,e._20(l,1).inf.state)})}var e=t(0),r=t(126),s=t(38),c=t(1),_=t(17),d=t(82),f=t(52);t.d(l,"b",function(){return b}),l.a=o;var p=[],b=e._13({encapsulation:2,styles:p,data:{}});e._21("ion-infinite-scroll-content",d.a,a,{loadingSpinner:"loadingSpinner",loadingText:"loadingText"},{},[])},199:function(n,l,t){"use strict";t(0),t(50),t(79);t.d(l,"a",function(){return u});var u=(this&&this.__decorate,this&&this.__metadata,function(){function n(n,l,t,u){this.navCtrl=n,this.navParams=l,this.popoverCtrl=t,this.pubilcService=u,this.title="",this.data=[],this.allpage=[],this.or="",this.pages=1,this.title=this.navParams.get("title"),this.or=this.navParams.get("or")}return n.prototype.doInfinite=function(n){var l=this;this.pages++,this.creatFrame(),this.itimer=setTimeout(function(){clearTimeout(l.itimer),n.complete()},1e3)},n.prototype.open=function(n,l,t){this.navCtrl.push("ComicsPage",{name:n,banner:l,url:t})},n.prototype.ionViewDidLoad=function(){this.creatFrame()},n.prototype.creatFrame=function(){this.pubilcService.presentLoadingDefault();var n=this,l="";l=isNaN(this.or)?"http://m.57mh.com/list/area-"+this.or+"-order-hits-p-"+this.pages:"http://m.57mh.com/list/smid-"+this.or+"-order-hits-p-"+this.pages;var t=$("<iframe/>");t.attr("id","ikmiclass"),t.attr("src",l),t.appendTo("body");var u=$("#ikmiclass");u[0].src=l,u[0].onload=function(){var l=u.contents();u[0].src="about:blank",u.remove(),l.find("#contList li").each(function(l){var t={},u=$(this);t.name=u.find("img").attr("alt"),t.bannerimg=u.find("img").attr("src"),t.url="http://m.57mh.com"+u.find("a").attr("href"),t.len=u.find(".tt").text(),n.allpage.push(t)}),n.data=n.allpage,n.pubilcService.presentLoadingDismiss()}},n.prototype.ionViewWillLeave=function(){var n=$("#ikmiclass");n[0].src="about:blank",n.remove()},n.prototype.tapEvent=function(n){this.content.scrollToTop()},n}())},215:function(n,l,t){"use strict";t(0),t(50),t(199);t.d(l,"a",function(){return u});var u=(this&&this.__decorate,function(){function n(){}return n}())},216:function(n,l,t){"use strict";function u(n){return a._14(0,[(n()(),a._16(0,null,null,9,"div",[["class","mh"]],null,[[null,"click"]],function(n,l,t){var u=!0,i=n.component;if("click"===l){u=!1!==i.open(n.context.$implicit.name,n.context.$implicit.bannerimg,n.context.$implicit.url)&&u}return u},null,null)),(n()(),a._19(null,["\n            "])),(n()(),a._16(0,null,null,0,"div",[["class","mh-img"]],[[4,"background",null]],null,null,null,null)),(n()(),a._19(null,["\n            "])),(n()(),a._16(0,null,null,1,"p",[],null,null,null,null,null)),(n()(),a._19(null,["",""])),(n()(),a._19(null,["\n            "])),(n()(),a._16(0,null,null,1,"span",[],null,null,null,null,null)),(n()(),a._19(null,["",""])),(n()(),a._19(null,["\n        "]))],null,function(n,l){n(l,2,0,"url("+l.context.$implicit.bannerimg+")"),n(l,5,0,l.context.$implicit.name),n(l,8,0,l.context.$implicit.len)})}function i(n){return a._14(0,[a._15(402653184,1,{content:0}),(n()(),a._16(0,null,null,10,"ion-header",[["no-border",""]],null,[[null,"tap"]],function(n,l,t){var u=!0,i=n.component;if("tap"===l){u=!1!==i.tapEvent(t)&&u}return u},null,null)),a._17(16384,null,0,r.a,[s.c,a.H,a.I,[2,c.a]],null,null),(n()(),a._19(null,["\n\n    "])),(n()(),a._16(0,null,null,6,"ion-navbar",[["class","toolbar"],["color","fff"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,_.a,_.b)),a._17(49152,null,0,d.a,[f.a,[2,c.a],[2,p.a],s.c,a.H,a.I],{color:[0,"color"]},null),(n()(),a._19(3,["\n        "])),(n()(),a._16(0,null,3,2,"ion-title",[],null,null,null,b.a,b.b)),a._17(49152,null,0,m.a,[s.c,a.H,a.I,[2,h.a],[2,d.a]],null,null),(n()(),a._19(0,["",""])),(n()(),a._19(3,["\n    "])),(n()(),a._19(null,["\n\n"])),(n()(),a._19(null,["\n\n\n"])),(n()(),a._16(0,null,null,16,"ion-content",[],[[2,"statusbar-padding",null]],null,null,g.a,g.b)),a._17(4374528,[[1,4]],0,v.a,[s.c,k.b,I.a,a.H,a.I,f.a,y.a,a.g,[2,c.a],[2,p.a]],null,null),(n()(),a._19(1,["\n    "])),(n()(),a._19(1,["\n    "])),(n()(),a._16(0,null,1,4,"section",[["class","wrap"]],null,null,null,null,null)),(n()(),a._19(null,["\n\n        "])),(n()(),a._22(16777216,null,null,1,null,u)),a._17(802816,null,0,C.k,[a.L,a.N,a.t],{ngForOf:[0,"ngForOf"]},null),(n()(),a._19(null,["\n\n    "])),(n()(),a._19(1,["\n\n    "])),(n()(),a._16(0,null,1,5,"ion-infinite-scroll",[],null,[[null,"ionInfinite"]],function(n,l,t){var u=!0,i=n.component;if("ionInfinite"===l){u=!1!==i.doInfinite(t)&&u}return u},null,null)),a._17(1196032,null,0,P.a,[v.a,a.g,a.H,I.a],null,{ionInfinite:"ionInfinite"}),(n()(),a._19(null,["\n        "])),(n()(),a._16(0,null,null,1,"ion-infinite-scroll-content",[],[[1,"state",0]],null,null,x.a,x.b)),a._17(114688,null,0,L.a,[P.a,s.c],null,null),(n()(),a._19(null,["\n    "])),(n()(),a._19(1,["\n"]))],function(n,l){var t=l.component;n(l,5,0,"fff"),n(l,20,0,t.data),n(l,27,0)},function(n,l){var t=l.component;n(l,4,0,a._20(l,5)._hidden,a._20(l,5)._sbPadding),n(l,9,0,t.title),n(l,13,0,a._20(l,14).statusbarPadding),n(l,26,0,a._20(l,27).inf.state)})}function o(n){return a._14(0,[(n()(),a._16(0,null,null,1,"page-comics-data",[],null,null,null,i,O)),a._17(49152,null,0,e.a,[p.a,w.a,H.a,M.a],null,null)],null,null)}var a=t(0),e=t(199),r=t(81),s=t(1),c=t(5),_=t(194),d=t(35),f=t(4),p=t(14),b=t(195),m=t(78),h=t(36),g=t(125),v=t(22),k=t(3),I=t(6),y=t(10),C=t(17),P=t(52),x=t(196),L=t(82),w=t(15),H=t(56),M=t(79);t.d(l,"a",function(){return T});var F=[],O=a._13({encapsulation:2,styles:F,data:{}}),T=a._21("page-comics-data",e.a,o,{},{},[])}});
-//# sourceMappingURL=/Users/apple/Documents/ionic2/3.3.0/buka/www/build/2.main.js.map
+webpackJsonp([2],{
+
+/***/ 272:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__search__ = __webpack_require__(284);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SearchPageModule", function() { return SearchPageModule; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var SearchPageModule = (function () {
+    function SearchPageModule() {
+    }
+    return SearchPageModule;
+}());
+SearchPageModule = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_2__search__["a" /* SearchPage */],
+        ],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__search__["a" /* SearchPage */]),
+        ],
+        exports: [
+            __WEBPACK_IMPORTED_MODULE_2__search__["a" /* SearchPage */]
+        ]
+    })
+], SearchPageModule);
+
+//# sourceMappingURL=search.module.js.map
+
+/***/ }),
+
+/***/ 284:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__service_public__ = __webpack_require__(194);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchPage; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var SearchPage = (function () {
+    function SearchPage(navCtrl, navParams, pubilcService) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.pubilcService = pubilcService;
+        this.page = 1;
+        this.data = [];
+        this.allpages = [];
+        this.searchval = '';
+    }
+    SearchPage.prototype.getItems = function (ev) {
+        // set val to the value of the searchbar
+        var val = ev.target.value;
+        // if the value is an empty string don't filter the items
+        if (val && val.trim() != '') {
+            //alert(val.trim());
+            this.searchval = val.trim();
+            this.runframe();
+        }
+    };
+    SearchPage.prototype.creatFrame = function () {
+        this.pubilcService.presentLoadingDefault();
+        var link = $("<iframe/>");
+        link.attr('id', 'ikmsearch');
+        link.attr('src', "http://m.57mh.com/search/q_" + this.searchval + "-p-" + this.page);
+        link.appendTo('body');
+        var _that = this;
+        var iframe = $("#ikmsearch");
+        iframe[0].onload = function () {
+            var ifobj = iframe.contents();
+            iframe[0].src = 'about:blank';
+            iframe.remove();
+            var ele = ifobj.find("#data_list li");
+            ele.each(function (index) {
+                var iobj = {}, ot = $(this);
+                iobj['name'] = ot.find('h3').text();
+                iobj['bannerimg'] = ot.find('.thumb img').attr('data-src');
+                //alert(iobj['bannerimg']);
+                iobj['url'] = 'http://m.57mh.com' + ot.find('a').eq(0).attr('href');
+                iobj['len'] = ot.find('dd').eq(2).text();
+                _that.allpages.push(iobj);
+            });
+            _that.data = _that.allpages;
+            _that.pubilcService.presentLoadingDismiss();
+        };
+    };
+    SearchPage.prototype.runframe = function () {
+        this.creatFrame();
+    };
+    ;
+    SearchPage.prototype.doInfinite = function (infiniteScroll) {
+        var _this = this;
+        this.page++;
+        this.creatFrame();
+        this.itimer = setTimeout(function () {
+            clearTimeout(_this.itimer);
+            infiniteScroll.complete();
+        }, 1000);
+    };
+    SearchPage.prototype.open = function (name, banner, url) {
+        this.navCtrl.push('ComicsPage', {
+            name: name,
+            banner: banner,
+            url: url,
+        });
+    };
+    SearchPage.prototype.ionViewWillLeave = function () {
+        var ifs = $("#ikmsearch");
+        ifs[0].src = 'about:blank';
+        ifs.remove();
+    };
+    //点击到顶部
+    SearchPage.prototype.tapEvent = function (e) {
+        this.content.scrollToTop();
+    };
+    return SearchPage;
+}());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Content */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Content */])
+], SearchPage.prototype, "content", void 0);
+SearchPage = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPage */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        selector: 'page-search',template:/*ion-inline-start:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/search/search.html"*/'<ion-header no-border (tap)="tapEvent($event)">\n\n    <ion-navbar color="fff">\n        <ion-title>\n            搜索\n        </ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n\n    <ion-searchbar (ionInput)="getItems($event)" debounce="500" showCancelButton="true" placeholder="作者／漫画" animated="true"></ion-searchbar>\n\n    <section class="wrap">\n\n        <div class="mh" *ngFor="let item of data" (click)="open(item.name, item.bannerimg, item.url);">\n            <div class="mh-img" [style.background]="\'url(\'+item.bannerimg+\')\'"></div>\n            <p>{{item.name}}</p>\n            <span>{{item.len}}</span>\n        </div>\n\n    </section>\n\n    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">\n        <ion-infinite-scroll-content></ion-infinite-scroll-content>\n    </ion-infinite-scroll>\n\n</ion-content>'/*ion-inline-end:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/search/search.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_2__service_public__["a" /* pubilcService */]])
+], SearchPage);
+
+//# sourceMappingURL=search.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=2.main.js.map

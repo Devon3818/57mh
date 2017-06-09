@@ -1,2 +1,114 @@
-webpackJsonp([3],{189:function(n,l,t){"use strict";Object.defineProperty(l,"__esModule",{value:!0});var u=t(0),o=t(221),e=t(17),a=t(51),i=t(80),r=t(121),c=t(122),s=t(123),_=t(124),d=t(222),b=t(202),h=t(37);t.d(l,"NewPageModuleNgFactory",function(){return m});var p=this&&this.__extends||function(){var n=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(n,l){n.__proto__=l}||function(n,l){for(var t in l)l.hasOwnProperty(t)&&(n[t]=l[t])};return function(l,t){function u(){this.constructor=l}n(l,t),l.prototype=null===t?Object.create(t):(u.prototype=t.prototype,new u)}}(),f=function(n){function l(l){return n.call(this,l,[r.a,c.a,s.a,_.a,d.a],[])||this}return p(l,n),Object.defineProperty(l.prototype,"_NgLocalization_7",{get:function(){return null==this.__NgLocalization_7&&(this.__NgLocalization_7=new e.a(this.parent.get(u.c))),this.__NgLocalization_7},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_ɵi_8",{get:function(){return null==this.__ɵi_8&&(this.__ɵi_8=new a.a),this.__ɵi_8},enumerable:!0,configurable:!0}),Object.defineProperty(l.prototype,"_FormBuilder_9",{get:function(){return null==this.__FormBuilder_9&&(this.__FormBuilder_9=new a.b),this.__FormBuilder_9},enumerable:!0,configurable:!0}),l.prototype.createInternal=function(){return this._CommonModule_0=new e.d,this._ɵba_1=new a.c,this._FormsModule_2=new a.d,this._ReactiveFormsModule_3=new a.e,this._IonicModule_4=new i.b,this._IonicPageModule_5=new i.c,this._NewPageModule_6=new o.a,this._LAZY_LOADED_TOKEN_10=b.a,this._NewPageModule_6},l.prototype.getInternal=function(n,l){return n===e.d?this._CommonModule_0:n===a.c?this._ɵba_1:n===a.d?this._FormsModule_2:n===a.e?this._ReactiveFormsModule_3:n===i.b?this._IonicModule_4:n===i.c?this._IonicPageModule_5:n===o.a?this._NewPageModule_6:n===e.e?this._NgLocalization_7:n===a.a?this._ɵi_8:n===a.b?this._FormBuilder_9:n===h.d?this._LAZY_LOADED_TOKEN_10:l},l.prototype.destroyInternal=function(){},l}(u.x),m=new u.y(f,o.a)},194:function(n,l,t){"use strict";function u(n){return e._14(0,[(n()(),e._16(0,null,null,1,"div",[["class","toolbar-background"]],null,null,null,null,null)),e._17(278528,null,0,a.n,[e.t,e.u,e.H,e.I],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),(n()(),e._16(0,null,null,8,"button",[["class","back-button"],["ion-button","bar-button"]],[[8,"hidden",0]],[[null,"click"]],function(n,l,t){var u=!0,o=n.component;if("click"===l){u=!1!==o.backButtonClick(t)&&u}return u},r.a,r.b)),e._17(278528,null,0,a.n,[e.t,e.u,e.H,e.I],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),e._17(1097728,null,0,c.a,[[8,"bar-button"],s.c,e.H,e.I],null,null),(n()(),e._16(0,null,0,2,"ion-icon",[["class","back-button-icon"],["role","img"]],[[2,"hide",null]],null,null,null,null)),e._17(278528,null,0,a.n,[e.t,e.u,e.H,e.I],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),e._17(147456,null,0,_.a,[s.c,e.H,e.I],{name:[0,"name"]},null),(n()(),e._16(0,null,0,2,"span",[["class","back-button-text"]],null,null,null,null,null)),e._17(278528,null,0,a.n,[e.t,e.u,e.H,e.I],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),(n()(),e._19(null,["",""])),e._23(null,0),e._23(null,1),e._23(null,2),(n()(),e._16(0,null,null,2,"div",[["class","toolbar-content"]],null,null,null,null,null)),e._17(278528,null,0,a.n,[e.t,e.u,e.H,e.I],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),e._23(null,3)],function(n,l){var t=l.component;n(l,1,0,"toolbar-background","toolbar-background-"+t._mode);n(l,3,0,"back-button","back-button-"+t._mode);n(l,6,0,"back-button-icon","back-button-icon-"+t._mode),n(l,7,0,t._bbIcon);n(l,9,0,"back-button-text","back-button-text-"+t._mode);n(l,15,0,"toolbar-content","toolbar-content-"+t._mode)},function(n,l){var t=l.component;n(l,2,0,t._hideBb),n(l,5,0,e._20(l,7)._hidden),n(l,10,0,t._backText)})}function o(n){return e._14(0,[(n()(),e._16(0,null,null,1,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,u,f)),e._17(49152,null,0,i.a,[d.a,[2,b.a],[2,h.a],s.c,e.H,e.I],null,null)],null,function(n,l){n(l,0,0,e._20(l,1)._hidden,e._20(l,1)._sbPadding)})}var e=t(0),a=t(17),i=t(35),r=t(120),c=t(23),s=t(1),_=t(28),d=t(4),b=t(5),h=t(14);t.d(l,"b",function(){return f}),l.a=u;var p=[],f=e._13({encapsulation:2,styles:p,data:{}});e._21("ion-navbar",i.a,o,{color:"color",mode:"mode",hideBackButton:"hideBackButton"},{},["[menuToggle],ion-buttons[left]","ion-buttons[start]","ion-buttons[end],ion-buttons[right]","*"])},195:function(n,l,t){"use strict";function u(n){return e._14(2,[(n()(),e._16(0,null,null,2,"div",[["class","toolbar-title"]],null,null,null,null,null)),e._17(278528,null,0,a.n,[e.t,e.u,e.H,e.I],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),e._23(null,0)],function(n,l){n(l,1,0,"toolbar-title","toolbar-title-"+l.component._mode)},null)}function o(n){return e._14(0,[(n()(),e._16(0,null,null,1,"ion-title",[],null,null,null,u,d)),e._17(49152,null,0,i.a,[r.c,e.H,e.I,[2,c.a],[2,s.a]],null,null)],null,null)}var e=t(0),a=t(17),i=t(78),r=t(1),c=t(36),s=t(35);t.d(l,"b",function(){return d}),l.a=u;var _=[],d=e._13({encapsulation:2,styles:_,data:{}});e._21("ion-title",i.a,o,{color:"color",mode:"mode"},{},["*"])},202:function(n,l,t){"use strict";t(0),t(50),t(79);t.d(l,"a",function(){return u});var u=(this&&this.__decorate,this&&this.__metadata,function(){function n(n,l,t,u){this.navCtrl=n,this.navParams=l,this.menuCtrl=t,this.pubilcService=u,this.data=[],this.pubilcService.presentLoadingDefault()}return n.prototype.ionViewDidLoad=function(){var n=this,l=[],t=$("<iframe/>");t.attr("id","ikmnew"),t.attr("src","http://m.57mh.com/latest/"),t.appendTo("body"),document.getElementById("ikmnew").onload=function(){$("#ikmnew").contents().find(".cont-list #data_list li").each(function(n){var t={},u=$(this);t.name=u.find("h3").text(),t.bannerimg=u.find(".thumb img").attr("data-src"),t.url="http://m.57mh.com"+u.find("a").eq(0).attr("href"),t.len=u.find("dd").eq(2).text(),l.push(t)}),n.data=l,$("#ikmnew").remove(),n.pubilcService.presentLoadingDismiss()}},n.prototype.open=function(n,l,t){this.navCtrl.push("ComicsPage",{name:n,banner:l,url:t})},n.prototype.openMenu=function(){this.menuCtrl.open()},n.prototype.search=function(){this.navCtrl.push("SearchPage")},n.prototype.tapEvent=function(n){this.content.scrollToTop()},n}())},221:function(n,l,t){"use strict";t(0),t(50),t(202);t.d(l,"a",function(){return u});var u=(this&&this.__decorate,function(){function n(){}return n}())},222:function(n,l,t){"use strict";function u(n){return a._14(0,[(n()(),a._16(0,null,null,9,"div",[["class","mh"]],null,[[null,"click"]],function(n,l,t){var u=!0,o=n.component;if("click"===l){u=!1!==o.open(n.context.$implicit.name,n.context.$implicit.bannerimg,n.context.$implicit.url)&&u}return u},null,null)),(n()(),a._19(null,["\n            "])),(n()(),a._16(0,null,null,0,"div",[["class","mh-img"]],[[4,"background",null]],null,null,null,null)),(n()(),a._19(null,["\n            "])),(n()(),a._16(0,null,null,1,"p",[],null,null,null,null,null)),(n()(),a._19(null,["",""])),(n()(),a._19(null,["\n            "])),(n()(),a._16(0,null,null,1,"span",[],null,null,null,null,null)),(n()(),a._19(null,["",""])),(n()(),a._19(null,["\n        "]))],null,function(n,l){n(l,2,0,"url("+l.context.$implicit.bannerimg+")"),n(l,5,0,l.context.$implicit.name),n(l,8,0,l.context.$implicit.len)})}function o(n){return a._14(0,[a._15(402653184,1,{content:0}),(n()(),a._16(0,null,null,24,"ion-header",[["no-border",""]],null,[[null,"tap"]],function(n,l,t){var u=!0,o=n.component;if("tap"===l){u=!1!==o.tapEvent(t)&&u}return u},null,null)),a._17(16384,null,0,r.a,[c.c,a.H,a.I,[2,s.a]],null,null),(n()(),a._19(null,["\n    "])),(n()(),a._16(0,null,null,20,"ion-navbar",[["class","toolbar"],["color","fff"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,_.a,_.b)),a._17(49152,null,0,d.a,[b.a,[2,s.a],[2,h.a],c.c,a.H,a.I],{color:[0,"color"]},null),(n()(),a._19(3,["\n        "])),(n()(),a._16(0,null,3,0,"img",[["class","headers"],["src","https://avatars0.githubusercontent.com/u/11835988?v=3&s=460"]],null,[[null,"click"]],function(n,l,t){var u=!0,o=n.component;if("click"===l){u=!1!==o.openMenu()&&u}return u},null,null)),(n()(),a._19(3,["\n        "])),(n()(),a._16(0,null,3,2,"ion-title",[],null,null,null,p.a,p.b)),a._17(49152,null,0,f.a,[c.c,a.H,a.I,[2,m.a],[2,d.a]],null,null),(n()(),a._19(0,["最新上架"])),(n()(),a._19(3,["\n        "])),(n()(),a._16(0,null,2,10,"ion-buttons",[["end",""]],null,null,null,null,null)),a._17(16384,null,1,g.a,[c.c,a.H,a.I,[2,m.a],[2,d.a]],null,null),a._15(603979776,2,{_buttons:1}),(n()(),a._19(null,["\n            "])),(n()(),a._16(0,null,null,5,"button",[["icon-only",""],["ion-button",""]],null,[[null,"click"]],function(n,l,t){var u=!0,o=n.component;if("click"===l){u=!1!==o.search()&&u}return u},v.a,v.b)),a._17(1097728,[[2,4]],0,k.a,[[8,""],c.c,a.H,a.I],null,null),(n()(),a._19(0,["\n              "])),(n()(),a._16(0,null,0,1,"ion-icon",[["name","ios-search"],["role","img"]],[[2,"hide",null]],null,null,null,null)),a._17(147456,null,0,y.a,[c.c,a.H,a.I],{name:[0,"name"]},null),(n()(),a._19(0,["\n            "])),(n()(),a._19(null,["\n        "])),(n()(),a._19(3,["\n\n    "])),(n()(),a._19(null,["\n"])),(n()(),a._19(null,["\n\n\n"])),(n()(),a._16(0,null,null,12,"ion-content",[],[[2,"statusbar-padding",null]],null,null,w.a,w.b)),a._17(4374528,[[1,4]],0,I.a,[c.c,C.b,P.a,a.H,a.I,b.a,H.a,a.g,[2,s.a],[2,h.a]],null,null),(n()(),a._19(1,["\n\n    "])),(n()(),a._16(0,null,1,7,"section",[["class","wrap"]],null,null,null,null,null)),(n()(),a._19(null,["\n        "])),(n()(),a._16(0,null,null,1,"h6",[["class","title"]],null,null,null,null,null)),(n()(),a._19(null,["最新更新"])),(n()(),a._19(null,["\n\n        "])),(n()(),a._22(16777216,null,null,1,null,u)),a._17(802816,null,0,M.k,[a.L,a.N,a.t],{ngForOf:[0,"ngForOf"]},null),(n()(),a._19(null,["\n\n    "])),(n()(),a._19(1,["\n    "])),(n()(),a._19(1,["\n"]))],function(n,l){var t=l.component;n(l,5,0,"fff");n(l,21,0,"ios-search"),n(l,36,0,t.data)},function(n,l){n(l,4,0,a._20(l,5)._hidden,a._20(l,5)._sbPadding),n(l,20,0,a._20(l,21)._hidden),n(l,27,0,a._20(l,28).statusbarPadding)})}function e(n){return a._14(0,[(n()(),a._16(0,null,null,1,"page-new",[],null,null,null,o,B)),a._17(49152,null,0,i.a,[h.a,x.a,O.a,L.a],null,null)],null,null)}var a=t(0),i=t(202),r=t(81),c=t(1),s=t(5),_=t(194),d=t(35),b=t(4),h=t(14),p=t(195),f=t(78),m=t(36),g=t(83),v=t(120),k=t(23),y=t(28),w=t(125),I=t(22),C=t(3),P=t(6),H=t(10),M=t(17),x=t(15),O=t(18),L=t(79);t.d(l,"a",function(){return F});var N=[],B=a._13({encapsulation:2,styles:N,data:{}}),F=a._21("page-new",i.a,e,{},{},[])}});
-//# sourceMappingURL=/Users/apple/Documents/ionic2/3.3.0/buka/www/build/3.main.js.map
+webpackJsonp([3],{
+
+/***/ 271:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__regist__ = __webpack_require__(283);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegistPageModule", function() { return RegistPageModule; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var RegistPageModule = (function () {
+    function RegistPageModule() {
+    }
+    return RegistPageModule;
+}());
+RegistPageModule = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_2__regist__["a" /* RegistPage */],
+        ],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__regist__["a" /* RegistPage */]),
+        ],
+        exports: [
+            __WEBPACK_IMPORTED_MODULE_2__regist__["a" /* RegistPage */]
+        ]
+    })
+], RegistPageModule);
+
+//# sourceMappingURL=regist.module.js.map
+
+/***/ }),
+
+/***/ 283:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__service_public__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(195);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegistPage; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var RegistPage = (function () {
+    function RegistPage(navCtrl, navParams, pubilcService, http) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.pubilcService = pubilcService;
+        this.http = http;
+        this.name = '';
+        this.pass = '';
+        this.nickname = '';
+    }
+    RegistPage.prototype.logon = function () {
+        var _this = this;
+        if (!this.name || !this.pass || !this.nickname) {
+            return true;
+        }
+        var url = "http://www.devonhello.com/buka/regist";
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        this.http.post(url, "name=" + this.name + "&pass=" + this.pass + "&nickname=" + this.nickname, {
+            headers: headers
+        })
+            .subscribe(function (res) {
+            if (res.json()[0]['_id']) {
+                _this.navCtrl.popToRoot();
+            }
+            else {
+                //用户重复／系统错误
+            }
+        });
+    };
+    return RegistPage;
+}());
+RegistPage = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPage */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        selector: 'page-regist',template:/*ion-inline-start:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/regist/regist.html"*/'<ion-header no-border>\n\n    <ion-navbar color="fff">\n        <ion-title>注册</ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n    <ion-list inset>\n\n        <ion-item>\n            <ion-label>&nbsp;&nbsp;账号:</ion-label>\n            <ion-input type="text" [(ngModel)]="name"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label>&nbsp;&nbsp;昵称:</ion-label>\n            <ion-input type="text" [(ngModel)]="nickname"></ion-input>\n        </ion-item>\n\n        <ion-item>\n            <ion-label>&nbsp;&nbsp;密码:</ion-label>\n            <ion-input type="password" [(ngModel)]="pass"></ion-input>\n        </ion-item>\n\n    </ion-list>\n    <br/>\n    <br/>\n    <br/>\n    <br/>\n    <button ion-button color="danger" full round (click)="logon();">注册</button>\n</ion-content>'/*ion-inline-end:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/regist/regist.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_2__service_public__["a" /* pubilcService */],
+        __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* Http */]])
+], RegistPage);
+
+//# sourceMappingURL=regist.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=3.main.js.map

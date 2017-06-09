@@ -5,6 +5,7 @@ import { LoadingController } from 'ionic-angular';
 export class pubilcService {
 
     loading: any = null;
+    user:any = {};
 
     constructor(public loadingCtrl: LoadingController) { }
 

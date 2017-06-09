@@ -1,0 +1,33 @@
+<ion-header no-border>
+
+    <ion-navbar color="fff">
+        <ion-title>注册</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-list inset>
+
+        <ion-item>
+            <ion-label>&nbsp;&nbsp;账号:</ion-label>
+            <ion-input type="text" [(ngModel)]="name"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>&nbsp;&nbsp;昵称:</ion-label>
+            <ion-input type="text" [(ngModel)]="nickname"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>&nbsp;&nbsp;密码:</ion-label>
+            <ion-input type="password" [(ngModel)]="pass"></ion-input>
+        </ion-item>
+
+    </ion-list>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <button ion-button color="danger" full round (click)="logon();">注册</button>
+</ion-content>

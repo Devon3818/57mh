@@ -1,6 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Content } from 'ionic-angular';
-import { Headers, Http } from '@angular/http';
 import { pubilcService } from '../../service/public';
 
 declare var $: any;
@@ -26,7 +25,6 @@ export class ComicsPage {
   };
 
   constructor(
-    public http: Http,
     public navCtrl: NavController,
     public navParams: NavParams,
     public pubilcService: pubilcService

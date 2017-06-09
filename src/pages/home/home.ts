@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, MenuController, IonicPage, Content } from 'ionic-angular';
 import { pubilcService } from '../../service/public';
+import { CodePush } from '@ionic-native/code-push';
 
 declare var $: any;
 declare var Swiper: any;
@@ -19,17 +20,22 @@ export class HomePage {
     'new': [],
     'banner': []
   };
+  Swiperobj: any = null;
+  itimer: any = null;
 
   constructor(
     public navCtrl: NavController,
     public menuCtrl: MenuController,
-    public pubilcService: pubilcService
+    public pubilcService: pubilcService,
+    private codePush: CodePush
   ) {
+    this.codePush.sync().subscribe((syncStatus) => console.log(syncStatus));
     this.pubilcService.presentLoadingDefault();
   }
 
   openMenu() {
-    this.menuCtrl.open();
+    this.navCtrl.push('LoginPage');
+    //this.menuCtrl.open();
   }
 
   open(name, banner, url) {
@@ -60,22 +66,22 @@ export class HomePage {
       'new': [],
       'banner': []
     };
+    var oframe = $("#ikmhome");
 
-    document.getElementById("ikmhome").onload = function () {
-
-      var oframe = $("#ikmhome");
+    oframe[0].onload = function () {
+      
       var ifobj = oframe.contents();
       oframe[0].src = 'about:blank';
       oframe.remove();
       var ibanner = ifobj.find('.swiper-slide');
-      
+
       ibanner.each(function (index) {
         var iobj = {},
           ot = $(this);
         iobj['banner'] = ot.find('img').attr('src');
         iobj['name'] = ot.find('h2').text();
         iobj['url'] = 'http://m.57mh.com/' + ot.find('a').attr('href');
-        pages['banner'].push( iobj );
+        pages['banner'].push(iobj);
       });
       _thst.data['banner'] = pages['banner'];
 
@@ -85,7 +91,7 @@ export class HomePage {
           ot = $(this);
         iobj['name'] = ot.find('img').attr('alt');
         iobj['bannerimg'] = ot.find('img').attr('src');
-        //alert(iobj['bannerimg']);
+        
         iobj['url'] = 'http://m.57mh.com' + ot.find('a').attr('href');
         iobj['len'] = ot.find('p').text();
         pages['tj'].push(iobj);
@@ -99,7 +105,7 @@ export class HomePage {
           ot = $(this);
         iobj['name'] = ot.find('img').attr('alt');
         iobj['bannerimg'] = ot.find('img').attr('src');
-        //alert(iobj['bannerimg']);
+        
         iobj['url'] = 'http://m.57mh.com' + ot.find('a').attr('href');
         iobj['len'] = ot.find('p').text();
         pages['rm'].push(iobj);
@@ -112,7 +118,7 @@ export class HomePage {
           ot = $(this);
         iobj['name'] = ot.find('img').attr('alt');
         iobj['bannerimg'] = ot.find('img').attr('src');
-        //alert(iobj['bannerimg']);
+        
         iobj['url'] = 'http://m.57mh.com' + ot.find('a').attr('href');
         iobj['len'] = ot.find('p').text();
         pages['gm'].push(iobj);
@@ -125,19 +131,22 @@ export class HomePage {
           ot = $(this);
         iobj['name'] = ot.find('img').attr('alt');
         iobj['bannerimg'] = ot.find('img').attr('src');
-        //alert(iobj['bannerimg']);
+        
         iobj['url'] = 'http://m.57mh.com' + ot.find('a').attr('href');
         iobj['len'] = ot.find('p').text();
         pages['new'].push(iobj);
 
       });
       _thst.data['new'] = pages['new'];
-      setTimeout(() => {
-        var swiper = new Swiper('.swiper-container', {
+
+      _thst.itimer = setTimeout(() => {
+        clearTimeout(_thst.itimer);
+        _thst.Swiperobj = new Swiper('.swiper-container', {
           loop: true,
           autoplay: 3000,
         });
       }, 1000);
+
 
       _thst.pubilcService.presentLoadingDismiss();
 

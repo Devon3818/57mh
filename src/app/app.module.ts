@@ -4,10 +4,11 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-
+import { CodePush } from '@ionic-native/code-push';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { pubilcService } from '../service/public';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { pubilcService } from '../service/public';
     SplashScreen,
     InAppBrowser,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    pubilcService
+    pubilcService,
+    CodePush
   ]
 })
 export class AppModule { }

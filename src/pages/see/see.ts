@@ -23,9 +23,9 @@ export class SeePage {
   }
 
   open(url) {
-    this.br = this.iab.create('http://m.57mh.com' + url, '_blank', 'location=no,hardwareback=no');
+    this.br = this.iab.create('http://m.57mh.com' + url, '_blank', 'location=no,hardwareback=no,hidden=yes');
     this.br.on('loadstart').subscribe(() => {
-      this.br.hide();
+      
     });
 
     this.br.on('exit').subscribe(() => {

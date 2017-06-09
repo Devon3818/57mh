@@ -1,2 +1,149 @@
-webpackJsonp([8],{192:function(t,n,e){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var i=e(0),o=e(227),a=e(17),r=e(51),l=e(80),s=e(121),u=e(122),_=e(123),c=e(124),h=e(228),d=e(205),p=e(37);e.d(n,"SeePageModuleNgFactory",function(){return g});var b=this&&this.__extends||function(){var t=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(t,n){t.__proto__=n}||function(t,n){for(var e in n)n.hasOwnProperty(e)&&(t[e]=n[e])};return function(n,e){function i(){this.constructor=n}t(n,e),n.prototype=null===e?Object.create(e):(i.prototype=e.prototype,new i)}}(),f=function(t){function n(n){return t.call(this,n,[s.a,u.a,_.a,c.a,h.a],[])||this}return b(n,t),Object.defineProperty(n.prototype,"_NgLocalization_7",{get:function(){return null==this.__NgLocalization_7&&(this.__NgLocalization_7=new a.a(this.parent.get(i.c))),this.__NgLocalization_7},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"_ɵi_8",{get:function(){return null==this.__ɵi_8&&(this.__ɵi_8=new r.a),this.__ɵi_8},enumerable:!0,configurable:!0}),Object.defineProperty(n.prototype,"_FormBuilder_9",{get:function(){return null==this.__FormBuilder_9&&(this.__FormBuilder_9=new r.b),this.__FormBuilder_9},enumerable:!0,configurable:!0}),n.prototype.createInternal=function(){return this._CommonModule_0=new a.d,this._ɵba_1=new r.c,this._FormsModule_2=new r.d,this._ReactiveFormsModule_3=new r.e,this._IonicModule_4=new l.b,this._IonicPageModule_5=new l.c,this._SeePageModule_6=new o.a,this._LAZY_LOADED_TOKEN_10=d.a,this._SeePageModule_6},n.prototype.getInternal=function(t,n){return t===a.d?this._CommonModule_0:t===r.c?this._ɵba_1:t===r.d?this._FormsModule_2:t===r.e?this._ReactiveFormsModule_3:t===l.b?this._IonicModule_4:t===l.c?this._IonicPageModule_5:t===o.a?this._SeePageModule_6:t===a.e?this._NgLocalization_7:t===r.a?this._ɵi_8:t===r.b?this._FormBuilder_9:t===p.d?this._LAZY_LOADED_TOKEN_10:n},n.prototype.destroyInternal=function(){},n}(i.x),g=new i.y(f,o.a)},205:function(t,n,e){"use strict";e(0),e(50),e(85);e.d(n,"a",function(){return i});var i=(this&&this.__decorate,this&&this.__metadata,function(){function t(t,n,e){this.navCtrl=t,this.iab=n,this.navParams=e,this.imgs="http://im1.56zzw.com/7/2225.jpg",this.open(this.navParams.get("url"))}return t.prototype.open=function(t){var n=this;this.br=this.iab.create("http://m.57mh.com"+t,"_blank","location=no,hardwareback=no"),this.br.on("loadstart").subscribe(function(){n.br.hide()}),this.br.on("exit").subscribe(function(){n.navCtrl.pop()}),this.br.on("loaderror").subscribe(function(){alert("加载出错..."),n.navCtrl.pop()}),this.br.on("loadstop").subscribe(function(){n.br.insertCSS({code:"body {display: block;"});n.br.executeScript({code:"$('body').children().css('display','none'); $('.title').css('display','block'); $('.main-bar').css('display','block'); $('#mangaTitle a').attr('href',''); var allpage = $('#pageNo').text().split('/')[1];  var ihtml = ''; var iurl = 'http://' + window.location.host + window.location.pathname + '?p='; for(var i=0; i<allpage; i++){ var ips = i+1; ihtml+='<a class=\"dv_a\" href=\"' + iurl+ ips + '\">'+ ips +' 页</a>'; }; $('body').append(ihtml+'<i class=\"dv_bar\"></i>');"}),n.br.insertCSS({code:".dv_bar { clear: both; width: 100px; height: 20px; display: block; } .dv_a { float: left; display: block; padding: 20px; } #pb {width: 100% !important;} #pb a {display: none !important;}"}),n.br.show()})},t}())},227:function(t,n,e){"use strict";e(0),e(50),e(205);e.d(n,"a",function(){return i});var i=(this&&this.__decorate,function(){function t(){}return t}())},228:function(t,n,e){"use strict";function i(t){return a._14(0,[(t()(),a._16(0,null,null,2,"ion-content",[],[[2,"statusbar-padding",null]],null,null,r.a,r.b)),a._17(4374528,null,0,l.a,[s.c,u.b,_.a,a.H,a.I,c.a,h.a,a.g,[2,d.a],[2,p.a]],null,null),(t()(),a._19(1,["\n\n"]))],null,function(t,n){t(n,0,0,a._20(n,1).statusbarPadding)})}function o(t){return a._14(0,[(t()(),a._16(0,null,null,1,"page-see",[],null,null,null,i,y)),a._17(49152,null,0,b.a,[p.a,f.a,g.a],null,null)],null,null)}var a=e(0),r=e(125),l=e(22),s=e(1),u=e(3),_=e(6),c=e(4),h=e(10),d=e(5),p=e(14),b=e(205),f=e(85),g=e(15);e.d(n,"a",function(){return v});var m=[],y=a._13({encapsulation:2,styles:m,data:{}}),v=a._21("page-see",b.a,o,{},{},[])}});
-//# sourceMappingURL=/Users/apple/Documents/ionic2/3.3.0/buka/www/build/8.main.js.map
+webpackJsonp([8],{
+
+/***/ 266:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__comics__ = __webpack_require__(278);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ComicsPageModule", function() { return ComicsPageModule; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var ComicsPageModule = (function () {
+    function ComicsPageModule() {
+    }
+    return ComicsPageModule;
+}());
+ComicsPageModule = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_2__comics__["a" /* ComicsPage */],
+        ],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__comics__["a" /* ComicsPage */]),
+        ],
+        exports: [
+            __WEBPACK_IMPORTED_MODULE_2__comics__["a" /* ComicsPage */]
+        ]
+    })
+], ComicsPageModule);
+
+//# sourceMappingURL=comics.module.js.map
+
+/***/ }),
+
+/***/ 278:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__service_public__ = __webpack_require__(194);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComicsPage; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ComicsPage = (function () {
+    function ComicsPage(navCtrl, navParams, pubilcService) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.pubilcService = pubilcService;
+        this.name = '';
+        this.uptime = '-';
+        this.banner = '';
+        this.url = '';
+        this.len = '-';
+        this.cod = '0';
+        this.iclass = [];
+        this.dec = '';
+        this.data = {
+            'pages': []
+        };
+        this.name = this.navParams.get('name');
+        this.banner = this.navParams.get('banner');
+        this.url = this.navParams.get('url');
+        this.pubilcService.presentLoadingDefault();
+    }
+    ComicsPage.prototype.openpage = function (url) {
+        this.navCtrl.push('SeePage', {
+            url: url + '?p=1'
+        });
+    };
+    ComicsPage.prototype.ionViewDidLoad = function () {
+        var _thst = this;
+        var link = $("<iframe/>");
+        link.attr('id', 'ikmfs');
+        link.attr('src', this.url);
+        link.appendTo('body');
+        var oframe = $("#ikmfs");
+        var pages = [];
+        oframe[0].onload = function () {
+            var ifobj = oframe.contents();
+            oframe[0].src = 'about:blank';
+            oframe.remove();
+            var ele = ifobj.find(".chapter-list li a");
+            _thst.banner = ifobj.find(".thumb img").attr('src');
+            _thst.dec = ifobj.find("#bookIntro").text();
+            _thst.len = ifobj.find("dd").eq(5).text();
+            _thst.cod = ifobj.find("dd").eq(4).text();
+            _thst.uptime = ifobj.find("dd").eq(6).text();
+            _thst.iclass = ifobj.find("dd").eq(3).text().split('/');
+            ele.each(function () {
+                var iobj = {}, ot = $(this);
+                iobj['ititle'] = ot.attr('title');
+                iobj['ihref'] = ot.attr('href');
+                pages.push(iobj);
+            });
+            _thst.data['pages'] = pages;
+            _thst.pubilcService.presentLoadingDismiss();
+        };
+    };
+    ComicsPage.prototype.ionViewWillLeave = function () {
+        var ifs = $("#ikmfs");
+        ifs[0].src = 'about:blank';
+        ifs.remove();
+    };
+    //点击到顶部
+    ComicsPage.prototype.tapEvent = function (e) {
+        this.content.scrollToTop();
+    };
+    return ComicsPage;
+}());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Content */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Content */])
+], ComicsPage.prototype, "content", void 0);
+ComicsPage = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPage */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        selector: 'page-comics',template:/*ion-inline-start:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/comics/comics.html"*/'<ion-header no-border (tap)="tapEvent($event)">\n\n    <ion-navbar color="hebar">\n        <ion-title>{{name}}</ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n\n    <section class="comics-top">\n        <div class="comics-top-bar">\n            <h2 class="fr grade">{{cod}}</h2>\n        </div>\n        <img [src]="banner" />\n        <div class="basics">\n            <p class="title">{{name}}</p>\n            <p>更新至{{len}}</p>\n            <p>更新于{{uptime}}</p>\n            <div class="btm">\n                <div class="btms coll">收藏</div>\n                <div class="btms read">开始阅读</div>\n            </div>\n        </div>\n\n    </section>\n    <div class="wrap">\n        <p class="dec">{{dec}}</p>\n\n        <div class="tag-wrap">\n            <span class="tag" *ngFor="let ic of iclass">{{ic}}</span>\n        </div>\n    </div>\n\n    <div class="wrap">\n\n        <div class="piece-title">\n            <p class="fl">连载(话)</p>\n            <p class="fr">{{uptime}}</p>\n        </div>\n\n        <div class="piece" *ngFor="let item of data[\'pages\']" (click)="openpage(item.ihref);">{{item.ititle}}</div>\n\n    </div>\n    <!--<iframe id="ikmfs" src="http://m.57mh.com/"></iframe>-->\n</ion-content>'/*ion-inline-end:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/comics/comics.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_2__service_public__["a" /* pubilcService */]])
+], ComicsPage);
+
+//# sourceMappingURL=comics.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=8.main.js.map

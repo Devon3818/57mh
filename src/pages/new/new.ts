@@ -34,10 +34,13 @@ export class NewPage {
     link.appendTo('body');
 
     //document.getElementById("ikmnew").src = "http://m.57mh.com/list/order-hits";
+    var oframe = $("#ikmnew");
 
-    document.getElementById("ikmnew").onload = function () {
+    oframe[0].onload = function () {
       
-      var ifobj = $("#ikmnew").contents();
+      var ifobj = oframe.contents();
+      oframe[0].src = 'about:blank';
+      oframe.remove();
       var ele = ifobj.find(".cont-list #data_list li");
       ele.each(function (index) {
         var iobj = {},
@@ -50,7 +53,7 @@ export class NewPage {
         pages.push(iobj);
       });
       _thst.data = pages;
-      $("#ikmnew").remove();
+      
       _thst.pubilcService.presentLoadingDismiss();
     };
 

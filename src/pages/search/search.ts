@@ -46,9 +46,9 @@ export class SearchPage {
     link.appendTo('body');
     var _that = this;
 
-    document.getElementById("ikmsearch").onload = function () {
+    var iframe = $("#ikmsearch");
+    iframe[0].onload = function () {
 
-      var iframe = $("#ikmsearch");
       var ifobj = iframe.contents();
       iframe[0].src = 'about:blank';
       iframe.remove();

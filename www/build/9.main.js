@@ -1,2 +1,164 @@
-webpackJsonp([9],{190:function(n,t,l){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var e=l(0),u=l(223),i=l(17),o=l(51),_=l(80),a=l(121),r=l(122),c=l(123),s=l(124),h=l(224),d=l(203),p=l(37);l.d(t,"PopOverPageModuleNgFactory",function(){return m});var f=this&&this.__extends||function(){var n=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(n,t){n.__proto__=t}||function(n,t){for(var l in t)t.hasOwnProperty(l)&&(n[l]=t[l])};return function(t,l){function e(){this.constructor=t}n(t,l),t.prototype=null===l?Object.create(l):(e.prototype=l.prototype,new e)}}(),b=function(n){function t(t){return n.call(this,t,[a.a,r.a,c.a,s.a,h.a],[])||this}return f(t,n),Object.defineProperty(t.prototype,"_NgLocalization_7",{get:function(){return null==this.__NgLocalization_7&&(this.__NgLocalization_7=new i.a(this.parent.get(e.c))),this.__NgLocalization_7},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"_ɵi_8",{get:function(){return null==this.__ɵi_8&&(this.__ɵi_8=new o.a),this.__ɵi_8},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"_FormBuilder_9",{get:function(){return null==this.__FormBuilder_9&&(this.__FormBuilder_9=new o.b),this.__FormBuilder_9},enumerable:!0,configurable:!0}),t.prototype.createInternal=function(){return this._CommonModule_0=new i.d,this._ɵba_1=new o.c,this._FormsModule_2=new o.d,this._ReactiveFormsModule_3=new o.e,this._IonicModule_4=new _.b,this._IonicPageModule_5=new _.c,this._PopOverPageModule_6=new u.a,this._LAZY_LOADED_TOKEN_10=d.a,this._PopOverPageModule_6},t.prototype.getInternal=function(n,t){return n===i.d?this._CommonModule_0:n===o.c?this._ɵba_1:n===o.d?this._FormsModule_2:n===o.e?this._ReactiveFormsModule_3:n===_.b?this._IonicModule_4:n===_.c?this._IonicPageModule_5:n===u.a?this._PopOverPageModule_6:n===i.e?this._NgLocalization_7:n===o.a?this._ɵi_8:n===o.b?this._FormBuilder_9:n===p.d?this._LAZY_LOADED_TOKEN_10:t},t.prototype.destroyInternal=function(){},t}(e.x),m=new e.y(b,u.a)},203:function(n,t,l){"use strict";l(0),l(50);l.d(t,"a",function(){return e});var e=(this&&this.__decorate,this&&this.__metadata,function(){function n(n,t,l){this.navCtrl=n,this.navParams=t,this.viewCtrl=l,this.mod=this.navParams.data._that,this.pthis=this.navParams.data.pthis}return n.prototype.close=function(n){this.mod(n,this.pthis),this.viewCtrl.dismiss()},n}())},223:function(n,t,l){"use strict";l(0),l(50),l(203);l.d(t,"a",function(){return e});var e=(this&&this.__decorate,function(){function n(){}return n}())},224:function(n,t,l){"use strict";function e(n){return i._14(0,[(n()(),i._16(0,null,null,38,"ion-content",[],[[2,"statusbar-padding",null]],null,null,o.a,o.b)),i._17(4374528,null,0,_.a,[a.c,r.b,c.a,i.H,i.I,s.a,h.a,i.g,[2,d.a],[2,p.a]],null,null),(n()(),i._19(1,["\n    "])),(n()(),i._16(0,null,1,34,"ion-list",[],null,null,null,null,null)),i._17(16384,null,0,f.a,[a.c,i.H,i.I,r.b,b.a,c.a],null,null),(n()(),i._19(null,["\n        "])),(n()(),i._16(0,null,null,6,"button",[["class","item item-block"],["ion-item",""]],null,[[null,"click"]],function(n,t,l){var e=!0,u=n.component;if("click"===t){e=!1!==u.close("id")&&e}return e},v.a,v.b)),i._17(1097728,null,3,g.a,[y.a,a.c,i.H,i.I,[2,P.a]],null,null),i._15(335544320,1,{contentLabel:0}),i._15(603979776,2,{_buttons:1}),i._15(603979776,3,{_icons:1}),i._17(16384,null,0,w.a,[],null,null),(n()(),i._19(2,["\n          最新发布\n        "])),(n()(),i._19(null,["\n        "])),(n()(),i._16(0,null,null,6,"button",[["class","item item-block"],["ion-item",""]],null,[[null,"click"]],function(n,t,l){var e=!0,u=n.component;if("click"===t){e=!1!==u.close("addtime")&&e}return e},v.a,v.b)),i._17(1097728,null,3,g.a,[y.a,a.c,i.H,i.I,[2,P.a]],null,null),i._15(335544320,4,{contentLabel:0}),i._15(603979776,5,{_buttons:1}),i._15(603979776,6,{_icons:1}),i._17(16384,null,0,w.a,[],null,null),(n()(),i._19(2,["\n          最近更新\n        "])),(n()(),i._19(null,["\n        "])),(n()(),i._16(0,null,null,6,"button",[["class","item item-block"],["ion-item",""]],null,[[null,"click"]],function(n,t,l){var e=!0,u=n.component;if("click"===t){e=!1!==u.close("hits")&&e}return e},v.a,v.b)),i._17(1097728,null,3,g.a,[y.a,a.c,i.H,i.I,[2,P.a]],null,null),i._15(335544320,7,{contentLabel:0}),i._15(603979776,8,{_buttons:1}),i._15(603979776,9,{_icons:1}),i._17(16384,null,0,w.a,[],null,null),(n()(),i._19(2,["\n          人气最旺\n        "])),(n()(),i._19(null,["\n        "])),(n()(),i._16(0,null,null,6,"button",[["class","item item-block"],["ion-item",""]],null,[[null,"click"]],function(n,t,l){var e=!0,u=n.component;if("click"===t){e=!1!==u.close("gold")&&e}return e},v.a,v.b)),i._17(1097728,null,3,g.a,[y.a,a.c,i.H,i.I,[2,P.a]],null,null),i._15(335544320,10,{contentLabel:0}),i._15(603979776,11,{_buttons:1}),i._15(603979776,12,{_icons:1}),i._17(16384,null,0,w.a,[],null,null),(n()(),i._19(2,["\n          评分最高\n        "])),(n()(),i._19(null,["\n    "])),(n()(),i._19(1,["\n"]))],null,function(n,t){n(t,0,0,i._20(t,1).statusbarPadding)})}function u(n){return i._14(0,[(n()(),i._16(0,null,null,1,"page-pop-over",[],null,null,null,e,k)),i._17(49152,null,0,m.a,[p.a,O.a,d.a],null,null)],null,null)}var i=l(0),o=l(125),_=l(22),a=l(1),r=l(3),c=l(6),s=l(4),h=l(10),d=l(5),p=l(14),f=l(55),b=l(7),m=l(203),v=l(127),g=l(39),y=l(24),P=l(29),w=l(54),O=l(15);l.d(t,"a",function(){return I});var M=[],k=i._13({encapsulation:2,styles:M,data:{}}),I=i._21("page-pop-over",m.a,u,{},{},[])}});
-//# sourceMappingURL=/Users/apple/Documents/ionic2/3.3.0/buka/www/build/9.main.js.map
+webpackJsonp([9],{
+
+/***/ 265:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__comics_data__ = __webpack_require__(277);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ComicsDataPageModule", function() { return ComicsDataPageModule; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var ComicsDataPageModule = (function () {
+    function ComicsDataPageModule() {
+    }
+    return ComicsDataPageModule;
+}());
+ComicsDataPageModule = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_2__comics_data__["a" /* ComicsDataPage */],
+        ],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__comics_data__["a" /* ComicsDataPage */]),
+        ],
+        exports: [
+            __WEBPACK_IMPORTED_MODULE_2__comics_data__["a" /* ComicsDataPage */]
+        ]
+    })
+], ComicsDataPageModule);
+
+//# sourceMappingURL=comics-data.module.js.map
+
+/***/ }),
+
+/***/ 277:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__service_public__ = __webpack_require__(194);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComicsDataPage; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ComicsDataPage = (function () {
+    function ComicsDataPage(navCtrl, navParams, popoverCtrl, pubilcService) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.popoverCtrl = popoverCtrl;
+        this.pubilcService = pubilcService;
+        this.title = '';
+        this.data = [];
+        this.allpage = [];
+        this.or = '';
+        this.pages = 1;
+        this.title = this.navParams.get('title');
+        this.or = this.navParams.get('or');
+    }
+    ComicsDataPage.prototype.doInfinite = function (infiniteScroll) {
+        var _this = this;
+        this.pages++;
+        this.creatFrame();
+        this.itimer = setTimeout(function () {
+            clearTimeout(_this.itimer);
+            infiniteScroll.complete();
+        }, 1000);
+    };
+    ComicsDataPage.prototype.open = function (name, banner, url) {
+        this.navCtrl.push('ComicsPage', {
+            name: name,
+            banner: banner,
+            url: url,
+        });
+    };
+    ComicsDataPage.prototype.ionViewDidLoad = function () {
+        this.creatFrame();
+    };
+    ComicsDataPage.prototype.creatFrame = function () {
+        this.pubilcService.presentLoadingDefault();
+        var _thst = this;
+        var iurls = '';
+        if (isNaN(this.or)) {
+            iurls = "http://m.57mh.com/list/area-" + this.or + '-order-hits-p-' + this.pages;
+            ;
+        }
+        else {
+            iurls = "http://m.57mh.com/list/smid-" + this.or + '-order-hits-p-' + this.pages;
+            ;
+        }
+        var link = $("<iframe/>");
+        link.attr('id', 'ikmiclass');
+        link.attr('src', iurls);
+        link.appendTo('body');
+        var oframe = $("#ikmiclass");
+        oframe[0].src = iurls;
+        oframe[0].onload = function () {
+            var ifobj = oframe.contents();
+            oframe[0].src = 'about:blank';
+            oframe.remove();
+            var ele = ifobj.find("#contList li");
+            ele.each(function (index) {
+                var iobj = {}, ot = $(this);
+                iobj['name'] = ot.find('img').attr('alt');
+                iobj['bannerimg'] = ot.find('img').attr('src');
+                //alert(iobj['bannerimg']);
+                iobj['url'] = 'http://m.57mh.com' + ot.find('a').attr('href');
+                iobj['len'] = ot.find('.tt').text();
+                _thst.allpage.push(iobj);
+            });
+            _thst.data = _thst.allpage;
+            _thst.pubilcService.presentLoadingDismiss();
+        };
+    };
+    ComicsDataPage.prototype.ionViewWillLeave = function () {
+        var ifs = $("#ikmiclass");
+        ifs[0].src = 'about:blank';
+        ifs.remove();
+    };
+    //点击到顶部
+    ComicsDataPage.prototype.tapEvent = function (e) {
+        this.content.scrollToTop();
+    };
+    return ComicsDataPage;
+}());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Content */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Content */])
+], ComicsDataPage.prototype, "content", void 0);
+ComicsDataPage = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPage */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        selector: 'page-comics-data',template:/*ion-inline-start:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/comics-data/comics-data.html"*/'<ion-header no-border (tap)="tapEvent($event)">\n\n    <ion-navbar color="fff">\n        <ion-title>{{title}}</ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n    <!--<iframe id="ikmiclass" src="http://m.57mh.com"></iframe>-->\n    <section class="wrap">\n\n        <div class="mh" *ngFor="let item of data" (click)="open(item.name, item.bannerimg, item.url);">\n            <div class="mh-img" [style.background]="\'url(\'+item.bannerimg+\')\'"></div>\n            <p>{{item.name}}</p>\n            <span>{{item.len}}</span>\n        </div>\n\n    </section>\n\n    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">\n        <ion-infinite-scroll-content></ion-infinite-scroll-content>\n    </ion-infinite-scroll>\n</ion-content>'/*ion-inline-end:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/comics-data/comics-data.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* PopoverController */],
+        __WEBPACK_IMPORTED_MODULE_2__service_public__["a" /* pubilcService */]])
+], ComicsDataPage);
+
+//# sourceMappingURL=comics-data.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=9.main.js.map

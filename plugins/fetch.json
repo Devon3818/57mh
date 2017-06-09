@@ -54,5 +54,93 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "code-push": {
+        "source": {
+            "type": "registry",
+            "id": "code-push"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "cordova-plugin-file": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-file"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-compat": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-compat"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "cordova-plugin-file-transfer": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-file-transfer"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-zip": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-zip"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "cordova-plugin-dialogs": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-dialogs"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "cordova-plugin-app-version": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-app-version"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-camera": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-camera"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-file-opener2": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-file-opener2"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-sqlite-storage": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-sqlite-storage"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-code-push": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-code-push"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }
