@@ -21,11 +21,11 @@ export class CollectPage {
     public pubilcService: pubilcService,
     public http: Http
   ) {
-    
+    this.pubilcService.presentLoadingDefault();
   }
 
   getclooect() {
-    this.pubilcService.presentLoadingDefault();
+    
     let url = "http://www.devonhello.com/buka/getcollect";
 
     var headers = new Headers();

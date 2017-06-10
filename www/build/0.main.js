@@ -1,14 +1,14 @@
 webpackJsonp([0],{
 
-/***/ 278:
+/***/ 282:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tabs__ = __webpack_require__(290);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabsModule", function() { return TabsModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__today__ = __webpack_require__(298);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TodayPageModule", function() { return TodayPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,37 +18,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var TabsModule = (function () {
-    function TabsModule() {
+var TodayPageModule = (function () {
+    function TodayPageModule() {
     }
-    return TabsModule;
+    return TodayPageModule;
 }());
-TabsModule = __decorate([
+TodayPageModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__tabs__["a" /* TabsPage */],
+            __WEBPACK_IMPORTED_MODULE_2__today__["a" /* TodayPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__tabs__["a" /* TabsPage */])
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__today__["a" /* TodayPage */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__tabs__["a" /* TabsPage */]
+            __WEBPACK_IMPORTED_MODULE_2__today__["a" /* TodayPage */]
         ]
     })
-], TabsModule);
+], TodayPageModule);
 
-//# sourceMappingURL=tabs.module.js.map
+//# sourceMappingURL=today.module.js.map
 
 /***/ }),
 
-/***/ 290:
+/***/ 298:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__service_public__ = __webpack_require__(100);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TodayPage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -60,83 +59,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-var TabsPage = TabsPage_1 = (function () {
-    function TabsPage(navCtrl, platform, toastCtrl, pubilcService) {
+/**
+ * Generated class for the TodayPage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var TodayPage = (function () {
+    function TodayPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
-        this.platform = platform;
-        this.toastCtrl = toastCtrl;
-        this.pubilcService = pubilcService;
-        this.backButtonPressed = false;
-        this.itimer = null;
-        this.tab1Root = 'NewPage';
-        this.tab2Root = 'HomePage';
-        this.tab3Root = 'ClassifyPage';
-        this.tab4Root = 'CollectPage';
-        this.pageBack();
-        codePush.sync();
-        //alert(codePush.sync);
+        this.navParams = navParams;
     }
-    TabsPage.prototype.pageBack = function () {
-        var _this = this;
-        this.platform.registerBackButtonAction(function () {
-            _this.pubilcService.presentLoadingDismiss();
-            var activeVC = _this.navCtrl.getActive();
-            var page = activeVC.instance;
-            page.tabs;
-            if (!(page instanceof TabsPage_1)) {
-                if (!_this.navCtrl.canGoBack()) {
-                    return _this.showExit();
-                }
-                return _this.navCtrl.pop();
-            }
-            var tabs = page.tabs;
-            var activeNav = tabs.getSelected();
-            if (!activeNav.canGoBack()) {
-                return _this.showExit();
-            }
-            return activeNav.pop();
-        }, 101);
+    TodayPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad TodayPage');
     };
-    //双击退出提示框
-    TabsPage.prototype.showExit = function () {
-        var _that = this;
-        if (this.backButtonPressed) {
-            this.platform.exitApp();
-        }
-        else {
-            this.presentToast();
-            this.backButtonPressed = true;
-            if (this.itimer) {
-                clearTimeout(this.itimer);
-            }
-            this.itimer = setTimeout(function () {
-                _that.backButtonPressed = false;
-            }, 2000);
-        }
-    };
-    TabsPage.prototype.presentToast = function () {
-        var toast = this.toastCtrl.create({
-            message: '再次点击返回退出APP',
-            duration: 2000
-        });
-        toast.present();
-    };
-    return TabsPage;
+    return TodayPage;
 }());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('myTabs'),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Tabs */])
-], TabsPage.prototype, "tabs", void 0);
-TabsPage = TabsPage_1 = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPage */])(),
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({template:/*ion-inline-start:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/tabs/tabs.html"*/'<ion-tabs #myTabs selectedIndex="1" no-border color="fff">\n    <ion-tab [root]="tab1Root" tabIcon="md-flame"></ion-tab>\n    <ion-tab [root]="tab2Root" tabIcon="home"></ion-tab>\n    <ion-tab [root]="tab3Root" tabIcon="md-color-palette"></ion-tab>\n    <ion-tab [root]="tab4Root" tabIcon="md-star"></ion-tab>\n</ion-tabs>'/*ion-inline-end:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/tabs/tabs.html"*/
+TodayPage = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        selector: 'page-today',template:/*ion-inline-start:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/today/today.html"*/'<!--\n  Generated template for the TodayPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>today</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/today/today.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */], __WEBPACK_IMPORTED_MODULE_2__service_public__["a" /* pubilcService */]])
-], TabsPage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+], TodayPage);
 
-var TabsPage_1;
-//# sourceMappingURL=tabs.js.map
+//# sourceMappingURL=today.js.map
 
 /***/ })
 

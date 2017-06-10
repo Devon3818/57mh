@@ -1,14 +1,14 @@
 webpackJsonp([6],{
 
-/***/ 272:
+/***/ 276:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(284);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pop_over__ = __webpack_require__(292);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PopOverPageModule", function() { return PopOverPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,38 +18,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var LoginPageModule = (function () {
-    function LoginPageModule() {
+var PopOverPageModule = (function () {
+    function PopOverPageModule() {
     }
-    return LoginPageModule;
+    return PopOverPageModule;
 }());
-LoginPageModule = __decorate([
+PopOverPageModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */],
+            __WEBPACK_IMPORTED_MODULE_2__pop_over__["a" /* PopOverPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__pop_over__["a" /* PopOverPage */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */]
+            __WEBPACK_IMPORTED_MODULE_2__pop_over__["a" /* PopOverPage */]
         ]
     })
-], LoginPageModule);
+], PopOverPageModule);
 
-//# sourceMappingURL=login.module.js.map
+//# sourceMappingURL=pop-over.module.js.map
 
 /***/ }),
 
-/***/ 284:
+/***/ 292:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__service_public__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(196);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PopOverPage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -61,54 +59,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-
-var LoginPage = (function () {
-    function LoginPage(navCtrl, navParams, pubilcService, http) {
+var PopOverPage = (function () {
+    function PopOverPage(navCtrl, navParams, viewCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.pubilcService = pubilcService;
-        this.http = http;
-        this.name = '';
-        this.pass = '';
+        this.viewCtrl = viewCtrl;
+        this.mod = this.navParams.data._that;
+        this.pthis = this.navParams.data.pthis;
     }
-    LoginPage.prototype.regist = function () {
-        this.navCtrl.push('RegistPage');
+    PopOverPage.prototype.close = function (data) {
+        this.mod(data, this.pthis);
+        this.viewCtrl.dismiss();
     };
-    LoginPage.prototype.login = function () {
-        var _this = this;
-        if (!this.name || !this.pass) {
-            return true;
-        }
-        this.pubilcService.presentLoadingDefault();
-        var url = "http://www.devonhello.com/buka/login";
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]();
-        headers.append('Content-Type', 'application/x-www-form-urlencoded');
-        this.http.post(url, "name=" + this.name + "&pass=" + this.pass, {
-            headers: headers
-        })
-            .subscribe(function (res) {
-            _this.pubilcService.presentLoadingDismiss();
-            if (res.json()[0]['_id']) {
-                _this.pubilcService.setUser(res.json()[0]);
-                _this.navCtrl.popToRoot();
-            }
-        });
-    };
-    return LoginPage;
+    return PopOverPage;
 }());
-LoginPage = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPage */])(),
+PopOverPage = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-login',template:/*ion-inline-start:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/login/login.html"*/'<ion-header no-border>\n\n    <ion-navbar color="fff">\n        <ion-title>登陆</ion-title>\n        <ion-buttons end (click)="regist();">\n            <ion-title>注册</ion-title>\n        </ion-buttons>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n    <ion-list inset>\n\n        <ion-item>\n            <ion-label>&nbsp;&nbsp;账号:</ion-label>\n            <ion-input type="text" [(ngModel)]="name"></ion-input>\n        </ion-item>\n\n        <ion-item>\n            <ion-label>&nbsp;&nbsp;密码:</ion-label>\n            <ion-input type="password" [(ngModel)]="pass"></ion-input>\n        </ion-item>\n\n    </ion-list>\n    <br/>\n    <br/>\n    <br/>\n    <br/>\n    <button ion-button color="secondary" full round (click)="login();">登陆</button>\n</ion-content>'/*ion-inline-end:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/login/login.html"*/,
+        selector: 'page-pop-over',template:/*ion-inline-start:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/pop-over/pop-over.html"*/'<ion-content>\n    <ion-list>\n        <button ion-item (click)="close( \'id\' );">\n          最新发布\n        </button>\n        <button ion-item (click)="close( \'addtime\' );">\n          最近更新\n        </button>\n        <button ion-item (click)="close( \'hits\' );">\n          人气最旺\n        </button>\n        <button ion-item (click)="close( \'gold\' );">\n          评分最高\n        </button>\n    </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/pop-over/pop-over.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_2__service_public__["a" /* pubilcService */],
-        __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* Http */]])
-], LoginPage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ViewController */]])
+], PopOverPage);
 
-//# sourceMappingURL=login.js.map
+//# sourceMappingURL=pop-over.js.map
 
 /***/ })
 

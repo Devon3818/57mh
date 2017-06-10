@@ -25,7 +25,7 @@ export class SeePage {
   open(url) {
     this.br = this.iab.create('http://m.57mh.com' + url, '_blank', 'location=no,hardwareback=no,hidden=yes');
     this.br.on('loadstart').subscribe(() => {
-      
+      this.br.hide();
     });
 
     this.br.on('exit').subscribe(() => {
@@ -44,6 +44,10 @@ export class SeePage {
       this.br.insertCSS({ code: ".dv_bar { clear: both; width: 100px; height: 20px; display: block; } .dv_a { float: left; display: block; padding: 20px; } #pb {width: 100% !important;} #pb a {display: none !important;}" });
       this.br.show();
     });
+  }
+
+  ionViewWillLeave(){
+    this.br.close();
   }
 
 }

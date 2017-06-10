@@ -21,9 +21,14 @@ export class ComicsPage {
   cod = '0';
   iclass = [];
   dec = '';
+  olddata = [];
   data = {
     'pages': []
   };
+  iscollect: boolean = false;
+  isrecord: boolean = false;
+  recordurl = '';
+  itimer = null;
 
   constructor(
     public navCtrl: NavController,
@@ -35,6 +40,34 @@ export class ComicsPage {
     this.banner = this.navParams.get('banner');
     this.url = this.navParams.get('url');
     this.pubilcService.presentLoadingDefault();
+    if (this.pubilcService.user._id) {
+        this.checkcollect();
+      } else {
+        this.itimer = setTimeout(()=>{
+          clearTimeout(this.itimer);
+          this.init();
+        },300);
+      }
+  }
+
+  checkcollect() {
+
+
+    let url = "http://www.devonhello.com/buka/checkcollect";
+
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+
+    this.http.post(url, "bookname=" + this.name + "&uid=" + this.pubilcService.user._id, {
+      headers: headers
+    })
+      .subscribe((res) => {
+        if (res.json().length != 0) {
+          this.iscollect = true;
+        }
+        this.getrecord();
+      });
+
   }
 
   //收藏
@@ -52,9 +85,7 @@ export class ComicsPage {
         .subscribe((res) => {
           this.pubilcService.presentLoadingDismiss();
           if (res.json()['result']['ok'] == 1) {
-            alert('ok');
-          } else {
-            alert('err');
+            this.iscollect = true; 
           }
         });
     } else {
@@ -62,14 +93,71 @@ export class ComicsPage {
     }
   }
 
+  //取消收藏
+  uncollect() {
+    this.pubilcService.presentLoadingDefault();
+    let url = "http://www.devonhello.com/buka/uncollect";
+
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+
+    this.http.post(url, "uid=" + this.pubilcService.user._id + "&bookname=" + this.name, {
+      headers: headers
+    })
+      .subscribe((res) => {
+        this.iscollect = false;
+        this.pubilcService.presentLoadingDismiss();
+      });
+  }
+
   openpage(url) {
+    
+    if( this.pubilcService.user._id ){
+      this.addrecord(url);
+    }  
 
     this.navCtrl.push('SeePage', {
       url: url + '?p=1'
     });
   }
 
-  ionViewDidLoad() {
+
+  getrecord(){
+    let url = "http://www.devonhello.com/buka/seerecord";
+
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+
+    this.http.post(url, "bookname=" + this.name + "&uid=" + this.pubilcService.user._id, {
+      headers: headers
+    })
+      .subscribe((res) => {
+        
+        if (res.json().length != 0) {
+          this.isrecord = true;
+          this.recordurl = res.json()[0]['url'];
+          this.isrecord = true;
+        }
+        this.init();
+      });
+  }
+
+
+  addrecord( iurl ){
+    let url = "http://www.devonhello.com/buka/addrecord";
+
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+
+    this.http.post(url, "uid=" + this.pubilcService.user._id + "&bookname=" + this.name + "&url=" + iurl, {
+      headers: headers
+    })
+      .subscribe((res) => {
+        this.recordurl = iurl;
+      });
+  }
+
+  init() {
 
     var _thst = this;
     var link = $("<iframe/>");
@@ -102,7 +190,6 @@ export class ComicsPage {
       });
       _thst.data['pages'] = pages;
       _thst.pubilcService.presentLoadingDismiss();
-
     };
 
   }
@@ -116,6 +203,17 @@ export class ComicsPage {
   //点击到顶部
   tapEvent(e) {
     this.content.scrollToTop();
+  }
+
+  ionViewDidEnter(){
+    if(this.pubilcService.user._id){
+      this.olddata = this.data['pages'];
+      this.data['pages'] = [];
+      this.data['pages'] = this.olddata
+    }
+    if(this.olddata.length == 0){
+      this.isrecord = true;
+    }
   }
 
 

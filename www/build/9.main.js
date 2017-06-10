@@ -1,14 +1,14 @@
 webpackJsonp([9],{
 
-/***/ 269:
+/***/ 273:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__comics_data__ = __webpack_require__(281);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ComicsDataPageModule", function() { return ComicsDataPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(289);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,37 +18,38 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ComicsDataPageModule = (function () {
-    function ComicsDataPageModule() {
+var LoginPageModule = (function () {
+    function LoginPageModule() {
     }
-    return ComicsDataPageModule;
+    return LoginPageModule;
 }());
-ComicsDataPageModule = __decorate([
+LoginPageModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__comics_data__["a" /* ComicsDataPage */],
+            __WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__comics_data__["a" /* ComicsDataPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__comics_data__["a" /* ComicsDataPage */]
+            __WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */]
         ]
     })
-], ComicsDataPageModule);
+], LoginPageModule);
 
-//# sourceMappingURL=comics-data.module.js.map
+//# sourceMappingURL=login.module.js.map
 
 /***/ }),
 
-/***/ 281:
+/***/ 289:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__service_public__ = __webpack_require__(100);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComicsDataPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(196);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -61,102 +62,53 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var ComicsDataPage = (function () {
-    function ComicsDataPage(navCtrl, navParams, popoverCtrl, pubilcService) {
+
+var LoginPage = (function () {
+    function LoginPage(navCtrl, navParams, pubilcService, http) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.popoverCtrl = popoverCtrl;
         this.pubilcService = pubilcService;
-        this.title = '';
-        this.data = [];
-        this.allpage = [];
-        this.or = '';
-        this.pages = 1;
-        this.title = this.navParams.get('title');
-        this.or = this.navParams.get('or');
+        this.http = http;
+        this.name = '';
+        this.pass = '';
     }
-    ComicsDataPage.prototype.doInfinite = function (infiniteScroll) {
-        var _this = this;
-        this.pages++;
-        this.creatFrame();
-        this.itimer = setTimeout(function () {
-            clearTimeout(_this.itimer);
-            infiniteScroll.complete();
-        }, 1000);
+    LoginPage.prototype.regist = function () {
+        this.navCtrl.push('RegistPage');
     };
-    ComicsDataPage.prototype.open = function (name, banner, url) {
-        this.navCtrl.push('ComicsPage', {
-            name: name,
-            banner: banner,
-            url: url,
+    LoginPage.prototype.login = function () {
+        var _this = this;
+        if (!this.name || !this.pass) {
+            return true;
+        }
+        this.pubilcService.presentLoadingDefault();
+        var url = "http://www.devonhello.com/buka/login";
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        this.http.post(url, "name=" + this.name + "&pass=" + this.pass, {
+            headers: headers
+        })
+            .subscribe(function (res) {
+            _this.pubilcService.presentLoadingDismiss();
+            if (res.json()[0]['_id']) {
+                _this.pubilcService.setUser(res.json()[0]);
+                _this.navCtrl.popToRoot();
+            }
         });
     };
-    ComicsDataPage.prototype.ionViewDidLoad = function () {
-        this.creatFrame();
-    };
-    ComicsDataPage.prototype.creatFrame = function () {
-        this.pubilcService.presentLoadingDefault();
-        var _thst = this;
-        var iurls = '';
-        if (isNaN(this.or)) {
-            iurls = "http://m.57mh.com/list/area-" + this.or + '-order-hits-p-' + this.pages;
-            ;
-        }
-        else {
-            iurls = "http://m.57mh.com/list/smid-" + this.or + '-order-hits-p-' + this.pages;
-            ;
-        }
-        var link = $("<iframe/>");
-        link.attr('id', 'ikmiclass');
-        link.attr('src', iurls);
-        link.appendTo('body');
-        var oframe = $("#ikmiclass");
-        oframe[0].src = iurls;
-        oframe[0].onload = function () {
-            var ifobj = oframe.contents();
-            oframe[0].src = 'about:blank';
-            oframe.remove();
-            var ele = ifobj.find("#contList li");
-            ele.each(function (index) {
-                var iobj = {}, ot = $(this);
-                iobj['name'] = ot.find('img').attr('alt');
-                iobj['bannerimg'] = ot.find('img').attr('src');
-                //alert(iobj['bannerimg']);
-                iobj['url'] = 'http://m.57mh.com' + ot.find('a').attr('href');
-                iobj['len'] = ot.find('.tt').text();
-                _thst.allpage.push(iobj);
-            });
-            _thst.data = _thst.allpage;
-            _thst.pubilcService.presentLoadingDismiss();
-        };
-    };
-    ComicsDataPage.prototype.ionViewWillLeave = function () {
-        var ifs = $("#ikmiclass");
-        ifs[0].src = 'about:blank';
-        ifs.remove();
-    };
-    //点击到顶部
-    ComicsDataPage.prototype.tapEvent = function (e) {
-        this.content.scrollToTop();
-    };
-    return ComicsDataPage;
+    return LoginPage;
 }());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Content */]),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Content */])
-], ComicsDataPage.prototype, "content", void 0);
-ComicsDataPage = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPage */])(),
+LoginPage = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-comics-data',template:/*ion-inline-start:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/comics-data/comics-data.html"*/'<ion-header no-border (tap)="tapEvent($event)">\n\n    <ion-navbar color="fff">\n        <ion-title>{{title}}</ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n    <!--<iframe id="ikmiclass" src="http://m.57mh.com"></iframe>-->\n    <section class="wrap">\n\n        <div class="mh" *ngFor="let item of data" (click)="open(item.name, item.bannerimg, item.url);">\n            <div class="mh-img" [style.background]="\'url(\'+item.bannerimg+\')\'"></div>\n            <p>{{item.name}}</p>\n            <span>{{item.len}}</span>\n        </div>\n\n    </section>\n\n    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">\n        <ion-infinite-scroll-content></ion-infinite-scroll-content>\n    </ion-infinite-scroll>\n</ion-content>'/*ion-inline-end:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/comics-data/comics-data.html"*/,
+        selector: 'page-login',template:/*ion-inline-start:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/login/login.html"*/'<ion-header no-border>\n\n    <ion-navbar color="fff">\n        <ion-title>登陆</ion-title>\n        <ion-buttons end (click)="regist();">\n            <ion-title>注册</ion-title>\n        </ion-buttons>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n    <ion-list inset>\n\n        <ion-item>\n            <ion-label>&nbsp;&nbsp;账号:</ion-label>\n            <ion-input type="text" [(ngModel)]="name"></ion-input>\n        </ion-item>\n\n        <ion-item>\n            <ion-label>&nbsp;&nbsp;密码:</ion-label>\n            <ion-input type="password" [(ngModel)]="pass"></ion-input>\n        </ion-item>\n\n    </ion-list>\n    <br/>\n    <br/>\n    <br/>\n    <br/>\n    <button ion-button color="secondary" full round (click)="login();">登陆</button>\n</ion-content>'/*ion-inline-end:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/login/login.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* PopoverController */],
-        __WEBPACK_IMPORTED_MODULE_2__service_public__["a" /* pubilcService */]])
-], ComicsDataPage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_2__service_public__["a" /* pubilcService */],
+        __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* Http */]])
+], LoginPage);
 
-//# sourceMappingURL=comics-data.js.map
+//# sourceMappingURL=login.js.map
 
 /***/ })
 

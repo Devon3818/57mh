@@ -19,8 +19,10 @@
             <p>更新至{{len}}</p>
             <p>更新于{{uptime}}</p>
             <div class="btm">
-                <div class="btms coll" (click)="collect();">收藏</div>
-                <div class="btms read">开始阅读</div>
+                <div class="btms coll" [hidden]="!iscollect" (click)="uncollect();">不收藏</div>
+                <div class="btms coll" [hidden]="iscollect" (click)="collect();">收藏</div>
+                <div class="btms read" [hidden]="isrecord" (click)="openpage(data['pages'][data['pages'].length-1]['ihref']);">开始阅读</div>
+                <div class="btms read" [hidden]="!isrecord" (click)="openpage(recordurl);">继续阅读</div>
             </div>
         </div>
 
@@ -40,7 +42,10 @@
             <p class="fr">{{uptime}}</p>
         </div>
 
-        <div class="piece" *ngFor="let item of data['pages']" (click)="openpage(item.ihref);">{{item.ititle}}</div>
+        <div class="piece" *ngFor="let item of data['pages']; let i=index" (click)="openpage(item.ihref);">
+            <span *ngIf="item.ihref == recordurl" class="repiece">{{item.ititle}}</span>
+            <span *ngIf="item.ihref != recordurl">{{item.ititle}}</span>
+        </div>
 
     </div>
     <!--<iframe id="ikmfs" src="http://m.57mh.com/"></iframe>-->

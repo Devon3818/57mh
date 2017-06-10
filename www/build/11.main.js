@@ -1,14 +1,14 @@
 webpackJsonp([11],{
 
-/***/ 267:
+/***/ 271:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__classify__ = __webpack_require__(279);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClassifyPageModule", function() { return ClassifyPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__comics__ = __webpack_require__(287);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ComicsPageModule", function() { return ComicsPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,36 +18,38 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ClassifyPageModule = (function () {
-    function ClassifyPageModule() {
+var ComicsPageModule = (function () {
+    function ComicsPageModule() {
     }
-    return ClassifyPageModule;
+    return ComicsPageModule;
 }());
-ClassifyPageModule = __decorate([
+ComicsPageModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__classify__["a" /* ClassifyPage */],
+            __WEBPACK_IMPORTED_MODULE_2__comics__["a" /* ComicsPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__classify__["a" /* ClassifyPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__comics__["a" /* ComicsPage */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__classify__["a" /* ClassifyPage */]
+            __WEBPACK_IMPORTED_MODULE_2__comics__["a" /* ComicsPage */]
         ]
     })
-], ClassifyPageModule);
+], ComicsPageModule);
 
-//# sourceMappingURL=classify.module.js.map
+//# sourceMappingURL=comics.module.js.map
 
 /***/ }),
 
-/***/ 279:
+/***/ 287:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClassifyPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__service_public__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(196);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComicsPage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -59,45 +61,200 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var ClassifyPage = (function () {
-    function ClassifyPage(navCtrl, navParams, menuCtrl) {
+
+
+var ComicsPage = (function () {
+    function ComicsPage(navCtrl, navParams, pubilcService, http) {
+        var _this = this;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.menuCtrl = menuCtrl;
+        this.pubilcService = pubilcService;
+        this.http = http;
+        this.name = '';
+        this.uptime = '-';
+        this.banner = '';
+        this.url = '';
+        this.len = '-';
+        this.cod = '0';
+        this.iclass = [];
+        this.dec = '';
+        this.olddata = [];
+        this.data = {
+            'pages': []
+        };
+        this.iscollect = false;
+        this.isrecord = false;
+        this.recordurl = '';
+        this.itimer = null;
+        this.name = this.navParams.get('name');
+        this.banner = this.navParams.get('banner');
+        this.url = this.navParams.get('url');
+        this.pubilcService.presentLoadingDefault();
+        if (this.pubilcService.user._id) {
+            this.checkcollect();
+        }
+        else {
+            this.itimer = setTimeout(function () {
+                clearTimeout(_this.itimer);
+                _this.init();
+            }, 300);
+        }
     }
-    ClassifyPage.prototype.openMenu = function () {
-        this.menuCtrl.open();
-    };
-    ClassifyPage.prototype.search = function () {
-        this.navCtrl.push('SearchPage');
-    };
-    ClassifyPage.prototype.openClassifyData = function (title, or) {
-        this.navCtrl.push('ComicsDataPage', {
-            title: title,
-            or: or
+    ComicsPage.prototype.checkcollect = function () {
+        var _this = this;
+        var url = "http://www.devonhello.com/buka/checkcollect";
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        this.http.post(url, "bookname=" + this.name + "&uid=" + this.pubilcService.user._id, {
+            headers: headers
+        })
+            .subscribe(function (res) {
+            if (res.json().length != 0) {
+                _this.iscollect = true;
+            }
+            _this.getrecord();
         });
     };
+    //收藏
+    ComicsPage.prototype.collect = function () {
+        var _this = this;
+        if (this.pubilcService.user._id) {
+            this.pubilcService.presentLoadingDefault();
+            var url = "http://www.devonhello.com/buka/collect";
+            var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]();
+            headers.append('Content-Type', 'application/x-www-form-urlencoded');
+            this.http.post(url, "name=" + this.pubilcService.user.nickname + "&uid=" + this.pubilcService.user._id + "&bookname=" + this.name + "&bookbanner=" + this.banner + "&bookpages=" + this.len + "&booktime=" + this.uptime + "&url=" + this.url, {
+                headers: headers
+            })
+                .subscribe(function (res) {
+                _this.pubilcService.presentLoadingDismiss();
+                if (res.json()['result']['ok'] == 1) {
+                    _this.iscollect = true;
+                }
+            });
+        }
+        else {
+            this.navCtrl.push('LoginPage');
+        }
+    };
+    //取消收藏
+    ComicsPage.prototype.uncollect = function () {
+        var _this = this;
+        this.pubilcService.presentLoadingDefault();
+        var url = "http://www.devonhello.com/buka/uncollect";
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        this.http.post(url, "uid=" + this.pubilcService.user._id + "&bookname=" + this.name, {
+            headers: headers
+        })
+            .subscribe(function (res) {
+            _this.iscollect = false;
+            _this.pubilcService.presentLoadingDismiss();
+        });
+    };
+    ComicsPage.prototype.openpage = function (url) {
+        if (this.pubilcService.user._id) {
+            this.addrecord(url);
+        }
+        this.navCtrl.push('SeePage', {
+            url: url + '?p=1'
+        });
+    };
+    ComicsPage.prototype.getrecord = function () {
+        var _this = this;
+        var url = "http://www.devonhello.com/buka/seerecord";
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        this.http.post(url, "bookname=" + this.name + "&uid=" + this.pubilcService.user._id, {
+            headers: headers
+        })
+            .subscribe(function (res) {
+            if (res.json().length != 0) {
+                _this.isrecord = true;
+                _this.recordurl = res.json()[0]['url'];
+                _this.isrecord = true;
+            }
+            _this.init();
+        });
+    };
+    ComicsPage.prototype.addrecord = function (iurl) {
+        var _this = this;
+        var url = "http://www.devonhello.com/buka/addrecord";
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        this.http.post(url, "uid=" + this.pubilcService.user._id + "&bookname=" + this.name + "&url=" + iurl, {
+            headers: headers
+        })
+            .subscribe(function (res) {
+            _this.recordurl = iurl;
+        });
+    };
+    ComicsPage.prototype.init = function () {
+        var _thst = this;
+        var link = $("<iframe/>");
+        link.attr('id', 'ikmfs');
+        link.attr('src', this.url);
+        link.appendTo('body');
+        var oframe = $("#ikmfs");
+        var pages = [];
+        oframe[0].onload = function () {
+            var ifobj = oframe.contents();
+            oframe[0].src = 'about:blank';
+            oframe.remove();
+            var ele = ifobj.find(".chapter-list li a");
+            _thst.banner = ifobj.find(".thumb img").attr('src');
+            _thst.dec = ifobj.find("#bookIntro").text();
+            _thst.len = ifobj.find("dd").eq(5).text();
+            _thst.cod = ifobj.find("dd").eq(4).text();
+            _thst.uptime = ifobj.find("dd").eq(6).text();
+            _thst.iclass = ifobj.find("dd").eq(3).text().split('/');
+            ele.each(function () {
+                var iobj = {}, ot = $(this);
+                iobj['ititle'] = ot.attr('title');
+                iobj['ihref'] = ot.attr('href');
+                pages.push(iobj);
+            });
+            _thst.data['pages'] = pages;
+            _thst.pubilcService.presentLoadingDismiss();
+        };
+    };
+    ComicsPage.prototype.ionViewWillLeave = function () {
+        var ifs = $("#ikmfs");
+        ifs[0].src = 'about:blank';
+        ifs.remove();
+    };
     //点击到顶部
-    ClassifyPage.prototype.tapEvent = function (e) {
+    ComicsPage.prototype.tapEvent = function (e) {
         this.content.scrollToTop();
     };
-    return ClassifyPage;
+    ComicsPage.prototype.ionViewDidEnter = function () {
+        if (this.pubilcService.user._id) {
+            this.olddata = this.data['pages'];
+            this.data['pages'] = [];
+            this.data['pages'] = this.olddata;
+        }
+        if (this.olddata.length == 0) {
+            this.isrecord = true;
+        }
+    };
+    return ComicsPage;
 }());
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Content */]),
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Content */])
-], ClassifyPage.prototype, "content", void 0);
-ClassifyPage = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPage */])(),
+], ComicsPage.prototype, "content", void 0);
+ComicsPage = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-classify',template:/*ion-inline-start:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/classify/classify.html"*/'<ion-header no-border (tap)="tapEvent($event)">\n    <ion-navbar color="fff">\n        <img (click)="openMenu();" class="headers" src="https://avatars0.githubusercontent.com/u/11835988?v=3&s=460" />\n        <ion-title>漫画分类</ion-title>\n        <ion-buttons end>\n            <button ion-button icon-only (click)="search();">\n              <ion-icon name="ios-search"></ion-icon>\n            </button>\n        </ion-buttons>\n\n    </ion-navbar>\n</ion-header>\n\n\n<ion-content>\n\n    <section class="classifys" (click)="openClassifyData(\'日本\',\'日本\');">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/bcover/2012/12/252206261_h.jpg\')"></div>\n        <p>日本</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'港台\',\'港台\');">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/manhuaxiaotuku/2016-02-06/20162610401947204.jpg\')"></div>\n        <p>港台</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'欧美\',\'欧美\');">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/webpic/16/00chaojizhizhu1022.jpg\')"></div>\n        <p>欧美</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'韩国\',\'韩国\');">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/bcover/2013/8/061157498_h.jpg\')"></div>\n        <p>韩国</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'国产\',\'国产\');">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/vod/2017-05-25/5925ccda8f89e.jpg\')"></div>\n        <p>国产</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'热血\',1);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/vip/jinjidejuren.jpg\')"></div>\n        <p>热血</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'武侠\',2);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/fengmian/720481.jpg\')"></div>\n        <p>武侠</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'搞笑\',3);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/bcover/2012/12/281619206_h.jpg\')"></div>\n        <p>搞笑</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'耽美\',4);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/vip/heizhishi.jpg\')"></div>\n        <p>耽美</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'爱情\',5);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/vip/wodeshuangxiudaolv.jpg\')"></div>\n        <p>爱情</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'科幻\',6);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/vip/kunbingzhilong.jpg\')"></div>\n        <p>科幻</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'魔法\',7);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/webpic/9/170511legend.jpg\')"></div>\n        <p>魔法</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'神魔\',8);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/vip/dongjingshishigui.jpg\')"></div>\n        <p>神魔</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'竞技\',9);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/vip/xingmengouxiangjihua.jpg\')"></div>\n        <p>竞技</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'格斗\',10);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/webpic/16/qiuyujingying.jpg\')"></div>\n        <p>格斗</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'机战\',11);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/img/webpic/19/1024118591482917357.jpg\')"></div>\n        <p>机战</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'体育\',12);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/bcover/2012/12/262103255_h.jpg\')"></div>\n        <p>体育</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'运动\',13);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/manhuaxiaotuku/2015-09-16/201591612112385251.jpg\')"></div>\n        <p>运动</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'校园\',14);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/bcover/2012/12/252229268_h.jpg\')"></div>\n        <p>校园</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'励志\',15);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/vip/mingxingjinpaixiaozhuli.jpg\')"></div>\n        <p>励志</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'历史\',16);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/pic/2015/07/02/ee9555ae5aba455a91e844ed93f73439.jpg\')"></div>\n        <p>历史</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'伪娘\',17);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/vip/qishimofa.jpg\')"></div>\n        <p>伪娘</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'百合\',18);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/vip/xuanjici.jpg\')"></div>\n        <p>百合</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'后宫\',19);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/vip/qunxiazhishen.jpg\')"></div>\n        <p>后宫</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'治愈\',20);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/manhuaxiaotuku/2016-02-03/20162320485490646.jpg\')"></div>\n        <p>治愈</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'美食\',21);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/bcover/2013/8/221152484_h.jpg\')"></div>\n        <p>美食</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'推理\',22);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/bcover/2012/12/261802199_h.jpg\')"></div>\n        <p>推理</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'悬疑\',23);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/img/webpic/3/1016819631493374978.jpg\')"></div>\n        <p>悬疑</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'恐怖\',24);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/img/webpic/12/1041456121492155329.jpg\')"></div>\n        <p>恐怖</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'职场\',25);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/webpic/6/shezekezhangdemniang.jpg\')"></div>\n        <p>职场</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'BL\',26);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/fengmian/772801.jpg\')"></div>\n        <p>BL</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'剧情\',27);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/works/vertical/57f2517d4d76c.webp\')"></div>\n        <p>剧情</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'生活\',28);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/vip/baiyelinglong.jpg\')"></div>\n        <p>生活</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'幻想\',29);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/vip/tianzhongshinianling.jpg\')"></div>\n        <p>幻想</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'战争\',30);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/bcover/2012/12/262050071_h.jpg\')"></div>\n        <p>战争</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'仙侠\',33);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/webpic/1/tashimofashaonv.png\')"></div>\n        <p>仙侠</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'性转换\',40);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/webpic/9/shuzhihunzhiwulieren.jpg\')"></div>\n        <p>性转换</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'冒险\',41);">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/webpic/10/lurennvzhudeyangchengfangfagirlssidefengmianl.jpg\')"></div>\n        <p>冒险</p>\n    </section>\n    <section class="classifys" (click)="openClassifyData(\'其他\',\'其他\');">\n        <div class="classimg" style="background: url(\'http://i.57mh.com/Uploads/webpic/18/godfingerxunfengmianl.jpg\')"></div>\n        <p>其他</p>\n    </section>\n\n\n\n</ion-content>'/*ion-inline-end:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/classify/classify.html"*/,
+        selector: 'page-comics',template:/*ion-inline-start:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/comics/comics.html"*/'<ion-header no-border (tap)="tapEvent($event)">\n\n    <ion-navbar color="hebar">\n        <ion-title>{{name}}</ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n\n    <section class="comics-top">\n        <div class="comics-top-bar">\n            <h2 class="fr grade">{{cod}}</h2>\n        </div>\n        <img [src]="banner" />\n        <div class="basics">\n            <p class="title">{{name}}</p>\n            <p>更新至{{len}}</p>\n            <p>更新于{{uptime}}</p>\n            <div class="btm">\n                <div class="btms coll" [hidden]="!iscollect" (click)="uncollect();">不收藏</div>\n                <div class="btms coll" [hidden]="iscollect" (click)="collect();">收藏</div>\n                <div class="btms read" [hidden]="isrecord" (click)="openpage(data[\'pages\'][data[\'pages\'].length-1][\'ihref\']);">开始阅读</div>\n                <div class="btms read" [hidden]="!isrecord" (click)="openpage(recordurl);">继续阅读</div>\n            </div>\n        </div>\n\n    </section>\n    <div class="wrap">\n        <p class="dec">{{dec}}</p>\n\n        <div class="tag-wrap">\n            <span class="tag" *ngFor="let ic of iclass">{{ic}}</span>\n        </div>\n    </div>\n\n    <div class="wrap">\n\n        <div class="piece-title">\n            <p class="fl">连载(话)</p>\n            <p class="fr">{{uptime}}</p>\n        </div>\n\n        <div class="piece" *ngFor="let item of data[\'pages\']; let i=index" (click)="openpage(item.ihref);">\n            <span *ngIf="item.ihref == recordurl" class="repiece">{{item.ititle}}</span>\n            <span *ngIf="item.ihref != recordurl">{{item.ititle}}</span>\n        </div>\n\n    </div>\n    <!--<iframe id="ikmfs" src="http://m.57mh.com/"></iframe>-->\n</ion-content>'/*ion-inline-end:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/comics/comics.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* MenuController */]])
-], ClassifyPage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_2__service_public__["a" /* pubilcService */],
+        __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* Http */]])
+], ComicsPage);
 
-//# sourceMappingURL=classify.js.map
+//# sourceMappingURL=comics.js.map
 
 /***/ })
 

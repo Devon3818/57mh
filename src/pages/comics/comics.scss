@@ -47,7 +47,7 @@ page-comics {
                 }
                 .btm {
                     padding-top: 8px;
-                    width: 80%;
+                    width: 85%;
                     overflow: hidden;
                     .coll {
                         float: left;
@@ -59,7 +59,7 @@ page-comics {
                         color: #fff;
                     }
                     .btms {
-                        padding: 10px 18px;
+                        padding: 10px 14px;
                         border: 1px solid #b06869;
                         border-radius: 60px;
                     }
@@ -110,6 +110,9 @@ page-comics {
                 box-sizing: border-box;
                 color: #929292;
                 border-radius: 999px;
+            }
+            .repiece {
+                color: #ff9b24;
             }
         }
         .dec {

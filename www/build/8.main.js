@@ -1,14 +1,14 @@
 webpackJsonp([8],{
 
-/***/ 270:
+/***/ 274:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__comics__ = __webpack_require__(282);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ComicsPageModule", function() { return ComicsPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__new__ = __webpack_require__(290);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewPageModule", function() { return NewPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,38 +18,37 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ComicsPageModule = (function () {
-    function ComicsPageModule() {
+var NewPageModule = (function () {
+    function NewPageModule() {
     }
-    return ComicsPageModule;
+    return NewPageModule;
 }());
-ComicsPageModule = __decorate([
+NewPageModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__comics__["a" /* ComicsPage */],
+            __WEBPACK_IMPORTED_MODULE_2__new__["a" /* NewPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__comics__["a" /* ComicsPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__new__["a" /* NewPage */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__comics__["a" /* ComicsPage */]
+            __WEBPACK_IMPORTED_MODULE_2__new__["a" /* NewPage */]
         ]
     })
-], ComicsPageModule);
+], NewPageModule);
 
-//# sourceMappingURL=comics.module.js.map
+//# sourceMappingURL=new.module.js.map
 
 /***/ }),
 
-/***/ 282:
+/***/ 290:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__service_public__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(196);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComicsPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewPage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -62,115 +61,77 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-var ComicsPage = (function () {
-    function ComicsPage(navCtrl, navParams, pubilcService, http) {
+var NewPage = (function () {
+    function NewPage(navCtrl, navParams, menuCtrl, pubilcService) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.menuCtrl = menuCtrl;
         this.pubilcService = pubilcService;
-        this.http = http;
-        this.name = '';
-        this.uptime = '-';
-        this.banner = '';
-        this.url = '';
-        this.len = '-';
-        this.cod = '0';
-        this.iclass = [];
-        this.dec = '';
-        this.data = {
-            'pages': []
-        };
-        this.name = this.navParams.get('name');
-        this.banner = this.navParams.get('banner');
-        this.url = this.navParams.get('url');
+        this.data = [];
         this.pubilcService.presentLoadingDefault();
     }
-    //收藏
-    ComicsPage.prototype.collect = function () {
-        var _this = this;
-        if (this.pubilcService.user._id) {
-            this.pubilcService.presentLoadingDefault();
-            var url = "http://www.devonhello.com/buka/collect";
-            var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]();
-            headers.append('Content-Type', 'application/x-www-form-urlencoded');
-            this.http.post(url, "name=" + this.pubilcService.user.nickname + "&uid=" + this.pubilcService.user._id + "&bookname=" + this.name + "&bookbanner=" + this.banner + "&bookpages=" + this.len + "&booktime=" + this.uptime + "&url=" + this.url, {
-                headers: headers
-            })
-                .subscribe(function (res) {
-                _this.pubilcService.presentLoadingDismiss();
-                if (res.json()['result']['ok'] == 1) {
-                    alert('ok');
-                }
-                else {
-                    alert('err');
-                }
-            });
-        }
-        else {
-            this.navCtrl.push('LoginPage');
-        }
-    };
-    ComicsPage.prototype.openpage = function (url) {
-        this.navCtrl.push('SeePage', {
-            url: url + '?p=1'
-        });
-    };
-    ComicsPage.prototype.ionViewDidLoad = function () {
+    NewPage.prototype.ionViewDidLoad = function () {
         var _thst = this;
-        var link = $("<iframe/>");
-        link.attr('id', 'ikmfs');
-        link.attr('src', this.url);
-        link.appendTo('body');
-        var oframe = $("#ikmfs");
         var pages = [];
+        var link = $("<iframe/>");
+        link.attr('id', 'ikmnew');
+        link.attr('src', "http://m.57mh.com/latest/");
+        link.appendTo('body');
+        //document.getElementById("ikmnew").src = "http://m.57mh.com/list/order-hits";
+        var oframe = $("#ikmnew");
         oframe[0].onload = function () {
             var ifobj = oframe.contents();
             oframe[0].src = 'about:blank';
             oframe.remove();
-            var ele = ifobj.find(".chapter-list li a");
-            _thst.banner = ifobj.find(".thumb img").attr('src');
-            _thst.dec = ifobj.find("#bookIntro").text();
-            _thst.len = ifobj.find("dd").eq(5).text();
-            _thst.cod = ifobj.find("dd").eq(4).text();
-            _thst.uptime = ifobj.find("dd").eq(6).text();
-            _thst.iclass = ifobj.find("dd").eq(3).text().split('/');
-            ele.each(function () {
+            var ele = ifobj.find(".cont-list #data_list li");
+            ele.each(function (index) {
                 var iobj = {}, ot = $(this);
-                iobj['ititle'] = ot.attr('title');
-                iobj['ihref'] = ot.attr('href');
+                iobj['name'] = ot.find('h3').text();
+                iobj['bannerimg'] = ot.find('.thumb img').attr('data-src');
+                //alert(iobj['bannerimg']);
+                iobj['url'] = 'http://m.57mh.com' + ot.find('a').eq(0).attr('href');
+                iobj['len'] = ot.find('dd').eq(2).text();
                 pages.push(iobj);
             });
-            _thst.data['pages'] = pages;
+            _thst.data = pages;
             _thst.pubilcService.presentLoadingDismiss();
         };
     };
-    ComicsPage.prototype.ionViewWillLeave = function () {
-        var ifs = $("#ikmfs");
-        ifs[0].src = 'about:blank';
-        ifs.remove();
+    NewPage.prototype.open = function (name, banner, url) {
+        this.navCtrl.push('ComicsPage', {
+            name: name,
+            banner: banner,
+            url: url,
+        });
+    };
+    NewPage.prototype.openMenu = function () {
+        this.menuCtrl.open();
+    };
+    NewPage.prototype.search = function () {
+        this.navCtrl.push('SearchPage');
     };
     //点击到顶部
-    ComicsPage.prototype.tapEvent = function (e) {
+    NewPage.prototype.tapEvent = function (e) {
         this.content.scrollToTop();
     };
-    return ComicsPage;
+    return NewPage;
 }());
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Content */]),
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Content */])
-], ComicsPage.prototype, "content", void 0);
-ComicsPage = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPage */])(),
+], NewPage.prototype, "content", void 0);
+NewPage = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-comics',template:/*ion-inline-start:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/comics/comics.html"*/'<ion-header no-border (tap)="tapEvent($event)">\n\n    <ion-navbar color="hebar">\n        <ion-title>{{name}}</ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n\n    <section class="comics-top">\n        <div class="comics-top-bar">\n            <h2 class="fr grade">{{cod}}</h2>\n        </div>\n        <img [src]="banner" />\n        <div class="basics">\n            <p class="title">{{name}}</p>\n            <p>更新至{{len}}</p>\n            <p>更新于{{uptime}}</p>\n            <div class="btm">\n                <div class="btms coll" (click)="collect();">收藏</div>\n                <div class="btms read">开始阅读</div>\n            </div>\n        </div>\n\n    </section>\n    <div class="wrap">\n        <p class="dec">{{dec}}</p>\n\n        <div class="tag-wrap">\n            <span class="tag" *ngFor="let ic of iclass">{{ic}}</span>\n        </div>\n    </div>\n\n    <div class="wrap">\n\n        <div class="piece-title">\n            <p class="fl">连载(话)</p>\n            <p class="fr">{{uptime}}</p>\n        </div>\n\n        <div class="piece" *ngFor="let item of data[\'pages\']" (click)="openpage(item.ihref);">{{item.ititle}}</div>\n\n    </div>\n    <!--<iframe id="ikmfs" src="http://m.57mh.com/"></iframe>-->\n</ion-content>'/*ion-inline-end:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/comics/comics.html"*/,
+        selector: 'page-new',template:/*ion-inline-start:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/new/new.html"*/'<ion-header no-border (tap)="tapEvent($event)">\n    <ion-navbar color="fff">\n        <img (click)="openMenu();" class="headers" src="https://avatars0.githubusercontent.com/u/11835988?v=3&s=460" />\n        <ion-title>最新上架</ion-title>\n        <ion-buttons end>\n            <button ion-button icon-only (click)="search();">\n              <ion-icon name="ios-search"></ion-icon>\n            </button>\n        </ion-buttons>\n\n    </ion-navbar>\n</ion-header>\n\n\n<ion-content>\n\n    <section class="wrap">\n        <h6 class="title">最新更新</h6>\n\n        <div class="mh" *ngFor="let item of data" (click)="open(item.name, item.bannerimg, item.url);">\n            <div class="mh-img" [style.background]="\'url(\'+item.bannerimg+\')\'"></div>\n            <p>{{item.name}}</p>\n            <span>{{item.len}}</span>\n        </div>\n\n    </section>\n    <!--<iframe id="ikmnew" src="http://m.57mh.com/latest/"></iframe>-->\n</ion-content>'/*ion-inline-end:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/new/new.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_2__service_public__["a" /* pubilcService */],
-        __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* Http */]])
-], ComicsPage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* MenuController */],
+        __WEBPACK_IMPORTED_MODULE_2__service_public__["a" /* pubilcService */]])
+], NewPage);
 
-//# sourceMappingURL=comics.js.map
+//# sourceMappingURL=new.js.map
 
 /***/ })
 

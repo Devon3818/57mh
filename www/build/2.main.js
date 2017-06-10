@@ -1,14 +1,14 @@
 webpackJsonp([2],{
 
-/***/ 276:
+/***/ 280:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__search__ = __webpack_require__(288);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SearchPageModule", function() { return SearchPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__see__ = __webpack_require__(296);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SeePageModule", function() { return SeePageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,37 +18,37 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var SearchPageModule = (function () {
-    function SearchPageModule() {
+var SeePageModule = (function () {
+    function SeePageModule() {
     }
-    return SearchPageModule;
+    return SeePageModule;
 }());
-SearchPageModule = __decorate([
+SeePageModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__search__["a" /* SearchPage */],
+            __WEBPACK_IMPORTED_MODULE_2__see__["a" /* SeePage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__search__["a" /* SearchPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__see__["a" /* SeePage */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__search__["a" /* SearchPage */]
+            __WEBPACK_IMPORTED_MODULE_2__see__["a" /* SeePage */]
         ]
     })
-], SearchPageModule);
+], SeePageModule);
 
-//# sourceMappingURL=search.module.js.map
+//# sourceMappingURL=see.module.js.map
 
 /***/ }),
 
-/***/ 288:
+/***/ 296:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__service_public__ = __webpack_require__(100);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser__ = __webpack_require__(198);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SeePage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -61,98 +61,51 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var SearchPage = (function () {
-    function SearchPage(navCtrl, navParams, pubilcService) {
+var SeePage = (function () {
+    function SeePage(navCtrl, iab, navParams) {
         this.navCtrl = navCtrl;
+        this.iab = iab;
         this.navParams = navParams;
-        this.pubilcService = pubilcService;
-        this.page = 1;
-        this.data = [];
-        this.allpages = [];
-        this.searchval = '';
+        this.imgs = 'http://im1.56zzw.com/7/2225.jpg';
+        this.open(this.navParams.get('url'));
     }
-    SearchPage.prototype.getItems = function (ev) {
-        // set val to the value of the searchbar
-        var val = ev.target.value;
-        // if the value is an empty string don't filter the items
-        if (val && val.trim() != '') {
-            //alert(val.trim());
-            this.searchval = val.trim();
-            this.runframe();
-        }
-    };
-    SearchPage.prototype.creatFrame = function () {
-        this.pubilcService.presentLoadingDefault();
-        var link = $("<iframe/>");
-        link.attr('id', 'ikmsearch');
-        link.attr('src', "http://m.57mh.com/search/q_" + this.searchval + "-p-" + this.page);
-        link.appendTo('body');
-        var _that = this;
-        var iframe = $("#ikmsearch");
-        iframe[0].onload = function () {
-            var ifobj = iframe.contents();
-            iframe[0].src = 'about:blank';
-            iframe.remove();
-            var ele = ifobj.find("#data_list li");
-            ele.each(function (index) {
-                var iobj = {}, ot = $(this);
-                iobj['name'] = ot.find('h3').text();
-                iobj['bannerimg'] = ot.find('.thumb img').attr('data-src');
-                //alert(iobj['bannerimg']);
-                iobj['url'] = 'http://m.57mh.com' + ot.find('a').eq(0).attr('href');
-                iobj['len'] = ot.find('dd').eq(2).text();
-                _that.allpages.push(iobj);
-            });
-            _that.data = _that.allpages;
-            _that.pubilcService.presentLoadingDismiss();
-        };
-    };
-    SearchPage.prototype.runframe = function () {
-        this.creatFrame();
-    };
-    ;
-    SearchPage.prototype.doInfinite = function (infiniteScroll) {
+    SeePage.prototype.open = function (url) {
         var _this = this;
-        this.page++;
-        this.creatFrame();
-        this.itimer = setTimeout(function () {
-            clearTimeout(_this.itimer);
-            infiniteScroll.complete();
-        }, 1000);
-    };
-    SearchPage.prototype.open = function (name, banner, url) {
-        this.navCtrl.push('ComicsPage', {
-            name: name,
-            banner: banner,
-            url: url,
+        this.br = this.iab.create('http://m.57mh.com' + url, '_blank', 'location=no,hardwareback=no,hidden=yes');
+        this.br.on('loadstart').subscribe(function () {
+            _this.br.hide();
+        });
+        this.br.on('exit').subscribe(function () {
+            _this.navCtrl.pop();
+        });
+        this.br.on('loaderror').subscribe(function () {
+            alert('加载出错...');
+            _this.navCtrl.pop();
+        });
+        this.br.on('loadstop').subscribe(function () {
+            _this.br.insertCSS({ code: "body {display: block;" });
+            var jscode = "$('body').children().css('display','none'); $('.title').css('display','block'); $('.main-bar').css('display','block'); $('#mangaTitle a').attr('href',''); var allpage = $('#pageNo').text().split('/')[1];  var ihtml = ''; var iurl = 'http://' + window.location.host + window.location.pathname + '?p='; for(var i=0; i<allpage; i++){ var ips = i+1; ihtml+='<a class=\"dv_a\" href=\"' + iurl+ ips + '\">'+ ips +' 页</a>'; }; $('body').append(ihtml+'<i class=\"dv_bar\"></i>');";
+            _this.br.executeScript({ code: jscode });
+            _this.br.insertCSS({ code: ".dv_bar { clear: both; width: 100px; height: 20px; display: block; } .dv_a { float: left; display: block; padding: 20px; } #pb {width: 100% !important;} #pb a {display: none !important;}" });
+            _this.br.show();
         });
     };
-    SearchPage.prototype.ionViewWillLeave = function () {
-        var ifs = $("#ikmsearch");
-        ifs[0].src = 'about:blank';
-        ifs.remove();
+    SeePage.prototype.ionViewWillLeave = function () {
+        this.br.close();
     };
-    //点击到顶部
-    SearchPage.prototype.tapEvent = function (e) {
-        this.content.scrollToTop();
-    };
-    return SearchPage;
+    return SeePage;
 }());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Content */]),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Content */])
-], SearchPage.prototype, "content", void 0);
-SearchPage = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPage */])(),
+SeePage = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-search',template:/*ion-inline-start:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/search/search.html"*/'<ion-header no-border (tap)="tapEvent($event)">\n\n    <ion-navbar color="fff">\n        <ion-title>\n            搜索\n        </ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n\n    <ion-searchbar (ionInput)="getItems($event)" debounce="500" showCancelButton="true" placeholder="作者／漫画" animated="true"></ion-searchbar>\n\n    <section class="wrap">\n\n        <div class="mh" *ngFor="let item of data" (click)="open(item.name, item.bannerimg, item.url);">\n            <div class="mh-img" [style.background]="\'url(\'+item.bannerimg+\')\'"></div>\n            <p>{{item.name}}</p>\n            <span>{{item.len}}</span>\n        </div>\n\n    </section>\n\n    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">\n        <ion-infinite-scroll-content></ion-infinite-scroll-content>\n    </ion-infinite-scroll>\n\n</ion-content>'/*ion-inline-end:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/search/search.html"*/,
+        selector: 'page-see',template:/*ion-inline-start:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/see/see.html"*/'<ion-content>\n\n</ion-content>'/*ion-inline-end:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/see/see.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_2__service_public__["a" /* pubilcService */]])
-], SearchPage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_2__ionic_native_in_app_browser__["a" /* InAppBrowser */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+], SeePage);
 
-//# sourceMappingURL=search.js.map
+//# sourceMappingURL=see.js.map
 
 /***/ })
 

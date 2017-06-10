@@ -32502,7 +32502,7 @@ page-comics ion-content .comics-top .basics .title {
 
 page-comics ion-content .comics-top .basics .btm {
   padding-top: 8px;
-  width: 80%;
+  width: 85%;
   overflow: hidden;
 }
 
@@ -32518,7 +32518,7 @@ page-comics ion-content .comics-top .basics .btm .read {
 }
 
 page-comics ion-content .comics-top .basics .btm .btms {
-  padding: 10px 18px;
+  padding: 10px 14px;
   border: 1px solid #b06869;
   border-radius: 60px;
 }
@@ -32571,6 +32571,10 @@ page-comics ion-content .wrap .piece {
   box-sizing: border-box;
   color: #929292;
   border-radius: 999px;
+}
+
+page-comics ion-content .wrap .repiece {
+  color: #ff9b24;
 }
 
 page-comics ion-content .dec {

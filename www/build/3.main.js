@@ -1,14 +1,14 @@
 webpackJsonp([3],{
 
-/***/ 275:
+/***/ 279:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__regist__ = __webpack_require__(287);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegistPageModule", function() { return RegistPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__search__ = __webpack_require__(295);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SearchPageModule", function() { return SearchPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,38 +18,37 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var RegistPageModule = (function () {
-    function RegistPageModule() {
+var SearchPageModule = (function () {
+    function SearchPageModule() {
     }
-    return RegistPageModule;
+    return SearchPageModule;
 }());
-RegistPageModule = __decorate([
+SearchPageModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__regist__["a" /* RegistPage */],
+            __WEBPACK_IMPORTED_MODULE_2__search__["a" /* SearchPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__regist__["a" /* RegistPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__search__["a" /* SearchPage */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__regist__["a" /* RegistPage */]
+            __WEBPACK_IMPORTED_MODULE_2__search__["a" /* SearchPage */]
         ]
     })
-], RegistPageModule);
+], SearchPageModule);
 
-//# sourceMappingURL=regist.module.js.map
+//# sourceMappingURL=search.module.js.map
 
 /***/ }),
 
-/***/ 287:
+/***/ 295:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__service_public__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(196);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegistPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchPage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -62,54 +61,98 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-var RegistPage = (function () {
-    function RegistPage(navCtrl, navParams, pubilcService, http) {
+var SearchPage = (function () {
+    function SearchPage(navCtrl, navParams, pubilcService) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.pubilcService = pubilcService;
-        this.http = http;
-        this.name = '';
-        this.pass = '';
-        this.nickname = '';
+        this.page = 1;
+        this.data = [];
+        this.allpages = [];
+        this.searchval = '';
     }
-    RegistPage.prototype.logon = function () {
-        var _this = this;
-        if (!this.name || !this.pass || !this.nickname) {
-            return true;
+    SearchPage.prototype.getItems = function (ev) {
+        // set val to the value of the searchbar
+        var val = ev.target.value;
+        // if the value is an empty string don't filter the items
+        if (val && val.trim() != '') {
+            //alert(val.trim());
+            this.searchval = val.trim();
+            this.runframe();
         }
+    };
+    SearchPage.prototype.creatFrame = function () {
         this.pubilcService.presentLoadingDefault();
-        var url = "http://www.devonhello.com/buka/regist";
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]();
-        headers.append('Content-Type', 'application/x-www-form-urlencoded');
-        this.http.post(url, "name=" + this.name + "&pass=" + this.pass + "&nickname=" + this.nickname, {
-            headers: headers
-        })
-            .subscribe(function (res) {
-            _this.pubilcService.presentLoadingDismiss();
-            if (res.json()[0]['_id']) {
-                _this.pubilcService.setUser(res.json()[0]);
-                _this.navCtrl.popToRoot();
-            }
-            else {
-                //用户重复／系统错误
-            }
+        var link = $("<iframe/>");
+        link.attr('id', 'ikmsearch');
+        link.attr('src', "http://m.57mh.com/search/q_" + this.searchval + "-p-" + this.page);
+        link.appendTo('body');
+        var _that = this;
+        var iframe = $("#ikmsearch");
+        iframe[0].onload = function () {
+            var ifobj = iframe.contents();
+            iframe[0].src = 'about:blank';
+            iframe.remove();
+            var ele = ifobj.find("#data_list li");
+            ele.each(function (index) {
+                var iobj = {}, ot = $(this);
+                iobj['name'] = ot.find('h3').text();
+                iobj['bannerimg'] = ot.find('.thumb img').attr('data-src');
+                //alert(iobj['bannerimg']);
+                iobj['url'] = 'http://m.57mh.com' + ot.find('a').eq(0).attr('href');
+                iobj['len'] = ot.find('dd').eq(2).text();
+                _that.allpages.push(iobj);
+            });
+            _that.data = _that.allpages;
+            _that.pubilcService.presentLoadingDismiss();
+        };
+    };
+    SearchPage.prototype.runframe = function () {
+        this.creatFrame();
+    };
+    ;
+    SearchPage.prototype.doInfinite = function (infiniteScroll) {
+        var _this = this;
+        this.page++;
+        this.creatFrame();
+        this.itimer = setTimeout(function () {
+            clearTimeout(_this.itimer);
+            infiniteScroll.complete();
+        }, 1000);
+    };
+    SearchPage.prototype.open = function (name, banner, url) {
+        this.navCtrl.push('ComicsPage', {
+            name: name,
+            banner: banner,
+            url: url,
         });
     };
-    return RegistPage;
+    SearchPage.prototype.ionViewWillLeave = function () {
+        var ifs = $("#ikmsearch");
+        ifs[0].src = 'about:blank';
+        ifs.remove();
+    };
+    //点击到顶部
+    SearchPage.prototype.tapEvent = function (e) {
+        this.content.scrollToTop();
+    };
+    return SearchPage;
 }());
-RegistPage = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPage */])(),
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Content */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Content */])
+], SearchPage.prototype, "content", void 0);
+SearchPage = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-regist',template:/*ion-inline-start:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/regist/regist.html"*/'<ion-header no-border>\n\n    <ion-navbar color="fff">\n        <ion-title>注册</ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n    <ion-list inset>\n\n        <ion-item>\n            <ion-label>&nbsp;&nbsp;账号:</ion-label>\n            <ion-input type="text" [(ngModel)]="name"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label>&nbsp;&nbsp;昵称:</ion-label>\n            <ion-input type="text" [(ngModel)]="nickname"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label>&nbsp;&nbsp;密码:</ion-label>\n            <ion-input type="password" [(ngModel)]="pass"></ion-input>\n        </ion-item>\n\n    </ion-list>\n    <br/>\n    <br/>\n    <br/>\n    <br/>\n    <button ion-button color="danger" full round (click)="logon();">注册</button>\n</ion-content>'/*ion-inline-end:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/regist/regist.html"*/,
+        selector: 'page-search',template:/*ion-inline-start:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/search/search.html"*/'<ion-header no-border (tap)="tapEvent($event)">\n\n    <ion-navbar color="fff">\n        <ion-title>\n            搜索\n        </ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n\n    <ion-searchbar (ionInput)="getItems($event)" debounce="500" showCancelButton="true" placeholder="作者／漫画" animated="true"></ion-searchbar>\n\n    <section class="wrap">\n\n        <div class="mh" *ngFor="let item of data" (click)="open(item.name, item.bannerimg, item.url);">\n            <div class="mh-img" [style.background]="\'url(\'+item.bannerimg+\')\'"></div>\n            <p>{{item.name}}</p>\n            <span>{{item.len}}</span>\n        </div>\n\n    </section>\n\n    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">\n        <ion-infinite-scroll-content></ion-infinite-scroll-content>\n    </ion-infinite-scroll>\n\n</ion-content>'/*ion-inline-end:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/search/search.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_2__service_public__["a" /* pubilcService */],
-        __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* Http */]])
-], RegistPage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_2__service_public__["a" /* pubilcService */]])
+], SearchPage);
 
-//# sourceMappingURL=regist.js.map
+//# sourceMappingURL=search.js.map
 
 /***/ })
 
