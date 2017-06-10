@@ -80,7 +80,7 @@ PopOverPage = __decorate([
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ViewController */]])
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */]])
 ], PopOverPage);
 
 //# sourceMappingURL=pop-over.js.map

@@ -32925,6 +32925,79 @@ page-new ion-content .wrap .mh:nth-of-type(3n-1) {
   margin: 0 1.5%;
 }
 
+page-record ion-content {
+  background: #f7f7f7 !important;
+}
+
+page-record ion-content #ikmiclass {
+  display: none;
+}
+
+page-record ion-content .bar {
+  width: 100%;
+  display: block;
+  height: 2rem;
+  clear: both;
+  overflow: hidden;
+}
+
+page-record ion-content .wrap {
+  width: 92%;
+  padding-top: 0.9rem;
+  margin: 0 auto;
+  overflow: hidden;
+  border-top: 1px solid #dadada;
+}
+
+page-record ion-content .wrap .title {
+  display: block;
+  width: 90%;
+  border-left: 5px solid #ff7329;
+  text-indent: 14px;
+  margin: 1.2rem 0 !important;
+  overflow: hidden;
+  clear: both;
+}
+
+page-record ion-content .wrap .mh {
+  width: 32.3%;
+  float: left;
+  margin-bottom: 0.8rem;
+  background: #fff;
+}
+
+page-record ion-content .wrap .mh .mh-img {
+  width: 100%;
+  height: 13.5rem;
+  background-size: cover !important;
+  background-position: center center !important;
+}
+
+page-record ion-content .wrap .mh p {
+  width: 92%;
+  display: block;
+  line-height: 2rem;
+  margin: 0 auto;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+page-record ion-content .wrap .mh span {
+  margin: 0 auto 0.3rem;
+  width: 92%;
+  display: block;
+  font-size: 1rem;
+  color: #7d7d7d;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+page-record ion-content .wrap .mh:nth-of-type(3n-1) {
+  margin: 0 1.5%;
+}
+
 page-regist ion-content {
   background: #f7f7f7 !important;
 }

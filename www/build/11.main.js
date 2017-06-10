@@ -172,7 +172,6 @@ var ComicsPage = (function () {
             if (res.json().length != 0) {
                 _this.isrecord = true;
                 _this.recordurl = res.json()[0]['url'];
-                _this.isrecord = true;
             }
             _this.init();
         });
@@ -182,11 +181,12 @@ var ComicsPage = (function () {
         var url = "http://www.devonhello.com/buka/addrecord";
         var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
-        this.http.post(url, "uid=" + this.pubilcService.user._id + "&bookname=" + this.name + "&url=" + iurl, {
+        this.http.post(url, "uid=" + this.pubilcService.user._id + "&bookname=" + this.name + "&url=" + iurl + "&bookbanner=" + this.banner + "&bookpages=" + this.len + "&mhurl=" + this.url, {
             headers: headers
         })
             .subscribe(function (res) {
             _this.recordurl = iurl;
+            _this.isrecord = true;
         });
     };
     ComicsPage.prototype.init = function () {
@@ -232,9 +232,6 @@ var ComicsPage = (function () {
             this.olddata = this.data['pages'];
             this.data['pages'] = [];
             this.data['pages'] = this.olddata;
-        }
-        if (this.olddata.length == 0) {
-            this.isrecord = true;
         }
     };
     return ComicsPage;

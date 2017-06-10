@@ -124,7 +124,7 @@ CollectPage = __decorate([
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* MenuController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* MenuController */],
         __WEBPACK_IMPORTED_MODULE_2__service_public__["a" /* pubilcService */],
         __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* Http */]])
 ], CollectPage);

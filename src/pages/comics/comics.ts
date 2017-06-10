@@ -4,7 +4,6 @@ import { pubilcService } from '../../service/public';
 import { Headers, Http } from '@angular/http';
 
 declare var $: any;
-declare var document: any;
 @IonicPage()
 @Component({
   selector: 'page-comics',
@@ -136,7 +135,7 @@ export class ComicsPage {
         if (res.json().length != 0) {
           this.isrecord = true;
           this.recordurl = res.json()[0]['url'];
-          this.isrecord = true;
+          
         }
         this.init();
       });
@@ -149,11 +148,12 @@ export class ComicsPage {
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
-    this.http.post(url, "uid=" + this.pubilcService.user._id + "&bookname=" + this.name + "&url=" + iurl, {
+    this.http.post(url, "uid=" + this.pubilcService.user._id + "&bookname=" + this.name + "&url=" + iurl + "&bookbanner=" + this.banner + "&bookpages=" + this.len + "&mhurl=" + this.url, {
       headers: headers
     })
       .subscribe((res) => {
         this.recordurl = iurl;
+        this.isrecord = true;
       });
   }
 
@@ -211,9 +211,7 @@ export class ComicsPage {
       this.data['pages'] = [];
       this.data['pages'] = this.olddata
     }
-    if(this.olddata.length == 0){
-      this.isrecord = true;
-    }
+    
   }
 
 
