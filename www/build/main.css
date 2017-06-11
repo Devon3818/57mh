@@ -33103,3 +33103,52 @@ page-see ion-content {
 page-today ion-content {
   background: #f7f7f7 !important;
 }
+
+page-today ion-content .today_list:nth-child(even) {
+  background: #fff;
+}
+
+page-today ion-content .today_list {
+  width: 100%;
+  overflow: hidden;
+  padding: 10px;
+  background: #f6f6f6;
+}
+
+page-today ion-content .today_list .nu {
+  float: left;
+  display: block;
+  width: 22px;
+  height: 22px;
+  margin-top: 41px;
+  border-radius: 99999px;
+  overflow: hidden;
+  color: #fff;
+  background: #fd9426;
+  font-weight: bold;
+  line-height: 22px;
+  margin-right: 12px;
+  font-size: 14px;
+  text-align: center;
+}
+
+page-today ion-content .today_list img {
+  width: 102px;
+  height: 137px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+  float: left;
+  margin-right: 12px;
+}
+
+page-today ion-content .today_list .dec {
+  float: left;
+}
+
+page-today ion-content .today_list h5,
+page-today ion-content .today_list p {
+  display: block;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

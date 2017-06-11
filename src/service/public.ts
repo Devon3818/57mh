@@ -9,6 +9,7 @@ export class pubilcService {
     user: any = {};
     br:any = null;
     Version:any = '';
+    checkupdate = null;
 
     constructor(public loadingCtrl: LoadingController, public storage: Storage) {
         this.storageGet();

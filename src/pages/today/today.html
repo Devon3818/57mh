@@ -9,4 +9,15 @@
 
 <ion-content>
 
+    <section class="today_list" *ngFor="let item of data; let i = index" (click)="open(item.name, item.bannerimg, item.url);">
+        <span class="nu">{{i+1}}</span>
+        <img [src]="item.bannerimg" />
+        <div class="dec">
+            <h5>{{item.name}}</h5>
+            <p>更新至：{{item.len}}</p>
+            <p>更新于：{{item.up}}</p>
+        </div>
+    </section>
+
+
 </ion-content>

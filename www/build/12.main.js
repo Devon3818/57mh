@@ -1,6 +1,6 @@
 webpackJsonp([12],{
 
-/***/ 270:
+/***/ 274:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -152,7 +152,7 @@ ComicsDataPage = __decorate([
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* PopoverController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* PopoverController */],
         __WEBPACK_IMPORTED_MODULE_2__service_public__["a" /* pubilcService */]])
 ], ComicsDataPage);
 

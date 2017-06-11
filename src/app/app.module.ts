@@ -10,6 +10,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { pubilcService } from '../service/public';
 import { IonicStorageModule } from '@ionic/storage';
 
+import { AppVersion } from '@ionic-native/app-version';
+import { FileOpener } from '@ionic-native/file-opener';
+import { Transfer, TransferObject } from '@ionic-native/transfer';
+import { File } from '@ionic-native/file';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +38,12 @@ import { IonicStorageModule } from '@ionic/storage';
     InAppBrowser,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     pubilcService,
-    CodePush
+    CodePush,
+    AppVersion,
+    FileOpener,
+    Transfer,
+    TransferObject,
+    File
   ]
 })
 export class AppModule { }
