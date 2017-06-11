@@ -7,6 +7,8 @@ export class pubilcService {
 
     loading: any = null;
     user: any = {};
+    br:any = null;
+    Version:any = '';
 
     constructor(public loadingCtrl: LoadingController, public storage: Storage) {
         this.storageGet();

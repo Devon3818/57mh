@@ -7,7 +7,7 @@ webpackJsonp([11],{
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__comics__ = __webpack_require__(287);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__comics__ = __webpack_require__(291);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ComicsPageModule", function() { return ComicsPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -41,7 +41,7 @@ ComicsPageModule = __decorate([
 
 /***/ }),
 
-/***/ 287:
+/***/ 291:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -103,7 +103,7 @@ var ComicsPage = (function () {
     ComicsPage.prototype.checkcollect = function () {
         var _this = this;
         var url = "http://www.devonhello.com/buka/checkcollect";
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* Headers */]();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http.post(url, "bookname=" + this.name + "&uid=" + this.pubilcService.user._id, {
             headers: headers
@@ -121,7 +121,7 @@ var ComicsPage = (function () {
         if (this.pubilcService.user._id) {
             this.pubilcService.presentLoadingDefault();
             var url = "http://www.devonhello.com/buka/collect";
-            var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]();
+            var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* Headers */]();
             headers.append('Content-Type', 'application/x-www-form-urlencoded');
             this.http.post(url, "name=" + this.pubilcService.user.nickname + "&uid=" + this.pubilcService.user._id + "&bookname=" + this.name + "&bookbanner=" + this.banner + "&bookpages=" + this.len + "&booktime=" + this.uptime + "&url=" + this.url, {
                 headers: headers
@@ -142,7 +142,7 @@ var ComicsPage = (function () {
         var _this = this;
         this.pubilcService.presentLoadingDefault();
         var url = "http://www.devonhello.com/buka/uncollect";
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* Headers */]();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http.post(url, "uid=" + this.pubilcService.user._id + "&bookname=" + this.name, {
             headers: headers
@@ -163,7 +163,7 @@ var ComicsPage = (function () {
     ComicsPage.prototype.getrecord = function () {
         var _this = this;
         var url = "http://www.devonhello.com/buka/seerecord";
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* Headers */]();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http.post(url, "bookname=" + this.name + "&uid=" + this.pubilcService.user._id, {
             headers: headers
@@ -179,7 +179,7 @@ var ComicsPage = (function () {
     ComicsPage.prototype.addrecord = function (iurl) {
         var _this = this;
         var url = "http://www.devonhello.com/buka/addrecord";
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* Headers */]();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http.post(url, "uid=" + this.pubilcService.user._id + "&bookname=" + this.name + "&url=" + iurl + "&bookbanner=" + this.banner + "&bookpages=" + this.len + "&mhurl=" + this.url, {
             headers: headers
@@ -204,10 +204,11 @@ var ComicsPage = (function () {
             var ele = ifobj.find(".chapter-list li a");
             _thst.banner = ifobj.find(".thumb img").attr('src');
             _thst.dec = ifobj.find("#bookIntro").text();
-            _thst.len = ifobj.find("dd").eq(5).text();
-            _thst.cod = ifobj.find("dd").eq(4).text();
-            _thst.uptime = ifobj.find("dd").eq(6).text();
-            _thst.iclass = ifobj.find("dd").eq(3).text().split('/');
+            var dds = ifobj.find("dd");
+            _thst.len = dds.eq(5).text();
+            _thst.cod = dds.eq(4).text();
+            _thst.uptime = dds.eq(6).text();
+            _thst.iclass = dds.eq(3).text().split('/');
             ele.each(function () {
                 var iobj = {}, ot = $(this);
                 iobj['ititle'] = ot.attr('title');
@@ -228,6 +229,10 @@ var ComicsPage = (function () {
         this.content.scrollToTop();
     };
     ComicsPage.prototype.ionViewDidEnter = function () {
+        if (this.pubilcService.br) {
+            this.pubilcService.br.close();
+            this.pubilcService.br = null;
+        }
         if (this.pubilcService.user._id) {
             this.olddata = this.data['pages'];
             this.data['pages'] = [];
@@ -237,18 +242,18 @@ var ComicsPage = (function () {
     return ComicsPage;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Content */]),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Content */])
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Content */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Content */])
 ], ComicsPage.prototype, "content", void 0);
 ComicsPage = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
         selector: 'page-comics',template:/*ion-inline-start:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/comics/comics.html"*/'<ion-header no-border (tap)="tapEvent($event)">\n\n    <ion-navbar color="hebar">\n        <ion-title>{{name}}</ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n\n    <section class="comics-top">\n        <div class="comics-top-bar">\n            <h2 class="fr grade">{{cod}}</h2>\n        </div>\n        <img [src]="banner" />\n        <div class="basics">\n            <p class="title">{{name}}</p>\n            <p>更新至{{len}}</p>\n            <p>更新于{{uptime}}</p>\n            <div class="btm">\n                <div class="btms coll" [hidden]="!iscollect" (click)="uncollect();">不收藏</div>\n                <div class="btms coll" [hidden]="iscollect" (click)="collect();">收藏</div>\n                <div class="btms read" [hidden]="isrecord" (click)="openpage(data[\'pages\'][data[\'pages\'].length-1][\'ihref\']);">开始阅读</div>\n                <div class="btms read" [hidden]="!isrecord" (click)="openpage(recordurl);">继续阅读</div>\n            </div>\n        </div>\n\n    </section>\n    <div class="wrap">\n        <p class="dec">{{dec}}</p>\n\n        <div class="tag-wrap">\n            <span class="tag" *ngFor="let ic of iclass">{{ic}}</span>\n        </div>\n    </div>\n\n    <div class="wrap">\n\n        <div class="piece-title">\n            <p class="fl">连载(话)</p>\n            <p class="fr">{{uptime}}</p>\n        </div>\n\n        <div class="piece" *ngFor="let item of data[\'pages\']; let i=index" (click)="openpage(item.ihref);">\n            <span *ngIf="item.ihref == recordurl" class="repiece">{{item.ititle}}</span>\n            <span *ngIf="item.ihref != recordurl">{{item.ititle}}</span>\n        </div>\n\n    </div>\n    <!--<iframe id="ikmfs" src="http://m.57mh.com/"></iframe>-->\n</ion-content>'/*ion-inline-end:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/comics/comics.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_2__service_public__["a" /* pubilcService */],
-        __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* Http */]])
+        __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */]])
 ], ComicsPage);
 
 //# sourceMappingURL=comics.js.map

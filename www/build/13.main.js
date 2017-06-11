@@ -7,7 +7,7 @@ webpackJsonp([13],{
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__collect__ = __webpack_require__(285);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__collect__ = __webpack_require__(289);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CollectPageModule", function() { return CollectPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -41,7 +41,7 @@ CollectPageModule = __decorate([
 
 /***/ }),
 
-/***/ 285:
+/***/ 289:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -76,7 +76,7 @@ var CollectPage = (function () {
     CollectPage.prototype.getclooect = function () {
         var _this = this;
         var url = "http://www.devonhello.com/buka/getcollect";
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* Headers */]();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http.post(url, "uid=" + this.pubilcService.user._id, {
             headers: headers
@@ -114,19 +114,19 @@ var CollectPage = (function () {
     return CollectPage;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Content */]),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Content */])
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Content */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Content */])
 ], CollectPage.prototype, "content", void 0);
 CollectPage = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
         selector: 'page-collect',template:/*ion-inline-start:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/collect/collect.html"*/'<ion-header no-border (tap)="tapEvent($event)">\n    <ion-navbar color="fff">\n        <img (click)="openMenu();" class="headers" src="https://avatars0.githubusercontent.com/u/11835988?v=3&s=460" />\n        <ion-title>我的收藏</ion-title>\n        <ion-buttons end>\n            <button ion-button icon-only (click)="search();">\n              <ion-icon name="ios-search"></ion-icon>\n            </button>\n        </ion-buttons>\n\n    </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n    <section class="wrap">\n\n        <div class="mh" *ngFor="let item of data">\n            <div class="mh-img" (click)="open(item.bookname, item.bookbanner, item.url);" [style.background]="\'url(\'+item.bookbanner+\')\'"></div>\n            <p>{{item.bookname}}</p>\n            <span>更新至:{{item.bookpages}}</span>\n            <span>时间:{{item.booktime}}</span>\n        </div>\n\n    </section>\n</ion-content>'/*ion-inline-end:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/collect/collect.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* MenuController */],
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* MenuController */],
         __WEBPACK_IMPORTED_MODULE_2__service_public__["a" /* pubilcService */],
-        __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* Http */]])
+        __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */]])
 ], CollectPage);
 
 //# sourceMappingURL=collect.js.map

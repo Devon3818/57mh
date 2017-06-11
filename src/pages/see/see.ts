@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { pubilcService } from '../../service/public';
 
-declare var $: any;
-declare var document: any;
 @IonicPage()
 @Component({
   selector: 'page-see',
@@ -13,28 +12,32 @@ export class SeePage {
 
   imgs = 'http://im1.56zzw.com/7/2225.jpg';
   br;
+  isshow:boolean = false;
 
   constructor(
     public navCtrl: NavController,
     public iab: InAppBrowser,
+    public pubilcService: pubilcService,
     public navParams: NavParams
   ) {
     this.open(this.navParams.get('url'));
   }
 
   open(url) {
-    this.br = this.iab.create('http://m.57mh.com' + url, '_blank', 'location=no,hardwareback=no,hidden=yes');
+    this.br = this.iab.create('http://m.57mh.com' + url, '_blank', 'location=no,hardwareback=no');
+    this.pubilcService.br = this.br;
     this.br.on('loadstart').subscribe(() => {
       this.br.hide();
     });
 
     this.br.on('exit').subscribe(() => {
-      this.navCtrl.pop();
+      if( this.isshow ){
+        this.navCtrl.pop();
+      }
     });
 
     this.br.on('loaderror').subscribe(() => {
       alert('加载出错...');
-      this.navCtrl.pop();
     });
 
     this.br.on('loadstop').subscribe(() => {
@@ -43,11 +46,8 @@ export class SeePage {
       this.br.executeScript({ code: jscode });
       this.br.insertCSS({ code: ".dv_bar { clear: both; width: 100px; height: 20px; display: block; } .dv_a { float: left; display: block; padding: 20px; } #pb {width: 100% !important;} #pb a {display: none !important;}" });
       this.br.show();
+      this.isshow = true;
     });
-  }
-
-  ionViewWillLeave(){
-    this.br.close();
   }
 
 }

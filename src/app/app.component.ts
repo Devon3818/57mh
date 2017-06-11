@@ -22,4 +22,12 @@ export class MyApp {
   getrecord(){
    this.nav.push( 'RecordPage' );
   }
+
+  about(){
+    this.nav.push( 'AboutPage' );
+  }
+
+  today(){
+    this.nav.push( 'TodayPage' );
+  }
 }

@@ -177,10 +177,11 @@ export class ComicsPage {
       var ele = ifobj.find(".chapter-list li a");
       _thst.banner = ifobj.find(".thumb img").attr('src');
       _thst.dec = ifobj.find("#bookIntro").text();
-      _thst.len = ifobj.find("dd").eq(5).text();
-      _thst.cod = ifobj.find("dd").eq(4).text();
-      _thst.uptime = ifobj.find("dd").eq(6).text();
-      _thst.iclass = ifobj.find("dd").eq(3).text().split('/');
+      var dds = ifobj.find("dd");
+      _thst.len = dds.eq(5).text();
+      _thst.cod = dds.eq(4).text();
+      _thst.uptime = dds.eq(6).text();
+      _thst.iclass = dds.eq(3).text().split('/');
       ele.each(function () {
         var iobj = {},
           ot = $(this);
@@ -206,6 +207,12 @@ export class ComicsPage {
   }
 
   ionViewDidEnter(){
+
+    if( this.pubilcService.br ){
+      this.pubilcService.br.close();
+      this.pubilcService.br = null;
+    }
+
     if(this.pubilcService.user._id){
       this.olddata = this.data['pages'];
       this.data['pages'] = [];
