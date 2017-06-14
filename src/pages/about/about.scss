@@ -1,5 +1,13 @@
 page-about {
     ion-content {
         background: #f7f7f7 !important;
+        .banner {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+        }
+        .dec {
+            padding: 0 15px;
+        }
     }
 }

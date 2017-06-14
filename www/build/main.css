@@ -32335,6 +32335,16 @@ page-about ion-content {
   background: #f7f7f7 !important;
 }
 
+page-about ion-content .banner {
+  width: 100%;
+  display: block;
+  margin-bottom: 20px;
+}
+
+page-about ion-content .dec {
+  padding: 0 15px;
+}
+
 page-classify ion-title {
   text-align: center !important;
   line-height: 36px;

@@ -47,6 +47,7 @@ PersonPageModule = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__service_public__ = __webpack_require__(100);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PersonPage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -59,20 +60,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-/**
- * Generated class for the PersonPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+
 var PersonPage = (function () {
-    function PersonPage(navCtrl, navParams) {
+    function PersonPage(navCtrl, navParams, pubilcService) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.pubilcService = pubilcService;
+        this.Version = '';
+        this.Version = this.pubilcService.Version;
     }
-    PersonPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad PersonPage');
-    };
     return PersonPage;
 }());
 PersonPage = __decorate([
@@ -80,7 +76,9 @@ PersonPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
         selector: 'page-person',template:/*ion-inline-start:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/person/person.html"*/'<!--\n  Generated template for the PersonPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>person</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/person/person.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_2__service_public__["a" /* pubilcService */]])
 ], PersonPage);
 
 //# sourceMappingURL=person.js.map

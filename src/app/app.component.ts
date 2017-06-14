@@ -18,6 +18,7 @@ export class MyApp {
   apkDownloadUrl = '';
   fileTransfer: TransferObject;
   ischeck: boolean = false;
+  name = '漫画君'
 
   constructor(
     platform: Platform,
@@ -38,6 +39,10 @@ export class MyApp {
       appVersion.getVersionNumber().then((version) => {
         _that.pubilcService.Version = version;
         _that.getAppVersion();
+      }).then(()=>{
+        if( this.pubilcService.user.nickname ){
+          this.name = this.pubilcService.user.nickname;
+        }
       });
     });
   }
@@ -145,5 +150,9 @@ export class MyApp {
 
   today() {
     this.nav.push('TodayPage');
+  }
+
+  persion(){
+    this.nav.push('PersonPage');
   }
 }

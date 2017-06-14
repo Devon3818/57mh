@@ -20,7 +20,7 @@
         <div class="mh" *ngFor="let item of data" (click)="open(item.name, item.bannerimg, item.url);">
             <div class="mh-img" [style.background]="'url('+item.bannerimg+')'"></div>
             <p>{{item.name}}</p>
-            <span>{{item.len}}</span>
+            <span>(新){{item.len}}</span>
         </div>
 
     </section>

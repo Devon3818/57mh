@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { pubilcService } from '../../service/public';
 
-/**
- * Generated class for the PersonPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @IonicPage()
 @Component({
   selector: 'page-person',
@@ -14,11 +9,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PersonPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  Version = '';
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public pubilcService: pubilcService
+  ) 
+  {
+    this.Version = this.pubilcService.Version;
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PersonPage');
-  }
 
 }
