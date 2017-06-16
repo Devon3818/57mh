@@ -48,4 +48,7 @@
 ## Download
 - Android：https://github.com/kongdewen1994/57mh/raw/master/android-debug.apk
 
+## ⚠️注意
+- 纯粹好玩，并非真正的57漫画客户端，请勿商业化，更多漫画请关注57漫画网
+
 
