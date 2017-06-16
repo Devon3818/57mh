@@ -15,6 +15,7 @@
 
 
 支持 iOS, Android 的 ionic2例子。（ios未测试过）
+ionic3.3.0-example 「57漫画」📖 🈵️ 一款能看<惊爆游戏><零度战姬><进击的巨人><东京食尸鬼re >......de漫画app
 > 作者：Devon。
 
 >支持热跟新和app更新检测
