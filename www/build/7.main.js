@@ -62,23 +62,39 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var PersonPage = (function () {
-    function PersonPage(navCtrl, navParams, pubilcService) {
+    function PersonPage(navCtrl, navParams, pubilcService, menuCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.pubilcService = pubilcService;
+        this.menuCtrl = menuCtrl;
         this.Version = '';
+        this.itimer = null;
         this.Version = this.pubilcService.Version;
+        this.name = this.pubilcService.user.nickname;
+        this.img = "https://avatars0.githubusercontent.com/u/11835988?v=3&s=460";
+        this.menuCtrl.close();
     }
+    PersonPage.prototype.out = function () {
+        var _this = this;
+        this.pubilcService.presentLoadingDefault();
+        this.pubilcService.clearStorage();
+        this.itimer = setTimeout(function () {
+            clearTimeout(_this.itimer);
+            _this.pubilcService.presentLoadingDismiss();
+            _this.navCtrl.pop();
+        }, 1000);
+    };
     return PersonPage;
 }());
 PersonPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-person',template:/*ion-inline-start:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/person/person.html"*/'<!--\n  Generated template for the PersonPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>person</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/person/person.html"*/,
+        selector: 'page-person',template:/*ion-inline-start:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/person/person.html"*/'<ion-header no-border>\n\n    <ion-navbar color="fff">\n        <ion-title>个人信息</ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n    <ion-list>\n        <ion-item>\n            头像:\n            <ion-avatar item-right>\n                <img [src]="img">\n            </ion-avatar>\n        </ion-item>\n        <ion-item>\n            昵称:\n            <ion-note item-right>\n                {{name}}\n            </ion-note>\n        </ion-item>\n\n    </ion-list>\n    <br/>\n    <br/>\n    <button ion-button full (click)="out();">注销</button>\n</ion-content>'/*ion-inline-end:"/Users/apple/Documents/ionic2/3.3.0/buka/src/pages/person/person.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_2__service_public__["a" /* pubilcService */]])
+        __WEBPACK_IMPORTED_MODULE_2__service_public__["a" /* pubilcService */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* MenuController */]])
 ], PersonPage);
 
 //# sourceMappingURL=person.js.map

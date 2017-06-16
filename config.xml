@@ -21,7 +21,7 @@
     <preference name="FadeSplashScreenDuration" value="300" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="SplashScreen" value="screen" />
-    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="SplashScreenDelay" value="6000" />
     <platform name="android">
         <allow-intent href="market:*" />
         <preference name="CodePushDeploymentKey" value="cwNYI88P0dviMA3mL3KpmdOy0GMtc17f68e6-4cd4-4943-bf79-1e743d7622a2" />
