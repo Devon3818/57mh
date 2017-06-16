@@ -1,3 +1,51 @@
-# 57mh
+<p align="center"><a href="" target="_blank"><img width="100"src="https://github.com/kongdewen1994/57mh/blob/master/resources/android/icon/drawable-xxhdpi-icon.png"></a></p>
 
-即将发布
+<p align="center">
+  <a href="https://github.com/kongdewen1994/57mh"><img src="https://img.shields.io/badge/APP-57mh-blue.svg" alt=""></a>
+  <a href="https://github.com/kongdewen1994/57mh"><img src="https://img.shields.io/badge/QQ%20Group-513752928-red.svg" alt=""></a>
+  <a href="https://github.com/kongdewen1994/57mh"><img src="https://img.shields.io/badge/Beta-1.0.0-blue.svg" alt=""></a>
+  <a href="https://github.com/kongdewen1994/57mh"><img src="https://img.shields.io/badge/ionic2-3.3.0-blue.svg" alt=""></a>
+  <a href="https://github.com/kongdewen1994/57mh"><img src="https://img.shields.io/badge/platforms-iOS%7CAndroid-lightgrey.svg" alt=""></a>
+  <a href="https://github.com/kongdewen1994/57mh"><img src="https://img.shields.io/badge/WeChat-Devon1994-brightgreen.svg" alt=""></a>
+  
+</p>
+
+
+# 57漫画 / 57mh
+
+
+支持 iOS, Android 的 ionic2例子。（ios未测试过）
+> 作者：Devon。
+
+>支持热跟新和app更新检测
+
+>本人想换工作，有意请联系QQ：849996781
+
+>职业：web前端开发，ionic2开发，h5移动端开发，Hybrid App（混合模式移动应用）开发
+
+
+<br/>
+
+<p align="center">
+<img width="208"src="https://github.com/kongdewen1994/57mh/blob/master/test/img/1.png">
+<img width="208"src="https://github.com/kongdewen1994/57mh/blob/master/test/img/2.png">
+<img width="208"src="https://github.com/kongdewen1994/57mh/blob/master/test/img/3.png">
+<img width="208"src="https://github.com/kongdewen1994/57mh/blob/master/test/img/4.png">
+<br/>
+<br/>
+<img width="208"src="https://github.com/kongdewen1994/57mh/blob/master/test/img/5.png">
+<img width="208"src="https://github.com/kongdewen1994/57mh/blob/master/test/img/6.png">
+<img width="208"src="https://github.com/kongdewen1994/57mh/blob/master/test/img/7.png">
+<img width="208"src="https://github.com/kongdewen1994/57mh/blob/master/test/img/8.png">
+
+</p>
+
+
+## Support
+- QQ 群：513752928
+- QQ ：849996781
+
+## Download
+- Android：https://github.com/kongdewen1994/57mh/raw/master/android-debug.apk
+
+
