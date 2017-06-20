@@ -49,6 +49,9 @@ ionic3.3.0-example 「57漫画」📖 🈵️ 一款能看<惊爆游戏><零度�
 ## Download
 - Android：https://github.com/kongdewen1994/57mh/raw/master/android-debug.apk
 
+## 事件
+- 2017-6-19数据库异常，数据库丢失，呵呵呵，无奈（可能是mongodb的bug）
+
 ## ⚠️注意
 - 纯粹好玩，并非真正的57漫画客户端，请勿商业化，更多漫画请关注57漫画网
 
