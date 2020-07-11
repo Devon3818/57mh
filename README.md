@@ -1,12 +1,12 @@
-<p align="center"><a href="" target="_blank"><img width="100"src="https://github.com/kongdewen1994/57mh/blob/master/resources/android/icon/drawable-xxhdpi-icon.png"></a></p>
+<p align="center"><a href="" target="_blank"><img width="100"src="https://github.com/Devon3818/57mh/blob/master/resources/android/icon/drawable-xxhdpi-icon.png"></a></p>
 
 <p align="center">
-  <a href="https://github.com/kongdewen1994/57mh"><img src="https://img.shields.io/badge/APP-57mh-blue.svg" alt=""></a>
-  <a href="https://github.com/kongdewen1994/57mh"><img src="https://img.shields.io/badge/QQ%20Group-513752928-red.svg" alt=""></a>
-  <a href="https://github.com/kongdewen1994/57mh"><img src="https://img.shields.io/badge/Beta-1.0.0-blue.svg" alt=""></a>
-  <a href="https://github.com/kongdewen1994/57mh"><img src="https://img.shields.io/badge/ionic2-3.3.0-blue.svg" alt=""></a>
-  <a href="https://github.com/kongdewen1994/57mh"><img src="https://img.shields.io/badge/platforms-iOS%7CAndroid-lightgrey.svg" alt=""></a>
-  <a href="https://github.com/kongdewen1994/57mh"><img src="https://img.shields.io/badge/WeChat-Devon1994-brightgreen.svg" alt=""></a>
+  <a href="https://github.com/Devon3818/57mh"><img src="https://img.shields.io/badge/APP-57mh-blue.svg" alt=""></a>
+  <a href="https://github.com/Devon3818/57mh"><img src="https://img.shields.io/badge/QQ%20Group-513752928-red.svg" alt=""></a>
+  <a href="https://github.com/Devon3818/57mh"><img src="https://img.shields.io/badge/Beta-1.0.0-blue.svg" alt=""></a>
+  <a href="https://github.com/Devon3818/57mh"><img src="https://img.shields.io/badge/ionic2-3.3.0-blue.svg" alt=""></a>
+  <a href="https://github.com/Devon3818/57mh"><img src="https://img.shields.io/badge/platforms-iOS%7CAndroid-lightgrey.svg" alt=""></a>
+  <a href="https://github.com/Devon3818/57mh"><img src="https://img.shields.io/badge/WeChat-Devon1994-brightgreen.svg" alt=""></a>
   
 </p>
 
@@ -28,16 +28,16 @@ ionic3.3.0-example 「57漫画」📖 🈵️ 一款能看<惊爆游戏><零度�
 <br/>
 
 <p align="center">
-<img width="208"src="https://github.com/kongdewen1994/57mh/blob/master/test/img/1.png">
-<img width="208"src="https://github.com/kongdewen1994/57mh/blob/master/test/img/2.png">
-<img width="208"src="https://github.com/kongdewen1994/57mh/blob/master/test/img/3.png">
-<img width="208"src="https://github.com/kongdewen1994/57mh/blob/master/test/img/4.png">
+<img width="208"src="https://github.com/Devon3818/57mh/blob/master/test/img/1.png">
+<img width="208"src="https://github.com/Devon3818/57mh/blob/master/test/img/2.png">
+<img width="208"src="https://github.com/Devon3818/57mh/blob/master/test/img/3.png">
+<img width="208"src="https://github.com/Devon3818/57mh/blob/master/test/img/4.png">
 <br/>
 <br/>
-<img width="208"src="https://github.com/kongdewen1994/57mh/blob/master/test/img/5.png">
-<img width="208"src="https://github.com/kongdewen1994/57mh/blob/master/test/img/6.png">
-<img width="208"src="https://github.com/kongdewen1994/57mh/blob/master/test/img/7.png">
-<img width="208"src="https://github.com/kongdewen1994/57mh/blob/master/test/img/8.png">
+<img width="208"src="https://github.com/Devon3818/57mh/blob/master/test/img/5.png">
+<img width="208"src="https://github.com/Devon3818/57mh/blob/master/test/img/6.png">
+<img width="208"src="https://github.com/Devon3818/57mh/blob/master/test/img/7.png">
+<img width="208"src="https://github.com/Devon3818/57mh/blob/master/test/img/8.png">
 
 </p>
 
@@ -47,7 +47,7 @@ ionic3.3.0-example 「57漫画」📖 🈵️ 一款能看<惊爆游戏><零度�
 - QQ ：849996781
 
 ## Download
-- Android：https://github.com/kongdewen1994/57mh/raw/master/android-debug.apk
+- Android：https://github.com/Devon3818/57mh/raw/master/android-debug.apk
 
 ## 事件
 - 2017-6-19数据库异常，数据库丢失，呵呵呵，无奈（可能是mongodb的bug）
